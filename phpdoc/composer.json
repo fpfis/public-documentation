@@ -4,7 +4,6 @@
         "ec-europa/phpgit": "dev-master",
         "ec-europa/itopapi": "dev-master",
         "ec-europa/backtrac-php-client": "dev-master",
-        "ec-europa/ecas-phpcas-parser": "dev-master",
-        "ec-europa/oe-poetry-client": "dev-master"
+        "ec-europa/ecas-phpcas-parser": "dev-master"
     }
 }
