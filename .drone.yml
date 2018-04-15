@@ -9,9 +9,10 @@ pipeline:
     image: fpfis/php56-dev
     commands:
       - yum install -y graphviz 
+      - composer global require phpdocumentor/phpdocumentor:~2 --ansi
       - cd phpdoc
       - composer install --ansi
-      - ./vendor/bin/phpdoc --ansi
+      - phpdoc --ansi
       - find doc/ -name '*.dat' -delete
       - rsync -a doc/ ../_site/libs/ 
 
