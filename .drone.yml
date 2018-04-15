@@ -8,9 +8,11 @@ pipeline:
   build-docs:
     image: fpfis/php56-dev
     commands:
+      - yum install -y graphviz 
       - cd phpdoc
       - composer install --ansi
-      - ./vendor/bin/phpdoc
+      - ./vendor/bin/phpdoc --ansi
+      - find doc/ -name '*.dat' -delete
       - rsync -a doc/ ../_site/libs/ 
 
   deploy-site:
