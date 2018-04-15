@@ -1,0 +1,790 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>FPFIS libs documentation » \EC\Poetry\Messages\Requests\GetRequestStatus</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">FPFIS libs documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/BacktracTasks.html"><i class="icon-th"></i> BacktracTasks</a></li>
+<li><a href="../namespaces/EC.html"><i class="icon-th"></i> EC</a></li>
+<li><a href="../namespaces/EcasPhpCASParser.html"><i class="icon-th"></i> EcasPhpCASParser</a></li>
+<li><a href="../namespaces/PhpDrush.html"><i class="icon-th"></i> PhpDrush</a></li>
+<li><a href="../namespaces/PhpGit.html"><i class="icon-th"></i> PhpGit</a></li>
+<li><a href="../namespaces/iTopApi.html"><i class="icon-th"></i> iTopApi</a></li>
+<li><a href="../namespaces/spec.html"><i class="icon-th"></i> spec</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/EC.html"><i class="icon-folder-open"></i> EC</a></li>
+<li><a href="../packages/PhpDrush.html"><i class="icon-folder-open"></i> PhpDrush</a></li>
+<li><a href="../packages/PhpGit.html"><i class="icon-folder-open"></i> PhpGit</a></li>
+<li><a href="../packages/Poetry.html"><i class="icon-folder-open"></i> Poetry</a></li>
+<li><a href="../packages/iTopApi.html"><i class="icon-folder-open"></i> iTopApi</a></li>
+<li><a href="../packages/spec.html"><i class="icon-folder-open"></i> spec</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">660</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: AbstractMessage constructor."><span class="description">AbstractMessage constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method_fromXml" title="fromXml() :: Set a message or a component internal properties given its XML representation."><span class="description">Set a message or a component internal properties given its XML representation.</span><pre>fromXml()</pre></a></li>
+<li class="method public inherited"><a href="#method_getAttributes" title="getAttributes() :: Get rendered attributes."><span class="description">Get rendered attributes.</span><pre>getAttributes()</pre></a></li>
+<li class="method public inherited"><a href="#method_getCommunication" title="getCommunication() :: Get communication type for current message object."><span class="description">Get communication type for current message object.</span><pre>getCommunication()</pre></a></li>
+<li class="method public inherited"><a href="#method_getConstraints" title="getConstraints() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>getConstraints()</pre></a></li>
+<li class="method public inherited"><a href="#method_getIdentifier" title="getIdentifier() :: Get Identifier property."><span class="description">Get Identifier property.</span><pre>getIdentifier()</pre></a></li>
+<li class="method public inherited"><a href="#method_getMessageId" title="getMessageId() :: Get message ID."><span class="description">Get message ID.</span><pre>getMessageId()</pre></a></li>
+<li class="method public inherited"><a href="#method_getParser" title="getParser() :: "><span class="description">getParser()
+        </span><pre>getParser()</pre></a></li>
+<li class="method public inherited"><a href="#method_getRaw" title="getRaw() :: "><span class="description">getRaw()
+        </span><pre>getRaw()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTemplate" title="getTemplate() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>getTemplate()</pre></a></li>
+<li class="method public "><a href="#method_getType" title="getType() :: Get request type."><span class="description">Get request type.</span><pre>getType()</pre></a></li>
+<li class="method public inherited"><a href="#method_getType" title="getType() :: Get request type."><span class="description">Get request type.</span><pre>getType()</pre></a></li>
+<li class="method public inherited"><a href="#method_offsetExists" title="offsetExists() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>offsetExists()</pre></a></li>
+<li class="method public inherited"><a href="#method_offsetGet" title="offsetGet() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>offsetGet()</pre></a></li>
+<li class="method public inherited"><a href="#method_offsetSet" title="offsetSet() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>offsetSet()</pre></a></li>
+<li class="method public inherited"><a href="#method_offsetUnset" title="offsetUnset() :: {@inheritdoc}"><span class="description">{@inheritdoc}</span><pre>offsetUnset()</pre></a></li>
+<li class="method public inherited"><a href="#method_setIdentifier" title="setIdentifier() :: Set Identifier property."><span class="description">Set Identifier property.</span><pre>setIdentifier()</pre></a></li>
+<li class="method public inherited"><a href="#method_setMessageId" title="setMessageId() :: "><span class="description">setMessageId()
+        </span><pre>setMessageId()</pre></a></li>
+<li class="method public inherited"><a href="#method_setParser" title="setParser() :: "><span class="description">setParser()
+        </span><pre>setParser()</pre></a></li>
+<li class="method public inherited"><a href="#method_setRaw" title="setRaw() :: "><span class="description">setRaw()
+        </span><pre>setRaw()</pre></a></li>
+<li class="method public inherited"><a href="#method_withArray" title="withArray() :: Construct message or component with an array."><span class="description">Construct message or component with an array.</span><pre>withArray()</pre></a></li>
+<li class="method public inherited"><a href="#method_withIdentifier" title="withIdentifier() :: Set Identifier property."><span class="description">Set Identifier property.</span><pre>withIdentifier()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_getGetMethod" title="getGetMethod() :: Get a get*' method given a camel case property."><span class="description">Get a get*' method given a camel case property.</span><pre>getGetMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getSetMethod" title="getSetMethod() :: Get a set*' method given a camel case property."><span class="description">Get a set*' method given a camel case property.</span><pre>getSetMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getWithMethod" title="getWithMethod() :: Get a with*' method given a camel case property."><span class="description">Get a with*' method given a camel case property.</span><pre>getWithMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_hasGetMethod" title="hasGetMethod() :: Check whereas given property has a 'get*' method."><span class="description">Check whereas given property has a 'get*' method.</span><pre>hasGetMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_hasSetMethod" title="hasSetMethod() :: Check whereas given property has a 'set*' method."><span class="description">Check whereas given property has a 'set*' method.</span><pre>hasSetMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_hasWithMethod" title="hasWithMethod() :: Check whereas given property has a 'with*' factory method."><span class="description">Check whereas given property has a 'with*' factory method.</span><pre>hasWithMethod()</pre></a></li>
+<li class="method protected inherited"><a href="#method_isComponent" title="isComponent() :: Check whereas given name / value pair is a component."><span class="description">Check whereas given name / value pair is a component.</span><pre>isComponent()</pre></a></li>
+<li class="method protected inherited"><a href="#method_isComponentCollection" title="isComponentCollection() :: Check whereas given name / value pair is a collection of components."><span class="description">Check whereas given name / value pair is a collection of components.</span><pre>isComponentCollection()</pre></a></li>
+<li class="method protected inherited"><a href="#method_isProperty" title="isProperty() :: Check whereas given name / value pair is a simple component property."><span class="description">Check whereas given name / value pair is a simple component property.</span><pre>isProperty()</pre></a></li>
+<li class="method protected inherited"><a href="#method_parseXml" title="parseXml() :: Parse a XML string into a set of properties."><span class="description">Parse a XML string into a set of properties.</span><pre>parseXml()</pre></a></li>
+<li class="method protected inherited"><a href="#method_setComponentCollection" title="setComponentCollection() :: Helper method: set child components."><span class="description">Helper method: set child components.</span><pre>setComponentCollection()</pre></a></li>
+<li class="method protected inherited"><a href="#method_toCamelCase" title="toCamelCase() :: Convert snake_case to CamelCase."><span class="description">Convert snake_case to CamelCase.</span><pre>toCamelCase()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_settings" title="$settings() :: "><span class="description"></span><pre>$settings</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_identifier" title="$identifier() :: "><span class="description"></span><pre>$identifier</pre></a></li>
+<li class="property private "><a href="#property_messageId" title="$messageId() :: "><span class="description"></span><pre>$messageId</pre></a></li>
+<li class="property private "><a href="#property_parser" title="$parser() :: "><span class="description"></span><pre>$parser</pre></a></li>
+<li class="property private "><a href="#property_raw" title="$raw() :: "><span class="description"></span><pre>$raw</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Constants" class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_COMMUNICATION_ASYNCHRONOUS" title="COMMUNICATION_ASYNCHRONOUS() :: "><span class="description">COMMUNICATION_ASYNCHRONOUS</span><pre>COMMUNICATION_ASYNCHRONOUS</pre></a></li>
+<li class="constant  "><a href="#constant_COMMUNICATION_SYNCHRONOUS" title="COMMUNICATION_SYNCHRONOUS() :: "><span class="description">COMMUNICATION_SYNCHRONOUS</span><pre>COMMUNICATION_SYNCHRONOUS</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_CONTACTS" title="REQUEST_CONTACTS() :: "><span class="description">REQUEST_CONTACTS</span><pre>REQUEST_CONTACTS</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_DELETE" title="REQUEST_DELETE() :: "><span class="description">REQUEST_DELETE</span><pre>REQUEST_DELETE</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_MODIFICATION" title="REQUEST_MODIFICATION() :: "><span class="description">REQUEST_MODIFICATION</span><pre>REQUEST_MODIFICATION</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_MODIFICATION_POST" title="REQUEST_MODIFICATION_POST() :: "><span class="description">REQUEST_MODIFICATION_POST</span><pre>REQUEST_MODIFICATION_POST</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_NEW" title="REQUEST_NEW() :: "><span class="description">REQUEST_NEW</span><pre>REQUEST_NEW</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_NEW_POST" title="REQUEST_NEW_POST() :: "><span class="description">REQUEST_NEW_POST</span><pre>REQUEST_NEW_POST</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_POST" title="REQUEST_POST() :: "><span class="description">REQUEST_POST</span><pre>REQUEST_POST</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_STATUS" title="REQUEST_STATUS() :: "><span class="description">REQUEST_STATUS</span><pre>REQUEST_STATUS</pre></a></li>
+<li class="constant  "><a href="#constant_REQUEST_TRANSLATION" title="REQUEST_TRANSLATION() :: "><span class="description">REQUEST_TRANSLATION</span><pre>REQUEST_TRANSLATION</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\EC\Poetry\Messages\Requests\GetRequestStatus"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/EC.html">EC</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/EC.Poetry.html">Poetry</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/EC.Poetry.Messages.html">Messages</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/EC.Poetry.Messages.Requests.html">Requests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/EC.Poetry.Messages.Requests.GetRequestStatus.html">GetRequestStatus</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Get status of a translation request.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/EC.Poetry.Messages.Requests.html">EC\Poetry\Messages\Requests</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\EC\Poetry\Messages\Requests\AbstractRequest</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>AbstractMessage constructor.</h2>
+<pre>__construct(\EC\Poetry\Messages\Components\Identifier $identifier) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$identifier</h4>
+<code>\EC\Poetry\Messages\Components\Identifier</code>
+</div>
+</div></div>
+</div>
+<a id="method_fromXml"></a><div class="element clickable method public method_fromXml inherited" data-toggle="collapse" data-target=".method_fromXml .collapse" title="public">
+<h2>Set a message or a component internal properties given its XML representation.</h2>
+<pre>fromXml(string $xml) : \EC\Poetry\Messages\MessageInterface | \EC\Poetry\Messages\ComponentInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xml</h4>
+<code>string</code><p>XML string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\EC\Poetry\Messages\MessageInterface</code><code>\EC\Poetry\Messages\ComponentInterface</code>
+</div>
+</div></div>
+</div>
+<a id="method_getAttributes"></a><div class="element clickable method public method_getAttributes inherited" data-toggle="collapse" data-target=".method_getAttributes .collapse" title="public">
+<h2>Get rendered attributes.</h2>
+<pre>getAttributes() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of attributes.</div>
+</div></div>
+</div>
+<a id="method_getCommunication"></a><div class="element clickable method public method_getCommunication inherited" data-toggle="collapse" data-target=".method_getCommunication .collapse" title="public">
+<h2>Get communication type for current message object.</h2>
+<pre>getCommunication() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getConstraints"></a><div class="element clickable method public method_getConstraints inherited" data-toggle="collapse" data-target=".method_getConstraints .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>getConstraints(\Symfony\Component\Validator\Mapping\ClassMetadata $metadata) </pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$metadata</h4></div>
+</div></div>
+</div>
+<a id="method_getIdentifier"></a><div class="element clickable method public method_getIdentifier inherited" data-toggle="collapse" data-target=".method_getIdentifier .collapse" title="public">
+<h2>Get Identifier property.</h2>
+<pre>getIdentifier() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\EC\Poetry\Messages\MessageInterface::getIdentifier()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getMessageId"></a><div class="element clickable method public method_getMessageId inherited" data-toggle="collapse" data-target=".method_getMessageId .collapse" title="public">
+<h2>Get message ID.</h2>
+<pre>getMessageId() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\EC\Poetry\Messages\MessageInterface::getMessageId()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getParser"></a><div class="element clickable method public method_getParser inherited" data-toggle="collapse" data-target=".method_getParser .collapse" title="public">
+<h2>getParser()
+        </h2>
+<pre>getParser() : \EC\Poetry\Services\Parser</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\EC\Poetry\Services\Parser</code></div>
+</div></div>
+</div>
+<a id="method_getRaw"></a><div class="element clickable method public method_getRaw inherited" data-toggle="collapse" data-target=".method_getRaw .collapse" title="public">
+<h2>getRaw()
+        </h2>
+<pre>getRaw() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getTemplate"></a><div class="element clickable method public method_getTemplate inherited" data-toggle="collapse" data-target=".method_getTemplate .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>getTemplate() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getType"></a><div class="element clickable method public method_getType " data-toggle="collapse" data-target=".method_getType .collapse" title="public">
+<h2>Get request type.</h2>
+<pre>getType() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\EC\Poetry\Messages\Requests\AbstractRequest::getType()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getType"></a><div class="element clickable method public method_getType inherited" data-toggle="collapse" data-target=".method_getType .collapse" title="public">
+<h2>Get request type.</h2>
+<pre>getType() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_offsetExists"></a><div class="element clickable method public method_offsetExists inherited" data-toggle="collapse" data-target=".method_offsetExists .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>offsetExists($offset) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$offset</h4></div>
+</div></div>
+</div>
+<a id="method_offsetGet"></a><div class="element clickable method public method_offsetGet inherited" data-toggle="collapse" data-target=".method_offsetGet .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>offsetGet($offset) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$offset</h4></div>
+</div></div>
+</div>
+<a id="method_offsetSet"></a><div class="element clickable method public method_offsetSet inherited" data-toggle="collapse" data-target=".method_offsetSet .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>offsetSet($offset, $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$offset</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+</div></div>
+</div>
+<a id="method_offsetUnset"></a><div class="element clickable method public method_offsetUnset inherited" data-toggle="collapse" data-target=".method_offsetUnset .collapse" title="public">
+<h2>{@inheritdoc}</h2>
+<pre>offsetUnset($offset) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$offset</h4></div>
+</div></div>
+</div>
+<a id="method_setIdentifier"></a><div class="element clickable method public method_setIdentifier inherited" data-toggle="collapse" data-target=".method_setIdentifier .collapse" title="public">
+<h2>Set Identifier property.</h2>
+<pre>setIdentifier(\EC\Poetry\Messages\Components\Identifier $identifier) : \EC\Poetry\Messages\Requests\GetRequestStatus</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$identifier</h4>
+<code>\EC\Poetry\Messages\Components\Identifier</code><p>Property value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\EC\Poetry\Messages\Requests\GetRequestStatus</code></div>
+</div></div>
+</div>
+<a id="method_setMessageId"></a><div class="element clickable method public method_setMessageId inherited" data-toggle="collapse" data-target=".method_setMessageId .collapse" title="public">
+<h2>setMessageId()
+        </h2>
+<pre>setMessageId(string $messageId) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messageId</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_setParser"></a><div class="element clickable method public method_setParser inherited" data-toggle="collapse" data-target=".method_setParser .collapse" title="public">
+<h2>setParser()
+        </h2>
+<pre>setParser(\EC\Poetry\Services\Parser $parser) : \EC\Poetry\Messages\Requests\GetRequestStatus</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code>\EC\Poetry\Services\Parser</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\EC\Poetry\Messages\Requests\GetRequestStatus</code></div>
+</div></div>
+</div>
+<a id="method_setRaw"></a><div class="element clickable method public method_setRaw inherited" data-toggle="collapse" data-target=".method_setRaw .collapse" title="public">
+<h2>setRaw()
+        </h2>
+<pre>setRaw(string $raw) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$raw</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_withArray"></a><div class="element clickable method public method_withArray inherited" data-toggle="collapse" data-target=".method_withArray .collapse" title="public">
+<h2>Construct message or component with an array.</h2>
+<pre>withArray(array $properties) : \EC\Poetry\Messages\Requests\GetRequestStatus</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$properties</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\EC\Poetry\Messages\Requests\GetRequestStatus</code></div>
+</div></div>
+</div>
+<a id="method_withIdentifier"></a><div class="element clickable method public method_withIdentifier inherited" data-toggle="collapse" data-target=".method_withIdentifier .collapse" title="public">
+<h2>Set Identifier property.</h2>
+<pre>withIdentifier() : \EC\Poetry\Messages\Components\Identifier</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\EC\Poetry\Messages\Components\Identifier</code></div>
+</div></div>
+</div>
+<a id="method_getGetMethod"></a><div class="element clickable method protected method_getGetMethod inherited" data-toggle="collapse" data-target=".method_getGetMethod .collapse" title="protected">
+<h2>Get a get*' method given a camel case property.</h2>
+<pre>getGetMethod(string $method) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getSetMethod"></a><div class="element clickable method protected method_getSetMethod inherited" data-toggle="collapse" data-target=".method_getSetMethod .collapse" title="protected">
+<h2>Get a set*' method given a camel case property.</h2>
+<pre>getSetMethod(string $method) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getWithMethod"></a><div class="element clickable method protected method_getWithMethod inherited" data-toggle="collapse" data-target=".method_getWithMethod .collapse" title="protected">
+<h2>Get a with*' method given a camel case property.</h2>
+<pre>getWithMethod(string $method) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_hasGetMethod"></a><div class="element clickable method protected method_hasGetMethod inherited" data-toggle="collapse" data-target=".method_hasGetMethod .collapse" title="protected">
+<h2>Check whereas given property has a 'get*' method.</h2>
+<pre>hasGetMethod(string $method) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_hasSetMethod"></a><div class="element clickable method protected method_hasSetMethod inherited" data-toggle="collapse" data-target=".method_hasSetMethod .collapse" title="protected">
+<h2>Check whereas given property has a 'set*' method.</h2>
+<pre>hasSetMethod(string $method) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_hasWithMethod"></a><div class="element clickable method protected method_hasWithMethod inherited" data-toggle="collapse" data-target=".method_hasWithMethod .collapse" title="protected">
+<h2>Check whereas given property has a 'with*' factory method.</h2>
+<pre>hasWithMethod(string $method) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isComponent"></a><div class="element clickable method protected method_isComponent inherited" data-toggle="collapse" data-target=".method_isComponent .collapse" title="protected">
+<h2>Check whereas given name / value pair is a component.</h2>
+<pre>isComponent(string $name, mixed $value) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isComponentCollection"></a><div class="element clickable method protected method_isComponentCollection inherited" data-toggle="collapse" data-target=".method_isComponentCollection .collapse" title="protected">
+<h2>Check whereas given name / value pair is a collection of components.</h2>
+<pre>isComponentCollection(string $name, mixed $value) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isProperty"></a><div class="element clickable method protected method_isProperty inherited" data-toggle="collapse" data-target=".method_isProperty .collapse" title="protected">
+<h2>Check whereas given name / value pair is a simple component property.</h2>
+<pre>isProperty(string $name, mixed $value) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_parseXml"></a><div class="element clickable method protected method_parseXml inherited" data-toggle="collapse" data-target=".method_parseXml .collapse" title="protected">
+<h2>Parse a XML string into a set of properties.</h2>
+<pre>parseXml(string $xml) : \EC\Poetry\Messages\MessageInterface | \EC\Poetry\Messages\ComponentInterface</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xml</h4>
+<code>string</code><p>XML string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\EC\Poetry\Messages\MessageInterface</code><code>\EC\Poetry\Messages\ComponentInterface</code>
+</div>
+</div></div>
+</div>
+<a id="method_setComponentCollection"></a><div class="element clickable method protected method_setComponentCollection inherited" data-toggle="collapse" data-target=".method_setComponentCollection .collapse" title="protected">
+<h2>Helper method: set child components.</h2>
+<pre>setComponentCollection(string $parent, array $components) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parent</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$components</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_toCamelCase"></a><div class="element clickable method protected method_toCamelCase inherited" data-toggle="collapse" data-target=".method_toCamelCase .collapse" title="protected">
+<h2>Convert snake_case to CamelCase.</h2>
+<pre>toCamelCase(string $string) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_settings"> </a><div class="element clickable property protected property_settings" data-toggle="collapse" data-target=".property_settings .collapse" title="protected">
+<h2>$settings</h2>
+<pre>$settings : \EC\Poetry\Services\Settings</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_identifier"> </a><div class="element clickable property private property_identifier" data-toggle="collapse" data-target=".property_identifier .collapse" title="private">
+<h2>$identifier</h2>
+<pre>$identifier : \EC\Poetry\Messages\Components\Identifier</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_messageId"> </a><div class="element clickable property private property_messageId" data-toggle="collapse" data-target=".property_messageId .collapse" title="private">
+<h2>$messageId</h2>
+<pre>$messageId : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_parser"> </a><div class="element clickable property private property_parser" data-toggle="collapse" data-target=".property_parser .collapse" title="private">
+<h2>$parser</h2>
+<pre>$parser : \EC\Poetry\Services\Parser</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_raw"> </a><div class="element clickable property private property_raw" data-toggle="collapse" data-target=".property_raw .collapse" title="private">
+<h2>$raw</h2>
+<pre>$raw : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_COMMUNICATION_ASYNCHRONOUS"> </a><div class="element clickable constant  constant_COMMUNICATION_ASYNCHRONOUS" data-toggle="collapse" data-target=".constant_COMMUNICATION_ASYNCHRONOUS .collapse" title="">
+<h2>COMMUNICATION_ASYNCHRONOUS</h2>
+<pre>COMMUNICATION_ASYNCHRONOUS = 'asynchrone' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_COMMUNICATION_SYNCHRONOUS"> </a><div class="element clickable constant  constant_COMMUNICATION_SYNCHRONOUS" data-toggle="collapse" data-target=".constant_COMMUNICATION_SYNCHRONOUS .collapse" title="">
+<h2>COMMUNICATION_SYNCHRONOUS</h2>
+<pre>COMMUNICATION_SYNCHRONOUS = 'synchrone' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_CONTACTS"> </a><div class="element clickable constant  constant_REQUEST_CONTACTS" data-toggle="collapse" data-target=".constant_REQUEST_CONTACTS .collapse" title="">
+<h2>REQUEST_CONTACTS</h2>
+<pre>REQUEST_CONTACTS = 'getContacts' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_DELETE"> </a><div class="element clickable constant  constant_REQUEST_DELETE" data-toggle="collapse" data-target=".constant_REQUEST_DELETE .collapse" title="">
+<h2>REQUEST_DELETE</h2>
+<pre>REQUEST_DELETE = 'delete' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_MODIFICATION"> </a><div class="element clickable constant  constant_REQUEST_MODIFICATION" data-toggle="collapse" data-target=".constant_REQUEST_MODIFICATION .collapse" title="">
+<h2>REQUEST_MODIFICATION</h2>
+<pre>REQUEST_MODIFICATION = 'modification' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_MODIFICATION_POST"> </a><div class="element clickable constant  constant_REQUEST_MODIFICATION_POST" data-toggle="collapse" data-target=".constant_REQUEST_MODIFICATION_POST .collapse" title="">
+<h2>REQUEST_MODIFICATION_POST</h2>
+<pre>REQUEST_MODIFICATION_POST = 'modificationPost' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_NEW"> </a><div class="element clickable constant  constant_REQUEST_NEW" data-toggle="collapse" data-target=".constant_REQUEST_NEW .collapse" title="">
+<h2>REQUEST_NEW</h2>
+<pre>REQUEST_NEW = 'new' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_NEW_POST"> </a><div class="element clickable constant  constant_REQUEST_NEW_POST" data-toggle="collapse" data-target=".constant_REQUEST_NEW_POST .collapse" title="">
+<h2>REQUEST_NEW_POST</h2>
+<pre>REQUEST_NEW_POST = 'newPost' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_POST"> </a><div class="element clickable constant  constant_REQUEST_POST" data-toggle="collapse" data-target=".constant_REQUEST_POST .collapse" title="">
+<h2>REQUEST_POST</h2>
+<pre>REQUEST_POST = 'post' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_STATUS"> </a><div class="element clickable constant  constant_REQUEST_STATUS" data-toggle="collapse" data-target=".constant_REQUEST_STATUS .collapse" title="">
+<h2>REQUEST_STATUS</h2>
+<pre>REQUEST_STATUS = 'getStatus' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_REQUEST_TRANSLATION"> </a><div class="element clickable constant  constant_REQUEST_TRANSLATION" data-toggle="collapse" data-target=".constant_REQUEST_TRANSLATION .collapse" title="">
+<h2>REQUEST_TRANSLATION</h2>
+<pre>REQUEST_TRANSLATION = 'getTranslationFile' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2018-04-15T16:43:33Z.<br></footer></div>
+</div>
+</body>
+</html>
