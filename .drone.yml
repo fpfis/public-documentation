@@ -8,11 +8,10 @@ pipeline:
   build-docs:
     image: fpfis/php56-dev
     commands:
-      - git clone https://github.com/ec-europa/itopapi
-      - cd itopapi
+      - cd phpdoc
       - composer install --ansi
-      - composer phpdoc
-      - rsync -a doc/ ../_site/itopapi/
+      - ./vendor/bin/phpdoc
+      - rsync -a doc/ ../_site/libs/ 
 
   deploy-site:
     image: fpfis/drone-plugin-git-deploy

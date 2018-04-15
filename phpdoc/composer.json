@@ -1,0 +1,8 @@
+{
+    "require": {
+        "ec-europa/phpdrush": "dev-master",
+        "ec-europa/phpgit": "dev-master",
+        "ec-europa/itopapi": "dev-master",
+        "phpdocumentor/phpdocumentor": "~2"
+    }
+}
