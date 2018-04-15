@@ -1,8 +1,6 @@
 ---
-title: Home
+title: FPFIS 
 layout: page
 ---
-
-## FPFIS
 
 The following site contains various informations about FPFIS's projects.
