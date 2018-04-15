@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="ITopAPI documentation" version="2.8.5">
+  <partials/>
+  <file path="ITopClient.php" generated-path="ITopClient.html" hash="a56d5ccf83350e3f4b257921bf77922b" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="iTopApi" line="8" package="iTopApi">
+      <extends/>
+      <name>ITopClient</name>
+      <full_name>\iTopApi\ITopClient</full_name>
+      <docblock line="8">
+        <description>Class ITopClient</description>
+        <long-description></long-description>
+        <tag name="package" line="8" description="iTopApi"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="iTopApi" line="13" package="iTopApi">
+        <name>$endpoint</name>
+        <full_name>\iTopApi\ITopClient::endpoint</full_name>
+        <default></default>
+        <docblock line="13">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="13" description="&lt;p&gt;Endpoint for iTopApi&lt;/p&gt;" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="17" package="iTopApi">
+        <name>$user</name>
+        <full_name>\iTopApi\ITopClient::user</full_name>
+        <default></default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="17" description="&lt;p&gt;Username&lt;/p&gt;" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="21" package="iTopApi">
+        <name>$password</name>
+        <full_name>\iTopApi\ITopClient::password</full_name>
+        <default></default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="21" description="&lt;p&gt;Password&lt;/p&gt;" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="25" package="iTopApi">
+        <name>$certificateCheck</name>
+        <full_name>\iTopApi\ITopClient::certificateCheck</full_name>
+        <default>true</default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="25" description="&lt;p&gt;Perform ssl checks&lt;/p&gt;" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="29" package="iTopApi">
+        <name>$curlOptions</name>
+        <full_name>\iTopApi\ITopClient::curlOptions</full_name>
+        <default>array()</default>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="29" description="&lt;p&gt;Array of custom curl options&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="34" package="iTopApi">
+        <name>$proxyEnv</name>
+        <full_name>\iTopApi\ITopClient::proxyEnv</full_name>
+        <default>array()</default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="34" description="&lt;p&gt;use environement proxy or not&lt;/p&gt;" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="42" package="iTopApi">
+        <name>__construct</name>
+        <full_name>\iTopApi\ITopClient::__construct()</full_name>
+        <docblock line="42">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="42" description="" type="string" variable="$endpoint">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="42" description="" type="string" variable="$user">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="42" description="" type="string" variable="$password">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="42" description="&lt;p&gt;(Default:1.0)&lt;/p&gt;" type="string" variable="$version">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$endpoint</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$user</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$password</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$version</name>
+          <default>'1.0'</default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$proxyEnv</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="57" package="iTopApi">
+        <name>setCurlOption</name>
+        <full_name>\iTopApi\ITopClient::setCurlOption()</full_name>
+        <docblock line="57">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="57" description="&lt;p&gt;One of the CURLOPT_* constant&lt;/p&gt;" type="integer" variable="$option">
+            <type>integer</type>
+          </tag>
+          <tag name="param" line="57" description="&lt;p&gt;Setting&lt;/p&gt;" type="mixed" variable="$value">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="57" description="" type="\iTopApi\ITopClient">
+            <type>\iTopApi\ITopClient</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$option</name>
+          <default></default>
+          <type>integer</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="67" package="iTopApi">
+        <name>setCertificateCheck</name>
+        <full_name>\iTopApi\ITopClient::setCertificateCheck()</full_name>
+        <docblock line="67">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="67" description="&lt;p&gt;Check for SSL issues&lt;/p&gt;" type="" variable="$bool"/>
+          <tag name="return" line="67" description="" type="\iTopApi\ITopClient">
+            <type>\iTopApi\ITopClient</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$bool</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="79" package="iTopApi">
+        <name>sendRequest</name>
+        <full_name>\iTopApi\ITopClient::sendRequest()</full_name>
+        <docblock line="79">
+          <description>Send a JSON request to the API</description>
+          <long-description></long-description>
+          <tag name="param" line="79" description="" type="array" variable="$data">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="79" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+          <tag name="throws" line="79" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="146" package="iTopApi">
+        <name>operation</name>
+        <full_name>\iTopApi\ITopClient::operation()</full_name>
+        <docblock line="146">
+          <description>Execute an API operation</description>
+          <long-description></long-description>
+          <tag name="param" line="146" description="" type="string" variable="$operation">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="146" description="" type="array" variable="$data">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="146" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+          <tag name="throws" line="146" description="" type="\Exception">
+            <type>\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$operation</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="158" package="iTopApi">
+        <name>coreGet</name>
+        <full_name>\iTopApi\ITopClient::coreGet()</full_name>
+        <docblock line="158">
+          <description>Execute an API core/get</description>
+          <long-description></long-description>
+          <tag name="param" line="158" description="&lt;p&gt;Class to look for&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="158" description="&lt;p&gt;Param to be passed as key&lt;/p&gt;" type="mixed" variable="$query">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="158" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$query</name>
+          <default>null</default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="180" package="iTopApi">
+        <name>coreGetRelated</name>
+        <full_name>\iTopApi\ITopClient::coreGetRelated()</full_name>
+        <docblock line="180">
+          <description>Get relations</description>
+          <long-description></long-description>
+          <tag name="param" line="180" description="&lt;p&gt;Class to look for&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="180" description="&lt;p&gt;Param to be passed as key&lt;/p&gt;" type="mixed" variable="$key">
+            <type>mixed</type>
+          </tag>
+          <tag name="param" line="180" description="&lt;p&gt;Related class to look for&lt;/p&gt;" type="string" variable="$relation">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="180" description="&lt;p&gt;Depth&lt;/p&gt;" type="integer" variable="$depth">
+            <type>integer</type>
+          </tag>
+          <tag name="return" line="180" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$key</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$relation</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$depth</name>
+          <default>1</default>
+          <type>integer</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="200" package="iTopApi">
+        <name>coreDelete</name>
+        <full_name>\iTopApi\ITopClient::coreDelete()</full_name>
+        <docblock line="200">
+          <description>Delete one/multiple objects</description>
+          <long-description></long-description>
+          <tag name="param" line="200" description="&lt;p&gt;Class to delete&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="200" description="&lt;p&gt;Param to be passed as key&lt;/p&gt;" type="mixed" variable="$query">
+            <type>mixed</type>
+          </tag>
+          <tag name="param" line="200" description="&lt;p&gt;Comment to record in iTop&lt;/p&gt;" type="string" variable="$comment">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="200" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$query</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$comment</name>
+          <default>null</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="216" package="iTopApi">
+        <name>coreGetCustomSelect</name>
+        <full_name>\iTopApi\ITopClient::coreGetCustomSelect()</full_name>
+        <docblock line="216">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$query</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="230" package="iTopApi">
+        <name>coreUpdate</name>
+        <full_name>\iTopApi\ITopClient::coreUpdate()</full_name>
+        <docblock line="230">
+          <description>Update one/multiple objects in iTop</description>
+          <long-description></long-description>
+          <tag name="param" line="230" description="&lt;p&gt;Class to update&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="230" description="&lt;p&gt;Param to be passed as key&lt;/p&gt;" type="mixed" variable="$query">
+            <type>mixed</type>
+          </tag>
+          <tag name="param" line="230" description="&lt;p&gt;Data to update&lt;/p&gt;" type="array" variable="$data">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="230" description="&lt;p&gt;Comment to record in iTop&lt;/p&gt;" type="string" variable="$comment">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="230" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$query</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$comment</name>
+          <default>null</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="255" package="iTopApi">
+        <name>coreCreate</name>
+        <full_name>\iTopApi\ITopClient::coreCreate()</full_name>
+        <docblock line="255">
+          <description>Creates an object in iTop</description>
+          <long-description></long-description>
+          <tag name="param" line="255" description="&lt;p&gt;Class to create&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="255" description="&lt;p&gt;Data for the objects&lt;/p&gt;" type="array" variable="$data">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="255" description="&lt;p&gt;Record a comment in iTop&lt;/p&gt;" type="string" variable="$comment">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="255" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$comment</name>
+          <default>null</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="277" package="iTopApi">
+        <name>getNewObject</name>
+        <full_name>\iTopApi\ITopClient::getNewObject()</full_name>
+        <docblock line="277">
+          <description>Dispense a new ITopObject</description>
+          <long-description></long-description>
+          <tag name="param" line="277" description="&lt;p&gt;Class to get a new object for&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="277" description="" type="\iTopApi\ITopObject">
+            <type>\iTopApi\ITopObject</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="288" package="iTopApi">
+        <name>getObjects</name>
+        <full_name>\iTopApi\ITopClient::getObjects()</full_name>
+        <docblock line="288">
+          <description>Get objects from iTopApi</description>
+          <long-description></long-description>
+          <tag name="param" line="288" description="&lt;p&gt;Class to get objects for&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="288" description="&lt;p&gt;Param to be passed as key&lt;/p&gt;" type="mixed" variable="$query">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="288" description="" type="array|\iTopApi\ITopObject">
+            <type>array</type>
+            <type>\iTopApi\ITopObject</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$query</name>
+          <default>null</default>
+          <type>mixed</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="42" code="PPC:ERR-50015">Argument $proxyEnv is missing from the Docblock of __construct</error>
+      <error line="42" code="PPC:ERR-50014">Name of argument $proxyEnv does not match with the DocBlock's name $version in __construct()</error>
+      <error line="42" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="57" code="PPC:ERR-50008">No summary for method setCurlOption()</error>
+      <error line="67" code="PPC:ERR-50008">No summary for method setCertificateCheck()</error>
+      <error line="216" code="PPC:ERR-50015">Argument $class is missing from the Docblock of coreGetCustomSelect</error>
+      <error line="216" code="PPC:ERR-50015">Argument $query is missing from the Docblock of coreGetCustomSelect</error>
+      <error line="216" code="PPC:ERR-50008">No summary for method coreGetCustomSelect()</error>
+    </parse_markers>
+    <source>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</source>
+  </file>
+  <file path="ITopObject.php" generated-path="ITopObject.html" hash="71d59b603c321ba65486fc34fd3eb16c" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="iTopApi" line="9" package="iTopApi">
+      <extends/>
+      <name>ITopObject</name>
+      <full_name>\iTopApi\ITopObject</full_name>
+      <docblock line="9">
+        <description>Util class to acces iTop object oriented
+Class ITopObject</description>
+        <long-description></long-description>
+        <tag name="package" line="9" description="iTopApi"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="iTopApi" line="14" package="iTopApi">
+        <name>$dirty_</name>
+        <full_name>\iTopApi\ITopObject::dirty_</full_name>
+        <default>false</default>
+        <docblock line="14">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="14" description="&lt;p&gt;Was the oject updated or not&lt;/p&gt;" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="19" package="iTopApi">
+        <name>$key_</name>
+        <full_name>\iTopApi\ITopObject::key_</full_name>
+        <default></default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="19" description="&lt;p&gt;This is not an ssh one&lt;/p&gt;" type="integer" variable="">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="24" package="iTopApi">
+        <name>$class_</name>
+        <full_name>\iTopApi\ITopObject::class_</full_name>
+        <default></default>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="24" description="&lt;p&gt;Current class&lt;/p&gt;" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="29" package="iTopApi">
+        <name>$iTopClient_</name>
+        <full_name>\iTopApi\ITopObject::iTopClient_</full_name>
+        <default></default>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="29" description="&lt;p&gt;Current iTopClient&lt;/p&gt;" type="\iTopApi\ITopClient" variable="">
+            <type>\iTopApi\ITopClient</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="iTopApi" line="34" package="iTopApi">
+        <name>$data_</name>
+        <full_name>\iTopApi\ITopObject::data_</full_name>
+        <default>array()</default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="34" description="&lt;p&gt;Data about the current object&lt;/p&gt;" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="41" package="iTopApi">
+        <name>__construct</name>
+        <full_name>\iTopApi\ITopObject::__construct()</full_name>
+        <docblock line="41">
+          <description>Instantiate a new ITopObject</description>
+          <long-description></long-description>
+          <tag name="param" line="41" description="&lt;p&gt;Class for the current object&lt;/p&gt;" type="string" variable="$class">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="41" description="&lt;p&gt;Data for the current object (content of 'fields')&lt;/p&gt;" type="array" variable="$data">
+            <type>array</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$class</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$data</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$iTopClient</name>
+          <default></default>
+          <type>\iTopApi\iTopClient</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="58" package="iTopApi">
+        <name>save</name>
+        <full_name>\iTopApi\ITopObject::save()</full_name>
+        <docblock line="58">
+          <description>Update/Create the current object in iTop Database</description>
+          <long-description></long-description>
+          <tag name="param" line="58" description="&lt;p&gt;Comment to record in iTop&lt;/p&gt;" type="string" variable="$comment">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$comment</name>
+          <default>null</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="75" package="iTopApi">
+        <name>delete</name>
+        <full_name>\iTopApi\ITopObject::delete()</full_name>
+        <docblock line="75">
+          <description>Delete the current object from the database and mark is a new</description>
+          <long-description></long-description>
+          <tag name="param" line="75" description="&lt;p&gt;Comment to save in iTop&lt;/p&gt;" type="string" variable="$comment">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="75" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$comment</name>
+          <default>null</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="90" package="iTopApi">
+        <name>isDirty</name>
+        <full_name>\iTopApi\ITopObject::isDirty()</full_name>
+        <docblock line="90">
+          <description></description>
+          <long-description></long-description>
+          <tag name="return" line="90" description="Is dirty or not" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="99" package="iTopApi">
+        <name>__get</name>
+        <full_name>\iTopApi\ITopObject::__get()</full_name>
+        <docblock line="99">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="99" description="" type="string" variable="$variable">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="99" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$variable</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="108" package="iTopApi">
+        <name>__set</name>
+        <full_name>\iTopApi\ITopObject::__set()</full_name>
+        <docblock line="108">
+          <description></description>
+          <long-description></long-description>
+          <tag name="param" line="108" description="" type="string" variable="$variable">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="108" description="" type="mixed" variable="$value">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$variable</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="118" package="iTopApi">
+        <name>getITopClient</name>
+        <full_name>\iTopApi\ITopObject::getITopClient()</full_name>
+        <docblock line="118">
+          <description>Get the current ITopClient</description>
+          <long-description></long-description>
+          <tag name="return" line="118" description="" type="\iTopApi\ITopClient">
+            <type>\iTopApi\ITopClient</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="iTopApi" line="127" package="iTopApi">
+        <name>getKey</name>
+        <full_name>\iTopApi\ITopObject::getKey()</full_name>
+        <docblock line="127">
+          <description>Get current key id from iTop object</description>
+          <long-description></long-description>
+          <tag name="return" line="127" description="Current object ID in iTop db" type="integer">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="41" code="PPC:ERR-50014">Name of argument $key does not match with the DocBlock's name $data in __construct()</error>
+      <error line="41" code="PPC:ERR-50015">Argument $data is missing from the Docblock of __construct</error>
+      <error line="41" code="PPC:ERR-50015">Argument $iTopClient is missing from the Docblock of __construct</error>
+      <error line="41" code="PPC:ERR-50014">Name of argument $iTopClient does not match with the DocBlock's name $data in __construct()</error>
+      <error line="41" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $iTopClient in __construct()</error>
+      <error line="90" code="PPC:ERR-50008">No summary for method isDirty()</error>
+      <error line="99" code="PPC:ERR-50008">No summary for method __get()</error>
+      <error line="108" code="PPC:ERR-50008">No summary for method __set()</error>
+    </parse_markers>
+    <source>eJytV1tvmzAUfs+vOJMqQapMeV93VTJN0R720moPXYUMmMYrsZFt2kZV//uOL1wLhGrlhQDfuX6fj52PX4p9seDkQFVBEgrsUhTfCgZPiwXgtT4/t3c4hyvNckhyohRoASRJqLJoEPFfmmgQklGuaVrhNxa6Q8QvC6jef8U4d+S2DuXfr+09GTJ6cpB2Ot7VPZEQC5HDb4JZ7SkIm0pZpAQzwZSAC92yWNe/C8nuEQNnKZP6GMEnyEiu6MViMhbjGi73DAtXxjMQDkrtQXA6HeSOHqMTrpWWjN/CppQS2+gaMe3UQk65Na3c5IaZ2jWrX037b3CnghApyRG2RBMgsSi1pSLx4USL/VES0NRwYB2Fy/FwO6404ZoZKwKcPrwQmE+rIJIcqqa6VnlFZqiKyfwqY1eVSw5cdcO2ECYClW+eMwgyRvNUBcvhiss4ZwlkJU80ExyiCE0xyzLRoctyZdWycmFXLbLahDTOm7VhrjON4nz/2SkD++lcXgxhqpbbOIMII1oDwPvg95Y+DKx57KLXa9hllirfrQcaSAp23cGHDpRlEDIV8TLPw1YSy2WvzHYZ1fLFHtJu4OdF82tMT1d2Uqw3khpFDVDLuBtyhv6YKDolMnE42HXm7zglJU2ETCsnHVtJdSk5HNhjNTLth3GpKHJPwzrIJzBdOqGD/mzr9/rd3Gb7ZF8Sj1oTkrouhh31rdoyWnVUt6p7tRxjzBYhcU/C1UGNukYiO+JGIk8HO/MM+6kTFaII65DXgfuqgpu+WXdxONh1gM/BTRdZNa3yeTFDj1ua02EhZlIc7PvUKxE3nxQORN6ZzcjOwtdp0+jpbZSZ2qTnavM1i1zvpXiws+PP98eEFiZcGFzKoykKa3CR/U7gGhVMawpDNXJy2/IAuxNTpcu/qWKY9RHBbn2veoJ1I78R6gypVDzZ889O+YE6deTp0cbU1piEY0R1K3EtmaPhnvTwgMBInNP/01gU3VLcIitnM3M2A+C6Nrp5q+wdxCYPBpKXI+e/F0WodhErbzt3io+KsV+nUbj1PKfgH7R7XtsNHQ9rxga/jleMpDUWM5XWOXfOy7/K3axulrpZ2fpvMlQIa52I/YjdbevtPo3nlveTzl1B3Wnj5tLz4nnxD4qUn2E=</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <package name="iTopApi" full_name="iTopApi"/>
+  <namespace name="iTopApi" full_name="iTopApi"/>
+  <deprecated count="0"/>
+</project>

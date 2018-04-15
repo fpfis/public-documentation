@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>ITopAPI documentation » \iTopApi\ITopClient</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">ITopAPI documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/iTopApi.html"><i class="icon-folder-open"></i> iTopApi</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">18</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_coreCreate" title="coreCreate() :: Creates an object in iTop"><span class="description">Creates an object in iTop</span><pre>coreCreate()</pre></a></li>
+<li class="method public "><a href="#method_coreDelete" title="coreDelete() :: Delete one/multiple objects"><span class="description">Delete one/multiple objects</span><pre>coreDelete()</pre></a></li>
+<li class="method public "><a href="#method_coreGet" title="coreGet() :: Execute an API core/get"><span class="description">Execute an API core/get</span><pre>coreGet()</pre></a></li>
+<li class="method public "><a href="#method_coreGetCustomSelect" title="coreGetCustomSelect() :: "><span class="description">coreGetCustomSelect()
+        </span><pre>coreGetCustomSelect()</pre></a></li>
+<li class="method public "><a href="#method_coreGetRelated" title="coreGetRelated() :: Get relations"><span class="description">Get relations</span><pre>coreGetRelated()</pre></a></li>
+<li class="method public "><a href="#method_coreUpdate" title="coreUpdate() :: Update one/multiple objects in iTop"><span class="description">Update one/multiple objects in iTop</span><pre>coreUpdate()</pre></a></li>
+<li class="method public "><a href="#method_getNewObject" title="getNewObject() :: Dispense a new ITopObject"><span class="description">Dispense a new ITopObject</span><pre>getNewObject()</pre></a></li>
+<li class="method public "><a href="#method_getObjects" title="getObjects() :: Get objects from iTopApi"><span class="description">Get objects from iTopApi</span><pre>getObjects()</pre></a></li>
+<li class="method public "><a href="#method_operation" title="operation() :: Execute an API operation"><span class="description">Execute an API operation</span><pre>operation()</pre></a></li>
+<li class="method public "><a href="#method_sendRequest" title="sendRequest() :: Send a JSON request to the API"><span class="description">Send a JSON request to the API</span><pre>sendRequest()</pre></a></li>
+<li class="method public "><a href="#method_setCertificateCheck" title="setCertificateCheck() :: "><span class="description">setCertificateCheck()
+        </span><pre>setCertificateCheck()</pre></a></li>
+<li class="method public "><a href="#method_setCurlOption" title="setCurlOption() :: "><span class="description">setCurlOption()
+        </span><pre>setCurlOption()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_certificateCheck" title="$certificateCheck() :: "><span class="description">Perform ssl checks</span><pre>$certificateCheck</pre></a></li>
+<li class="property private "><a href="#property_curlOptions" title="$curlOptions() :: "><span class="description">Array of custom curl options</span><pre>$curlOptions</pre></a></li>
+<li class="property private "><a href="#property_endpoint" title="$endpoint() :: "><span class="description">Endpoint for iTopApi</span><pre>$endpoint</pre></a></li>
+<li class="property private "><a href="#property_password" title="$password() :: "><span class="description">Password</span><pre>$password</pre></a></li>
+<li class="property private "><a href="#property_proxyEnv" title="$proxyEnv() :: "><span class="description">use environement proxy or not</span><pre>$proxyEnv</pre></a></li>
+<li class="property private "><a href="#property_user" title="$user() :: "><span class="description">Username</span><pre>$user</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\iTopApi\ITopClient"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/iTopApi.html">iTopApi</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/iTopApi.ITopClient.html">ITopClient</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class ITopClient</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/iTopApi.html">iTopApi</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
+        </h2>
+<pre>__construct(string $endpoint, string $user, string $password, string $version<code> = '1.0'</code>, $proxyEnv<code> = false</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$endpoint</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$version</h4>
+<code>string</code><p>(Default:1.0)</p></div>
+<div class="subelement argument"><h4>$proxyEnv</h4></div>
+</div></div>
+</div>
+<a id="method_coreCreate"></a><div class="element clickable method public method_coreCreate " data-toggle="collapse" data-target=".method_coreCreate .collapse" title="public">
+<h2>Creates an object in iTop</h2>
+<pre>coreCreate(string $class, array $data, string $comment<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to create</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data for the objects</p></div>
+<div class="subelement argument">
+<h4>$comment</h4>
+<code>string</code><p>Record a comment in iTop</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_coreDelete"></a><div class="element clickable method public method_coreDelete " data-toggle="collapse" data-target=".method_coreDelete .collapse" title="public">
+<h2>Delete one/multiple objects</h2>
+<pre>coreDelete(string $class, mixed $query, string $comment<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to delete</p></div>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>Param to be passed as key</p></div>
+<div class="subelement argument">
+<h4>$comment</h4>
+<code>string</code><p>Comment to record in iTop</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_coreGet"></a><div class="element clickable method public method_coreGet " data-toggle="collapse" data-target=".method_coreGet .collapse" title="public">
+<h2>Execute an API core/get</h2>
+<pre>coreGet(string $class, mixed $query<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to look for</p></div>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>Param to be passed as key</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_coreGetCustomSelect"></a><div class="element clickable method public method_coreGetCustomSelect " data-toggle="collapse" data-target=".method_coreGetCustomSelect .collapse" title="public">
+<h2>coreGetCustomSelect()
+        </h2>
+<pre>coreGetCustomSelect($class, $query) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$query</h4></div>
+</div></div>
+</div>
+<a id="method_coreGetRelated"></a><div class="element clickable method public method_coreGetRelated " data-toggle="collapse" data-target=".method_coreGetRelated .collapse" title="public">
+<h2>Get relations</h2>
+<pre>coreGetRelated(string $class, mixed $key, string $relation, integer $depth<code> = 1</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to look for</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>mixed</code><p>Param to be passed as key</p></div>
+<div class="subelement argument">
+<h4>$relation</h4>
+<code>string</code><p>Related class to look for</p></div>
+<div class="subelement argument">
+<h4>$depth</h4>
+<code>integer</code><p>Depth</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_coreUpdate"></a><div class="element clickable method public method_coreUpdate " data-toggle="collapse" data-target=".method_coreUpdate .collapse" title="public">
+<h2>Update one/multiple objects in iTop</h2>
+<pre>coreUpdate(string $class, mixed $query, array $data, string $comment<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to update</p></div>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>Param to be passed as key</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data to update</p></div>
+<div class="subelement argument">
+<h4>$comment</h4>
+<code>string</code><p>Comment to record in iTop</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getNewObject"></a><div class="element clickable method public method_getNewObject " data-toggle="collapse" data-target=".method_getNewObject .collapse" title="public">
+<h2>Dispense a new ITopObject</h2>
+<pre>getNewObject(string $class) : \iTopApi\ITopObject</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to get a new object for</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\iTopApi\ITopObject</code></div>
+</div></div>
+</div>
+<a id="method_getObjects"></a><div class="element clickable method public method_getObjects " data-toggle="collapse" data-target=".method_getObjects .collapse" title="public">
+<h2>Get objects from iTopApi</h2>
+<pre>getObjects(string $class, mixed $query<code> = null</code>) : array | \iTopApi\ITopObject</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>Class to get objects for</p></div>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>mixed</code><p>Param to be passed as key</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>\iTopApi\ITopObject</code>
+</div>
+</div></div>
+</div>
+<a id="method_operation"></a><div class="element clickable method public method_operation " data-toggle="collapse" data-target=".method_operation .collapse" title="public">
+<h2>Execute an API operation</h2>
+<pre>operation(string $operation, array $data<code> = array()</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$operation</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Exception</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_sendRequest"></a><div class="element clickable method public method_sendRequest " data-toggle="collapse" data-target=".method_sendRequest .collapse" title="public">
+<h2>Send a JSON request to the API</h2>
+<pre>sendRequest(array $data) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Exception</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_setCertificateCheck"></a><div class="element clickable method public method_setCertificateCheck " data-toggle="collapse" data-target=".method_setCertificateCheck .collapse" title="public">
+<h2>setCertificateCheck()
+        </h2>
+<pre>setCertificateCheck($bool) : \iTopApi\ITopClient</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bool</h4><p>Check for SSL issues</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\iTopApi\ITopClient</code></div>
+</div></div>
+</div>
+<a id="method_setCurlOption"></a><div class="element clickable method public method_setCurlOption " data-toggle="collapse" data-target=".method_setCurlOption .collapse" title="public">
+<h2>setCurlOption()
+        </h2>
+<pre>setCurlOption(integer $option, mixed $value) : \iTopApi\ITopClient</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$option</h4>
+<code>integer</code><p>One of the CURLOPT_* constant</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Setting</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\iTopApi\ITopClient</code></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_certificateCheck"> </a><div class="element clickable property private property_certificateCheck" data-toggle="collapse" data-target=".property_certificateCheck .collapse" title="private">
+<h2>Perform ssl checks</h2>
+<pre>$certificateCheck : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_curlOptions"> </a><div class="element clickable property private property_curlOptions" data-toggle="collapse" data-target=".property_curlOptions .collapse" title="private">
+<h2>Array of custom curl options</h2>
+<pre>$curlOptions : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_endpoint"> </a><div class="element clickable property private property_endpoint" data-toggle="collapse" data-target=".property_endpoint .collapse" title="private">
+<h2>Endpoint for iTopApi</h2>
+<pre>$endpoint : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property private property_password" data-toggle="collapse" data-target=".property_password .collapse" title="private">
+<h2>Password</h2>
+<pre>$password : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_proxyEnv"> </a><div class="element clickable property private property_proxyEnv" data-toggle="collapse" data-target=".property_proxyEnv .collapse" title="private">
+<h2>use environement proxy or not</h2>
+<pre>$proxyEnv : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_user"> </a><div class="element clickable property private property_user" data-toggle="collapse" data-target=".property_user .collapse" title="private">
+<h2>Username</h2>
+<pre>$user : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2018-04-15T15:42:38Z.<br></footer></div>
+</div>
+</body>
+</html>
