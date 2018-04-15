@@ -16,10 +16,9 @@
 title: FPFIS documentation 
 email: digit-fpfis-devops@ec.europa.eu
 description: >- # this means to ignore newlines until "baseurl:"
-  This sites contains informations about FPFIS's projects
-baseurl: "/public-documentation" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: EcCoreDeploy
+  This site contains informations about FPFIS's projects
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://docs.fpfis.eu" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  fpfis
 
 # Build settings
