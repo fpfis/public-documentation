@@ -1,12 +1,18 @@
 pipeline:
-  build:
+  build-site:
     image: ruby
     commands: 
       - bundle install --path=vendor/bundle
       - bundle exec jekyll build
-    when:
-      event: push
-      branch: master
+
+  build-docs:
+    image: fpfis/php56-dev
+    commands:
+      - git clone https://github.com/ec-europa/itopapi
+      - cd itopapi
+      - composer install --ansi
+      - composer phpdoc
+      - rsync -a doc/ ../_sites/itopapi/
 
   deploy-site:
     image: fpfis/drone-plugin-git-deploy
