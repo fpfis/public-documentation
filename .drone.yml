@@ -1,0 +1,24 @@
+pipeline:
+  build:
+    image: ruby
+    commands: 
+      - bundle install --path=vendor/bundle
+      - bundle exec jekyll build
+    when:
+      event: push
+      branch: master
+
+  deploy-site:
+    image: fpfis/drone-plugin-git-deploy
+    source: _site
+    target_repo: git@github.com:fpfis/public-documentation.git
+    target_folder: deployed
+    clean: true
+    secrets: [ deploy_key ]
+    message: "Published ${DRONE_COMMIT_SHA} [CI SKIP]"
+    target_branch: gh-pages
+    excludes:
+      - CNAME
+    when:
+      event: push
+      branch: master
