@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
     <transformations>
-        <template name="responsive"/>
+        <template name="clean"/>
     </transformations>
     <title>FPFIS libs documentation</title>
     <parser>
