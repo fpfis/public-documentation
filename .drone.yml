@@ -8,9 +8,9 @@ pipeline:
   build-docs:
     image: fpfis/php56-dev
     commands:
+      - cd phpdoc
       - yum install -y graphviz 
       - wget https://www.phpdoc.org/phpDocumentor.phar -qO phpdoc.phar
-      - cd phpdoc
       - composer install --ansi
       - php phpdoc.phar --ansi
       - find doc/ -name '*.dat' -delete
