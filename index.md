@@ -5,4 +5,4 @@ layout: page
 
 ## FPFIS
 
-The following site contains various informations about FPFIS's projects
+The following site contains various informations about FPFIS's projects.
