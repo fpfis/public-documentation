@@ -12,7 +12,7 @@ pipeline:
       - cd itopapi
       - composer install --ansi
       - composer phpdoc
-      - rsync -a doc/ ../_sites/itopapi/
+      - rsync -a doc/ ../_site/itopapi/
 
   deploy-site:
     image: fpfis/drone-plugin-git-deploy
