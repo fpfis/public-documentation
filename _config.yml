@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: FPFIS workflows
+title: FPFIS documentation 
 email: digit-fpfis-devops@ec.europa.eu
 description: >- # this means to ignore newlines until "baseurl:"
-  This sites contains all workflows related to nexteuropa framework
-baseurl: "" # the subpath of your site, e.g. /blog
+  This sites contains informations about FPFIS's projects
+baseurl: "/public-documentation" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: EcCoreDeploy
-github_username:  ec-europa
+github_username:  fpfis
 
 # Build settings
 markdown: kramdown
