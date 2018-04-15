@@ -1,594 +1,1549 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>FPFIS libs documentation » \PhpDrush\PhpDrush</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>FPFIS libs documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
 </head>
 <body>
+
 <div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">FPFIS libs documentation</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/BacktracTasks.html"><i class="icon-th"></i> BacktracTasks</a></li>
-<li><a href="../namespaces/EC.html"><i class="icon-th"></i> EC</a></li>
-<li><a href="../namespaces/EcasPhpCASParser.html"><i class="icon-th"></i> EcasPhpCASParser</a></li>
-<li><a href="../namespaces/PhpDrush.html"><i class="icon-th"></i> PhpDrush</a></li>
-<li><a href="../namespaces/PhpGit.html"><i class="icon-th"></i> PhpGit</a></li>
-<li><a href="../namespaces/iTopApi.html"><i class="icon-th"></i> iTopApi</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-<li><a href="../packages/PhpDrush.html"><i class="icon-folder-open"></i> PhpDrush</a></li>
-<li><a href="../packages/PhpGit.html"><i class="icon-folder-open"></i> PhpGit</a></li>
-<li><a href="../packages/iTopApi.html"><i class="icon-folder-open"></i> iTopApi</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">130</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">FPFIS libs documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/BacktracTasks.html">\BacktracTasks</a></li>
+                                                        <li><a href="../namespaces/EC.html">\EC</a></li>
+                                                        <li><a href="../namespaces/EcasPhpCASParser.html">\EcasPhpCASParser</a></li>
+                                                        <li><a href="../namespaces/iTopApi.html">\iTopApi</a></li>
+                                                        <li><a href="../namespaces/PhpDrush.html">\PhpDrush</a></li>
+                                                        <li><a href="../namespaces/PhpGit.html">\PhpGit</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">130</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
 </div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
-<div class="btn-group visibility" data-toggle="buttons-checkbox">
-<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
-</div>
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-</div>
-</div>
-<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
-<li class="nav-header">
-<i title="Methods" class="icon-custom icon-method"></i> Methods
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-957256520"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-957256520" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-644119868"></a>
+                                <a href="../namespaces/BacktracTasks.html" style="margin-left: 30px; padding-left: 0">BacktracTasks</a>
+            </div>
+            <div id="namespace-644119868" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_clearCache" title="clearCache() :: Run a clear cache"><span class="description">Run a clear cache</span><pre>clearCache()</pre></a></li>
-<li class="method public "><a href="#method_disableModules" title="disableModules() :: Disable one or multiple modules"><span class="description">Disable one or multiple modules</span><pre>disableModules()</pre></a></li>
-<li class="method public "><a href="#method_enableModules" title="enableModules() :: Enable one or multiple modules"><span class="description">Enable one or multiple modules</span><pre>enableModules()</pre></a></li>
-<li class="method public "><a href="#method_ev" title="ev() :: Eval PHP code in current drush session"><span class="description">Eval PHP code in current drush session</span><pre>ev()</pre></a></li>
-<li class="method public "><a href="#method_featuresRevert" title="featuresRevert() :: "><span class="description">featuresRevert()
-        </span><pre>featuresRevert()</pre></a></li>
-<li class="method public "><a href="#method_getUpDbStatus" title="getUpDbStatus() :: "><span class="description">getUpDbStatus()
-        </span><pre>getUpDbStatus()</pre></a></li>
-<li class="method public "><a href="#method_getVariable" title="getVariable() :: Get variable value"><span class="description">Get variable value</span><pre>getVariable()</pre></a></li>
-<li class="method public "><a href="#method_redisFlushDB" title="redisFlushDB() :: Flush Redis DB"><span class="description">Flush Redis DB</span><pre>redisFlushDB()</pre></a></li>
-<li class="method public "><a href="#method_registryRebuild" title="registryRebuild() :: Runs a registry rebuild"><span class="description">Runs a registry rebuild</span><pre>registryRebuild()</pre></a></li>
-<li class="method public "><a href="#method_setColoring" title="setColoring() :: Enable/disable coloring drush output"><span class="description">Enable/disable coloring drush output</span><pre>setColoring()</pre></a></li>
-<li class="method public "><a href="#method_setMaintenanceMode" title="setMaintenanceMode() :: Set the maintenance mode for the site"><span class="description">Set the maintenance mode for the site</span><pre>setMaintenanceMode()</pre></a></li>
-<li class="method public "><a href="#method_setVariable" title="setVariable() :: Set a variable name"><span class="description">Set a variable name</span><pre>setVariable()</pre></a></li>
-<li class="method public "><a href="#method_sqlQuery" title="sqlQuery() :: Run SQLQuery"><span class="description">Run SQLQuery</span><pre>sqlQuery()</pre></a></li>
-<li class="method public "><a href="#method_uninstallModules" title="uninstallModules() :: Uninstall one or multiple modules"><span class="description">Uninstall one or multiple modules</span><pre>uninstallModules()</pre></a></li>
-<li class="method public "><a href="#method_updateDatabase" title="updateDatabase() :: Run a database upgrade"><span class="description">Run a database upgrade</span><pre>updateDatabase()</pre></a></li>
-<li class="method public "><a href="#method_updatePassword" title="updatePassword() :: Update password for user by auth name"><span class="description">Update password for user by auth name</span><pre>updatePassword()</pre></a></li>
-<li class="method public "><a href="#method_userAdd" title="userAdd() :: Add user"><span class="description">Add user</span><pre>userAdd()</pre></a></li>
-<li class="method public "><a href="#method_userAddRole" title="userAddRole() :: Add role to user"><span class="description">Add role to user</span><pre>userAddRole()</pre></a></li>
-<li class="method public "><a href="#method_userLogin" title="userLogin() :: Get logged in URL"><span class="description">Get logged in URL</span><pre>userLogin()</pre></a></li>
-<li class="method public "><a href="#method_validateDrushOutput" title="validateDrushOutput() :: Check drush output to handle drush [error]"><span class="description">Check drush output to handle drush [error]</span><pre>validateDrushOutput()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header private">» Private
+                                                                                                    <li class="class"><a href="../classes/BacktracTasks.BacktracCompareTask.html">BacktracCompareTask</a></li>
+                                                    <li class="class"><a href="../classes/BacktracTasks.BacktracSetUrlTask.html">BacktracSetUrlTask</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1029948693"></a>
+                                <a href="../namespaces/EC.html" style="margin-left: 30px; padding-left: 0">EC</a>
+            </div>
+            <div id="namespace-1029948693" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-275207662"></a>
+                                <a href="../namespaces/EC.Utils.html" style="margin-left: 30px; padding-left: 0">Utils</a>
+            </div>
+            <div id="namespace-275207662" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-688350599"></a>
+                                <a href="../namespaces/EC.Utils.Backtrac.html" style="margin-left: 30px; padding-left: 0">Backtrac</a>
+            </div>
+            <div id="namespace-688350599" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
                     <ul>
-<li class="method private "><a href="#method_getRedisClient" title="getRedisClient() :: Get redis-cli"><span class="description">Get redis-cli</span><pre>getRedisClient()</pre></a></li>
-<li class="method private "><a href="#method_runDrush" title="runDrush() :: Run a drush command and throws an exception if failing"><span class="description">Run a drush command and throws an exception if failing</span><pre>runDrush()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header">
-<i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header private">» Private
+                                                                                                    <li class="class"><a href="../classes/EC.Utils.Backtrac.Client.html">Client</a></li>
+                                                    <li class="class"><a href="../classes/EC.Utils.Backtrac.Website.html">Website</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
                     <ul>
-<li class="property private "><a href="#property_alias" title="$alias() :: "><span class="description">Alias to run commands on ( for targeting multiple sites )</span><pre>$alias</pre></a></li>
-<li class="property private "><a href="#property_drushLocation" title="$drushLocation() :: "><span class="description">location</span><pre>$drushLocation</pre></a></li>
-<li class="property private "><a href="#property_noColor" title="$noColor() :: "><span class="description">or disable coloring in drush output
-By default disabled</span><pre>$noColor</pre></a></li>
-<li class="property private "><a href="#property_siteLocation" title="$siteLocation() :: "><span class="description">location</span><pre>$siteLocation</pre></a></li>
-</ul>
-</li>
-</ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1774713968"></a>
+                                <a href="../namespaces/EcasPhpCASParser.html" style="margin-left: 30px; padding-left: 0">EcasPhpCASParser</a>
+            </div>
+            <div id="namespace-1774713968" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/EcasPhpCASParser.EcasPhpCASParser.html">EcasPhpCASParser</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-237024152"></a>
+                                <a href="../namespaces/iTopApi.html" style="margin-left: 30px; padding-left: 0">iTopApi</a>
+            </div>
+            <div id="namespace-237024152" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/iTopApi.ITopClient.html">ITopClient</a></li>
+                                                    <li class="class"><a href="../classes/iTopApi.ITopObject.html">ITopObject</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1584109236"></a>
+                                <a href="../namespaces/PhpDrush.html" style="margin-left: 30px; padding-left: 0">PhpDrush</a>
+            </div>
+            <div id="namespace-1584109236" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/PhpDrush.PhpDrush.html">PhpDrush</a></li>
+                                                    <li class="class"><a href="../classes/PhpDrush.PhpDrushException.html">PhpDrushException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-165824298"></a>
+                                <a href="../namespaces/PhpGit.html" style="margin-left: 30px; padding-left: 0">PhpGit</a>
+            </div>
+            <div id="namespace-165824298" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/PhpGit.GitRemoteRepo.html">GitRemoteRepo</a></li>
+                                                    <li class="class"><a href="../classes/PhpGit.GitWorkingCopy.html">GitWorkingCopy</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/PhpDrush.html">\PhpDrush</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\PhpDrush</small>PhpDrush</h1>
+                    <p><em>Class PhpDrush</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_getUpDbStatus" class="">getUpDbStatus()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_updateDatabase" class="">updateDatabase()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_registryRebuild" class="">registryRebuild()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_featuresRevert" class="">featuresRevert()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_setMaintenanceMode" class="">setMaintenanceMode()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_setVariable" class="">setVariable()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_clearCache" class="">clearCache()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_enableModules" class="">enableModules()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_disableModules" class="">disableModules()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_uninstallModules" class="">uninstallModules()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_ev" class="">ev()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_userLogin" class="">userLogin()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_updatePassword" class="">updatePassword()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_validateDrushOutput" class="">validateDrushOutput()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_setColoring" class="">setColoring()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_userAdd" class="">userAdd()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_userAddRole" class="">userAddRole()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_getVariable" class="">getVariable()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_sqlQuery" class="">sqlQuery()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_redisFlushDB" class="">redisFlushDB()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_runDrush" class="">runDrush()</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#method_getRedisClient" class="">getRedisClient()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#property_drushLocation" class="">$drushLocation</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#property_siteLocation" class="">$siteLocation</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#property_noColor" class="">$noColor</a><br />
+                                                                    <a href="../classes/PhpDrush.PhpDrush.html#property_alias" class="">$alias</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/phpdrush.src.PhpDrush.html"><div class="path-wrapper">phpdrush/src/PhpDrush.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">PhpDrush</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\PhpDrush\PhpDrush</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_drushLocation" name="property_drushLocation" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$drushLocation</h3>
+                <pre class="signature">$drushLocation : \PhpDrush\Drush</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \PhpDrush\Drush
+                &mdash; location                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_siteLocation" name="property_siteLocation" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$siteLocation</h3>
+                <pre class="signature">$siteLocation : \PhpDrush\Site</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \PhpDrush\Site
+                &mdash; location                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_noColor" name="property_noColor" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$noColor</h3>
+                <pre class="signature">$noColor : \PhpDrush\Enable</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \PhpDrush\Enable
+                &mdash; or disable coloring in drush output
+By default disabled                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_alias" name="property_alias" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$alias</h3>
+                <pre class="signature">$alias : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; Alias to run commands on ( for targeting multiple sites )                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$drushLocation</span>,   <span class="argument">$siteLocation</span>,   <span class="argument">$alias = null</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$drushLocation </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$siteLocation </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$alias </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUpDbStatus" name="method_getUpDbStatus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUpDbStatus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUpDbStatus() : boolean</pre>
+                <p><em></em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_updateDatabase" name="method_updateDatabase" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">updateDatabase()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">updateDatabase(boolean|true  <span class="argument">$doubleCheck = true</span>) : array</pre>
+                <p><em>Run a database upgrade</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean|true</td>
+                                <td>$doubleCheck </td>
+                                <td><p>Double check that updb did its job since rc code are for idiots (or sysadmins)</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_registryRebuild" name="method_registryRebuild" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">registryRebuild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">registryRebuild(boolean|false  <span class="argument">$noCacheClear = false</span>, boolean|false  <span class="argument">$fireBazooka = false</span>) : array</pre>
+                <p><em>Runs a registry rebuild</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean|false</td>
+                                <td>$noCacheClear </td>
+                                <td><p>Avoid clearing the cache after rr</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean|false</td>
+                                <td>$fireBazooka </td>
+                                <td><p>Fire a professional bazooka ... Yes ... A bazooka mtf!</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_featuresRevert" name="method_featuresRevert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">featuresRevert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">featuresRevert(array  <span class="argument">$featureList = array()</span>, boolean|false  <span class="argument">$force = false</span>) : array</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$featureList </td>
+                                <td><p>List of features to revert</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean|false</td>
+                                <td>$force </td>
+                                <td><p>If true, pass the --force argument</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMaintenanceMode" name="method_setMaintenanceMode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMaintenanceMode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMaintenanceMode(  <span class="argument">$bool</span>) : array</pre>
+                <p><em>Set the maintenance mode for the site</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$bool </td>
+                                <td><p>True to enable, False to disable</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setVariable" name="method_setVariable" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setVariable()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setVariable(  <span class="argument">$key</span>,   <span class="argument">$value</span>) : array</pre>
+                <p><em>Set a variable name</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$key </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$value </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearCache" name="method_clearCache" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearCache()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearCache(string  <span class="argument">$type = &#039;all&#039;</span>) : array</pre>
+                <p><em>Run a clear cache</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>Type of cache to clean ( default : all )</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_enableModules" name="method_enableModules" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">enableModules()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">enableModules(mixed  <span class="argument">$modules</span>) : array</pre>
+                <p><em>Enable one or multiple modules</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$modules </td>
+                                <td><p>Either a string (single module) or an array</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_disableModules" name="method_disableModules" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">disableModules()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">disableModules(mixed  <span class="argument">$modules</span>) : array</pre>
+                <p><em>Disable one or multiple modules</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$modules </td>
+                                <td><p>Either a string (single module) or an array</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_uninstallModules" name="method_uninstallModules" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">uninstallModules()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">uninstallModules(mixed  <span class="argument">$modules</span>) : array</pre>
+                <p><em>Uninstall one or multiple modules</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$modules </td>
+                                <td><p>Either a string (single module) or an array</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ev" name="method_ev" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ev()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ev(  <span class="argument">$toEval</span>) : array</pre>
+                <p><em>Eval PHP code in current drush session</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$toEval </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_userLogin" name="method_userLogin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">userLogin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">userLogin(null  <span class="argument">$user = null</span>, null  <span class="argument">$path = null</span>) : string</pre>
+                <p><em>Get logged in URL</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>null</td>
+                                <td>$user </td>
+                                <td><p>User to log into</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>null</td>
+                                <td>$path </td>
+                                <td><p>Path to log into</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>URL</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_updatePassword" name="method_updatePassword" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">updatePassword()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">updatePassword(  <span class="argument">$authname</span>,   <span class="argument">$password</span>) : array</pre>
+                <p><em>Update password for user by auth name</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$authname </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$password </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validateDrushOutput" name="method_validateDrushOutput" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">validateDrushOutput()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validateDrushOutput(array  <span class="argument">$output</span>) : boolean</pre>
+                <p><em>Check drush output to handle drush [error]</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$output </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setColoring" name="method_setColoring" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setColoring()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setColoring(  <span class="argument">$color</span>) </pre>
+                <p><em>Enable/disable coloring drush output</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$color </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_userAdd" name="method_userAdd" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">userAdd()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">userAdd(  <span class="argument">$username</span>,   <span class="argument">$mail = null</span>,   <span class="argument">$password = false</span>) : array</pre>
+                <p><em>Add user</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$username </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$mail </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$password </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_userAddRole" name="method_userAddRole" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">userAddRole()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">userAddRole(  <span class="argument">$username</span>,   <span class="argument">$role</span>) : array</pre>
+                <p><em>Add role to user</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$username </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$role </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getVariable" name="method_getVariable" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getVariable()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getVariable(  <span class="argument">$variable</span>) : string</pre>
+                <p><em>Get variable value</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$variable </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sqlQuery" name="method_sqlQuery" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">sqlQuery()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sqlQuery(  <span class="argument">$query</span>) </pre>
+                <p><em>Run SQLQuery</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$query </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_redisFlushDB" name="method_redisFlushDB" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">redisFlushDB()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">redisFlushDB() </pre>
+                <p><em>Flush Redis DB</em></p>
+                <p>Remove all keys from the current database</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\ErrorResponseException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_runDrush" name="method_runDrush" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">runDrush()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">runDrush(  <span class="argument">$arguments</span>) : array</pre>
+                <p><em>Run a drush command and throws an exception if failing</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$arguments </td>
+                                <td><p>Argument to pass to drush as a string</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\PhpDrush\PhpDrushException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>An array of all the lines returned by drush (including PHP warnings/errors)</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRedisClient" name="method_getRedisClient" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getRedisClient()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRedisClient() </pre>
+                <p><em>Get redis-cli</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">PhpDrush.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/phpdrush/src/PhpDrush.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/BacktracTasks.html">\BacktracTasks</a></li>
+                                                                            <li><a href="../namespaces/EC.html">\EC</a></li>
+                                                                            <li><a href="../namespaces/EcasPhpCASParser.html">\EcasPhpCASParser</a></li>
+                                                                            <li><a href="../namespaces/iTopApi.html">\iTopApi</a></li>
+                                                                            <li><a href="../namespaces/PhpDrush.html">\PhpDrush</a></li>
+                                                                            <li><a href="../namespaces/PhpGit.html">\PhpGit</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 15th, 2018 at 19:00.
+                </section>
+            </section>
+        </section>
+    </footer>
 </div>
-<div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\PhpDrush\PhpDrush"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
-<li>
-<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/PhpDrush.html">PhpDrush</a></li>
-<li class="active">
-<span class="divider">\</span><a href="../classes/PhpDrush.PhpDrush.html">PhpDrush</a>
-</li>
-</ul>
-<div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description">Class PhpDrush</p>
-<div class="details">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>package</th>
-<td><a href="../packages/PhpDrush.html">PhpDrush</a></td>
-</tr></table>
-<h3>
-<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
-<h2>__construct()
-        </h2>
-<pre>__construct($drushLocation, $siteLocation, $alias<code> = null</code>) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$drushLocation</h4></div>
-<div class="subelement argument"><h4>$siteLocation</h4></div>
-<div class="subelement argument"><h4>$alias</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_clearCache"></a><div class="element clickable method public method_clearCache " data-toggle="collapse" data-target=".method_clearCache .collapse" title="public">
-<h2>Run a clear cache</h2>
-<pre>clearCache(string $type<code> = 'all'</code>) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$type</h4>
-<code>string</code><p>Type of cache to clean ( default : all )</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_disableModules"></a><div class="element clickable method public method_disableModules " data-toggle="collapse" data-target=".method_disableModules .collapse" title="public">
-<h2>Disable one or multiple modules</h2>
-<pre>disableModules(mixed $modules) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$modules</h4>
-<code>mixed</code><p>Either a string (single module) or an array</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_enableModules"></a><div class="element clickable method public method_enableModules " data-toggle="collapse" data-target=".method_enableModules .collapse" title="public">
-<h2>Enable one or multiple modules</h2>
-<pre>enableModules(mixed $modules) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$modules</h4>
-<code>mixed</code><p>Either a string (single module) or an array</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_ev"></a><div class="element clickable method public method_ev " data-toggle="collapse" data-target=".method_ev .collapse" title="public">
-<h2>Eval PHP code in current drush session</h2>
-<pre>ev($toEval) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$toEval</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_featuresRevert"></a><div class="element clickable method public method_featuresRevert " data-toggle="collapse" data-target=".method_featuresRevert .collapse" title="public">
-<h2>featuresRevert()
-        </h2>
-<pre>featuresRevert(array $featureList<code> = array()</code>, boolean|false $force<code> = false</code>) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$featureList</h4>
-<code>array</code><p>List of features to revert</p></div>
-<div class="subelement argument">
-<h4>$force</h4>
-<code>boolean</code><code>false</code><p>If true, pass the --force argument</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_getUpDbStatus"></a><div class="element clickable method public method_getUpDbStatus " data-toggle="collapse" data-target=".method_getUpDbStatus .collapse" title="public">
-<h2>getUpDbStatus()
-        </h2>
-<pre>getUpDbStatus() : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
-<a id="method_getVariable"></a><div class="element clickable method public method_getVariable " data-toggle="collapse" data-target=".method_getVariable .collapse" title="public">
-<h2>Get variable value</h2>
-<pre>getVariable($variable) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$variable</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_redisFlushDB"></a><div class="element clickable method public method_redisFlushDB " data-toggle="collapse" data-target=".method_redisFlushDB .collapse" title="public">
-<h2>Flush Redis DB</h2>
-<pre>redisFlushDB() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Remove all keys from the current database</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\ErrorResponseException</code></th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_registryRebuild"></a><div class="element clickable method public method_registryRebuild " data-toggle="collapse" data-target=".method_registryRebuild .collapse" title="public">
-<h2>Runs a registry rebuild</h2>
-<pre>registryRebuild(boolean|false $noCacheClear<code> = false</code>, boolean|false $fireBazooka<code> = false</code>) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$noCacheClear</h4>
-<code>boolean</code><code>false</code><p>Avoid clearing the cache after rr</p></div>
-<div class="subelement argument">
-<h4>$fireBazooka</h4>
-<code>boolean</code><code>false</code><p>Fire a professional bazooka ... Yes ... A bazooka mtf!</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_setColoring"></a><div class="element clickable method public method_setColoring " data-toggle="collapse" data-target=".method_setColoring .collapse" title="public">
-<h2>Enable/disable coloring drush output</h2>
-<pre>setColoring($color) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$color</h4></div>
-</div></div>
-</div>
-<a id="method_setMaintenanceMode"></a><div class="element clickable method public method_setMaintenanceMode " data-toggle="collapse" data-target=".method_setMaintenanceMode .collapse" title="public">
-<h2>Set the maintenance mode for the site</h2>
-<pre>setMaintenanceMode($bool) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$bool</h4><p>True to enable, False to disable</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_setVariable"></a><div class="element clickable method public method_setVariable " data-toggle="collapse" data-target=".method_setVariable .collapse" title="public">
-<h2>Set a variable name</h2>
-<pre>setVariable($key, $value) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$key</h4></div>
-<div class="subelement argument"><h4>$value</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_sqlQuery"></a><div class="element clickable method public method_sqlQuery " data-toggle="collapse" data-target=".method_sqlQuery .collapse" title="public">
-<h2>Run SQLQuery</h2>
-<pre>sqlQuery($query) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$query</h4></div>
-</div></div>
-</div>
-<a id="method_uninstallModules"></a><div class="element clickable method public method_uninstallModules " data-toggle="collapse" data-target=".method_uninstallModules .collapse" title="public">
-<h2>Uninstall one or multiple modules</h2>
-<pre>uninstallModules(mixed $modules) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$modules</h4>
-<code>mixed</code><p>Either a string (single module) or an array</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_updateDatabase"></a><div class="element clickable method public method_updateDatabase " data-toggle="collapse" data-target=".method_updateDatabase .collapse" title="public">
-<h2>Run a database upgrade</h2>
-<pre>updateDatabase(boolean|true $doubleCheck<code> = true</code>) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$doubleCheck</h4>
-<code>boolean</code><code>true</code><p>Double check that updb did its job since rc code are for idiots (or sysadmins)</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_updatePassword"></a><div class="element clickable method public method_updatePassword " data-toggle="collapse" data-target=".method_updatePassword .collapse" title="public">
-<h2>Update password for user by auth name</h2>
-<pre>updatePassword($authname, $password) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$authname</h4></div>
-<div class="subelement argument"><h4>$password</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_userAdd"></a><div class="element clickable method public method_userAdd " data-toggle="collapse" data-target=".method_userAdd .collapse" title="public">
-<h2>Add user</h2>
-<pre>userAdd($username, $mail<code> = null</code>, $password<code> = false</code>) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$mail</h4></div>
-<div class="subelement argument"><h4>$password</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_userAddRole"></a><div class="element clickable method public method_userAddRole " data-toggle="collapse" data-target=".method_userAddRole .collapse" title="public">
-<h2>Add role to user</h2>
-<pre>userAddRole($username, $role) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$username</h4></div>
-<div class="subelement argument"><h4>$role</h4></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_userLogin"></a><div class="element clickable method public method_userLogin " data-toggle="collapse" data-target=".method_userLogin .collapse" title="public">
-<h2>Get logged in URL</h2>
-<pre>userLogin(null $user<code> = null</code>, null $path<code> = null</code>) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$user</h4>
-<code>null</code><p>User to log into</p></div>
-<div class="subelement argument">
-<h4>$path</h4>
-<code>null</code><p>Path to log into</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>URL</div>
-</div></div>
-</div>
-<a id="method_validateDrushOutput"></a><div class="element clickable method public method_validateDrushOutput " data-toggle="collapse" data-target=".method_validateDrushOutput .collapse" title="public">
-<h2>Check drush output to handle drush [error]</h2>
-<pre>validateDrushOutput(array $output) : boolean</pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$output</h4>
-<code>array</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
-<a id="method_getRedisClient"></a><div class="element clickable method private method_getRedisClient " data-toggle="collapse" data-target=".method_getRedisClient .collapse" title="private">
-<h2>Get redis-cli</h2>
-<pre>getRedisClient() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_runDrush"></a><div class="element clickable method private method_runDrush " data-toggle="collapse" data-target=".method_runDrush .collapse" title="private">
-<h2>Run a drush command and throws an exception if failing</h2>
-<pre>runDrush($arguments) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$arguments</h4><p>Argument to pass to drush as a string</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\PhpDrush\PhpDrushException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>An array of all the lines returned by drush (including PHP warnings/errors)</div>
-</div></div>
-</div>
-<h3>
-<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_alias"> </a><div class="element clickable property private property_alias" data-toggle="collapse" data-target=".property_alias .collapse" title="private">
-<h2>Alias to run commands on ( for targeting multiple sites )</h2>
-<pre>$alias : string</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>null</code></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_drushLocation"> </a><div class="element clickable property private property_drushLocation" data-toggle="collapse" data-target=".property_drushLocation .collapse" title="private">
-<h2>location</h2>
-<pre>$drushLocation : \PhpDrush\Drush</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_noColor"> </a><div class="element clickable property private property_noColor" data-toggle="collapse" data-target=".property_noColor .collapse" title="private">
-<h2>or disable coloring in drush output
-By default disabled</h2>
-<pre>$noColor : \PhpDrush\Enable</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>true</code></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_siteLocation"> </a><div class="element clickable property private property_siteLocation" data-toggle="collapse" data-target=".property_siteLocation .collapse" title="private">
-<h2>location</h2>
-<pre>$siteLocation : \PhpDrush\Site</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
-            generated on 2018-04-15T16:50:24Z.<br></footer></div>
-</div>
+
 </body>
 </html>
