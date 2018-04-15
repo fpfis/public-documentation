@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <transformations>
+        <template name="responsive"/>
+    </transformations>
+    <title>FPFIS libs documentation</title>
+    <parser>
+        <target>doc</target>
+    </parser>
+    <transformer>
+        <target>doc</target>
+    </transformer>
+    <files>
+        <directory>vendor/ec-europa</directory>
+        <ignore>vendor/ec-europa/*/test/*</ignore>
+        <ignore>vendor/ec-europa/*/tests/*</ignore>
+    </files>
+</phpdoc>
+
