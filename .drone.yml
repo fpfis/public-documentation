@@ -1,9 +1,10 @@
 pipeline:
-  build-site:
-    image: ruby
-    commands: 
-      - bundle install --path=vendor/bundle
-      - bundle exec jekyll build
+  hugo:
+    image: webhippie/hugo:latest
+    commands:
+      - "[ ! -d themes ] && mkdir themes && git clone https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn"
+      - wget https://github.com/gohugoio/hugo/releases/download/v0.40.3/hugo_0.40.3_Linux-64bit.tar.gz -O -|tar -xzv
+      - ./hugo
 
   build-docs:
     image: fpfis/php56-dev
@@ -14,7 +15,7 @@ pipeline:
       - composer install --ansi
       - ../vendor/bin/phpdoc --ansi
       - find doc/ -name '*.dat' -delete
-      - rsync -a doc/ ../_site/libs/ 
+      - rsync -a doc/ ../public/libs/ 
 
   deploy-site:
     image: fpfis/drone-plugin-git-deploy
