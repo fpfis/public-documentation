@@ -25,7 +25,7 @@
 	"title": "Docker images",
 	"tags": [],
 	"description": "",
-	"content": " All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/php71-dev  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish  "
+	"content": " The current FPFIS Docker images are NOT production ready and are meant for development and testing only !!!\n All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/php71-dev  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish  "
 },
 {
 	"uri": "https://docs.fpfis.eu/php-sdks/backtrac-php-client/",
