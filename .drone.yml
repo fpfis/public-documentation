@@ -15,11 +15,13 @@ pipeline:
       - composer install --ansi
       - ../vendor/bin/phpdoc --ansi
       - find doc/ -name '*.dat' -delete
-      - rsync -a doc/ ../public/libs/ 
+      - rsync -a doc/ ../public/libs/
+    volumes:
+      - /cache:/cache
 
   deploy-site:
     image: fpfis/drone-plugin-git-deploy
-    source: _site
+    source: public
     target_repo: git@github.com:fpfis/public-documentation.git
     target_folder: deployed
     clean: true
