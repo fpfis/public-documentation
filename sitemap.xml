@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://docs.fpfis.eu/php-sdks/backtrac-php-client/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/categories/</loc>
     <priority>0</priority>
   </url>
@@ -30,6 +34,10 @@
   
   <url>
     <loc>https://docs.fpfis.eu/docker-images/varnish/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/php-sdks/itopapi/</loc>
   </url>
   
 </urlset>

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>FPFIS documentation :: FPFIS Documentation</title>
+    <title>Backtrac PHP client :: FPFIS Documentation</title>
     
     
     <link href="/css/nucleus.css?1527000014" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/php-sdks/backtrac-php-client/">
     <nav id="sidebar" class="">
 
 
@@ -75,7 +75,7 @@
   
     
     <li data-nav-id="/php-sdks/" title="PHP SDKs" class="dd-item 
-        
+        parent
         
         
         ">
@@ -99,7 +99,7 @@
  
   
     
-      <li data-nav-id="/php-sdks/backtrac-php-client/" title="Backtrac PHP client" class="dd-item ">
+      <li data-nav-id="/php-sdks/backtrac-php-client/" title="Backtrac PHP client" class="dd-item active">
         <a href="/php-sdks/backtrac-php-client/">
         Backtrac PHP client
         
@@ -230,35 +230,163 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>FPFIS documentation</a> > <a href='/php-sdks/'>PHP SDKs</a> > Backtrac PHP client
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage-as-library">Usage as library</a></li>
+<li><a href="#usage-as-phing-task">Usage as Phing task</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>Backtrac PHP client</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
 
+
+
+<p>This projects includes both a client library and a phing helper to trigger visual comparison.</p>
+
+<h2 id="installation">Installation</h2>
+
+<pre><code class="language-sh">composer require ec-europa/backtrac-php-client:~0.1
+</code></pre>
+
+<h2 id="usage-as-library">Usage as library</h2>
+
+<pre><code class="language-php">&lt;?php
+require_once __DIR__.'/../vendor/autoload.php';
+$client = new \EC\Utils\Backtrac\Client(
+    1,
+    'aaaaaaaaaaaaaaa'
+);
+
+/**
+ * Create a website object
+ */
+$website = new \EC\Utils\Backtrac\Website('test-site','http://ci-test.com');
+
+/**
+ * Set the new url for dev :
+ */
+$client-&gt;setDevWebsite($website);
+
+/**
+ * Compare prod a dev :
+ */
+$diffId = $client-&gt;compareEnvironments(
+  \EC\Utils\Backtrac\Client::COMPARE_PROD_DEV
+)-&gt;result-&gt;nid;
+
+/**
+ * Wait for the end of the diff and display result :
+ */
+
+var_dump(
+  $client-&gt;waitForResults($diffId)
+);
+
+/**
+ * Custom compare :
+ */
+var_dump(
+    $client-&gt;customCompare(
+        'my_diff',
+        new \EC\Utils\Backtrac\Website('site_1','http://xxxx.yyy/zzz'),
+        new \EC\Utils\Backtrac\Website('site_2', 'http://xxx.yyy/zzzzw')
+    )
+);
+</code></pre>
+
+<h2 id="usage-as-phing-task">Usage as Phing task</h2>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; ?&gt;
+
+&lt;project default=&quot;backtrac-compare-self&quot; name=&quot;test&quot; basedir=&quot;.&quot;&gt;
+    &lt;!-- Import the phing tasks into your project. --&gt;
+    &lt;import file=&quot;${project.basedir}/vendor/ec-europa/backtrac-php-client/phing/import.xml&quot; /&gt;
+    
+    &lt;!-- Example target to update a website url for an environment. --&gt;
+    &lt;target name=&quot;backtrac-update-url&quot;&gt;
+        &lt;backtrac-set-url secure=&quot;true&quot; environment=&quot;development&quot; url=&quot;http://xyz.com&quot; project_id=&quot;12&quot; auth_token=&quot;xxxxxxxx&quot; /&gt;
+    &lt;/target&gt;
  
+    &lt;!-- Example target for comparing different environments: prod and dev. --&gt;
+    &lt;target name=&quot;backtrac-compare-prod-dev&quot;&gt;
+        &lt;backtrac-compare secure=&quot;true&quot; compare_mode=&quot;compare_prod_dev&quot; project_id=&quot;12&quot; check_results=&quot;true&quot; auth_token=&quot;xxxxxxxx&quot; /&gt;
+    &lt;/target&gt;
+
+    &lt;!-- Example target to take single snapshot: before deployment or build. --&gt;
+    &lt;target name=&quot;backtrac-single-snapshot&quot;&gt;
+        &lt;backtrac-compare secure=&quot;true&quot; compare_mode=&quot;snapshot&quot; environment=&quot;production&quot; project_id=&quot;12&quot; check_results=&quot;false&quot; auth_token=&quot;xxxxxxxx&quot; /&gt;
+    &lt;/target&gt;
+    
+    &lt;!-- Example target for comparing environment to latest snapshot: after deployment or build. --&gt;
+    &lt;target name=&quot;backtrac-compare-self&quot;&gt;
+        &lt;backtrac-compare secure=&quot;true&quot; compare_mode=&quot;compare_itself&quot; environment=&quot;production&quot; project_id=&quot;12&quot; check_results=&quot;false&quot; auth_token=&quot;xxxxxxxx&quot; /&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p><a href="https://drone.fpfis.eu/ec-europa/backtrac-php-client"><img src="https://drone.fpfis.eu/api/badges/ec-europa/backtrac-php-client/status.svg?branch=master" alt="Build Status" /></a></p>
 
 
-<h2 id="introduction">Introduction</h2>
-
-<p>This space is a placeholder for all documentation about FPFIS&rsquo;s OpenSource
-projects.</p>
-
-<h3 id="php-sdks-php-sdks"><a href="/php-sdks/">PHP SDKs</a></h3>
-
-<p>Multiple PHP SDKs are provided for various clients.</p>
-
-<h3 id="docker-images-docker-images"><a href="/docker-images/">Docker images</a></h3>
-
-<p>Docker images are also provided for other tasks, eg, an nginx web server,
-a <a href="http://getcomposer.org/">Composer</a> Docker image</p>
+<footer class=" footline" >
 	
-  
+</footer>
+
+
         
         </div> 
         
@@ -290,8 +418,6 @@ a <a href="http://getcomposer.org/">Composer</a> Docker image</p>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -306,53 +432,6 @@ a <a href="http://getcomposer.org/">Composer</a> Docker image</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -370,6 +449,57 @@ a <a href="http://getcomposer.org/">Composer</a> Docker image</p>
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -391,8 +521,10 @@ a <a href="http://getcomposer.org/">Composer</a> Docker image</p>
 
 
         
+            <a class="nav nav-prev" href="/php-sdks/" title="PHP SDKs"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/php-sdks/" title="PHP SDKs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/php-sdks/itopapi/" title="iTopApi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
