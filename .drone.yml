@@ -9,7 +9,8 @@ pipeline:
   build-docs:
     image: fpfis/php56-dev
     commands:
-      - yum install -y graphviz 
+      - yum install -y graphviz
+      - composer global require hirak/prestissimo --ansi
       - composer install --ansi
       - cd phpdoc
       - composer install --ansi
