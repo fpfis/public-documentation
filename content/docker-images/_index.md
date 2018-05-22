@@ -4,31 +4,23 @@ title: Docker images
 weight: 15
 ---
 
-## Hub
-
 All images are available on FPFIS's [Docker hub](http://hub.docker.com/u/fpfis/)
 
 A curated lists of docker images maintained by FPFIS
 
-## [PHP](/docker-images/php)
-
-PHP Docker images
+## [PHP Docker images](/docker-images/php)
 
 ```sh
 docker pull fpfis/php71-dev
 ```
 
-## [Redis](/docker-images/redis)
-
-Redis Docker image
+## [Redis Docker image](/docker-images/redis)
 
 ```sh
 docker pull fpfis/redis
 ```
 
-## [Varnish](/docker-images/varnish)
-
-Varnish Docker image
+## [Varnish Docker image](/docker-images/varnish)
 
 ```sh
 docker pull fpfis/varnish
