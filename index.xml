@@ -25,7 +25,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
-      <description> TODO </description>
+      <description> Reference environment variables HTTP_PORT Port to listen to
+DEFAULT_BACKEND Backend to connect to
+Mouting VCL VCL must be mounted in /etc/varnish and a default.vcl should be present.
+Example docker run -ti --rm -e DEFAULT_BACKEND=172.16.10.1:8080 -v $(pwd)/varnish:/etc/varnish fpfis/varnish  </description>
     </item>
     
   </channel>

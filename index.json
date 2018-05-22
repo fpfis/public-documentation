@@ -46,5 +46,5 @@
 	"title": "Varnish",
 	"tags": [],
 	"description": "",
-	"content": " TODO "
+	"content": " Reference environment variables HTTP_PORT Port to listen to\nDEFAULT_BACKEND Backend to connect to\nMouting VCL VCL must be mounted in /etc/varnish and a default.vcl should be present.\nExample docker run -ti --rm -e DEFAULT_BACKEND=172.16.10.1:8080 -v $(pwd)/varnish:/etc/varnish fpfis/varnish  "
 }]
