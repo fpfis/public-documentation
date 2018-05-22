@@ -13,7 +13,7 @@ projects.
 
 Multiple PHP SDKs are provided for various clients.
 
-### [Docker images](https://hub.docker.com/u/fpfis/)
+### [Docker images](/docker-images/)
 
 Docker images are also provided for other tasks, eg, an nginx web server,
 a [Composer](http://getcomposer.org/) Docker image

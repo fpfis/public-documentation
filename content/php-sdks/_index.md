@@ -1,6 +1,7 @@
 ---
 date: 2018-20-05T10:21:05+02:00
 title: PHP SDKs
+weight: 10
 ---
 
 A curated lists of PHP SDKs maintained by FPFIS :
