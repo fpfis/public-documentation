@@ -4,11 +4,21 @@ title: iTopApi
 --- 
 iTopApi PHP is an helper class to use and query the [iTop](https://wiki.openitop.org/doku.php) API from your PHP scripts.
 
+
+## Usage
+
+### API documentation
+
+See the [generated documentation](/libs/namespaces/iTopApi.html).
+
 ### Installation
 
 ```
 composer require ec-europa/itopapi
 ```
+
+## Examples
+
 
 ### Getting data
 

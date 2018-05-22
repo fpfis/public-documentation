@@ -4,13 +4,21 @@ title: Backtrac PHP client
 --- 
 This projects includes both a client library and a phing helper to trigger visual comparison.
 
-## Installation
+## Usage
+
+### API Documentation
+
+See the [generated documentation](/libs/namespaces/EC.Utils.Backtrac.html)
+
+### Installation
 
 ```sh
 composer require ec-europa/backtrac-php-client:~0.1
 ```
 
-## Usage as library
+## Examples
+
+### Usage as library
 
 
 ```php
@@ -58,7 +66,7 @@ var_dump(
 );
 ```
 
-## Usage as Phing task
+### Usage as Phing task
 
 ```xml
 <?xml version="1.0" ?>
