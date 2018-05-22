@@ -3,8 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.fpfis.eu/categories/</loc>
-    <priority>0</priority>
+    <loc>https://docs.fpfis.eu/php-sdks/</loc>
   </url>
   
   <url>
@@ -12,11 +11,12 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/</loc>
+    <loc>https://docs.fpfis.eu/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/php-sdks/</loc>
+    <loc>https://docs.fpfis.eu/</loc>
   </url>
   
   <url>

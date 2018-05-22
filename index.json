@@ -1,5 +1,19 @@
 [
 {
+	"uri": "https://docs.fpfis.eu/php-sdks/",
+	"title": "PHP SDKs",
+	"tags": [],
+	"description": "",
+	"content": " A curated lists of PHP SDKs maintained by FPFIS :\niTopApi The plugins SDK allows for interactions with iTop CMDB.\ncomposer require ec-europa/itopapi:~1.0  Backtrac PHP client This projects includes both a client library and a phing helper to trigger visual comparison.\ncomposer require ec-europa/backtrac-php-client:~0.1  "
+},
+{
+	"uri": "https://docs.fpfis.eu/docker-images/",
+	"title": "Docker images",
+	"tags": [],
+	"description": "",
+	"content": " Hub All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nRedis Redis Docker image\ndocker pull fpfis/redis  Varnish Varnish Docker image\ndocker pull fpfis/varnish  "
+},
+{
 	"uri": "https://docs.fpfis.eu/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -7,25 +21,11 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.fpfis.eu/docker-images/",
-	"title": "Docker images",
-	"tags": [],
-	"description": "",
-	"content": " A curated lists of docker images maintained by FPFIS :\nVarnish Varnish Docker image\ndocker pull fpfis/varnish  Redis Redis Docker image\ndocker pull fpfis/redis  "
-},
-{
 	"uri": "https://docs.fpfis.eu/",
 	"title": "FPFIS documentation",
 	"tags": [],
 	"description": "",
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
-},
-{
-	"uri": "https://docs.fpfis.eu/php-sdks/",
-	"title": "PHP SDKs",
-	"tags": [],
-	"description": "",
-	"content": " A curated lists of PHP SDKs maintained by FPFIS :\niTopApi The plugins SDK allows for interactions with iTop CMDB.\ncomposer require ec-europa/itopapi:~1.0  Backtrac PHP client This projects includes both a client library and a phing helper to trigger visual comparison.\ncomposer require ec-europa/backtrac-php-client:~0.1  "
 },
 {
 	"uri": "https://docs.fpfis.eu/docker-images/redis/",
