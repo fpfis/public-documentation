@@ -1,6 +1,7 @@
 ---
 date: 2018-22-05T10:21:05+02:00
 title: Docker images
+pre: "<i class='fab fa-docker'></i> "
 weight: 15
 ---
 {{% notice warning %}}
