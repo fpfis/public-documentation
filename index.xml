@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/redis/</guid>
-      <description> TODO </description>
+      <description>Image Image is named fpfis/redis and based on CentOS 6.
+Configuration No configuration is available for this image.
+Port Redis is running on port 6379 by default.
+Example docker run -p 6379:6379 -ti --rm fpfis/redis</description>
     </item>
     
     <item>
@@ -25,10 +28,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
-      <description> Reference environment variables HTTP_PORT Port to listen to
-DEFAULT_BACKEND Backend to connect to
-Mouting VCL VCL must be mounted in /etc/varnish and a default.vcl should be present.
-Example docker run -ti --rm -e DEFAULT_BACKEND=172.16.10.1:8080 -v $(pwd)/varnish:/etc/varnish fpfis/varnish  </description>
+      <description>Image Image is named fpfis/varnish and based on CentOS 6.
+Configuration Use the following environment variable to configure the image :
+HTTP_PORT Port to listen to ( default 6080 )
+DEFAULT_BACKEND Backend to connect to ( default localhost:8080 )
+Mouting VCL volume VCL must be mounted in /etc/varnish and a default.vcl should be present.
+Example Assuming you have a working VCL with default.vcl in your local varnish folder :</description>
     </item>
     
   </channel>
