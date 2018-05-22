@@ -17,7 +17,8 @@
       
       <guid>https://docs.fpfis.eu/php-sdks/backtrac-php-client/</guid>
       <description>This projects includes both a client library and a phing helper to trigger visual comparison.
-Installation composer require ec-europa/backtrac-php-client:~0.1  Usage as library &amp;lt;?php require_once __DIR__.&#39;/../vendor/autoload.php&#39;; $client = new \EC\Utils\Backtrac\Client( 1, &#39;aaaaaaaaaaaaaaa&#39; ); /** * Create a website object */ $website = new \EC\Utils\Backtrac\Website(&#39;test-site&#39;,&#39;http://ci-test.com&#39;); /** * Set the new url for dev : */ $client-&amp;gt;setDevWebsite($website); /** * Compare prod a dev : */ $diffId = $client-&amp;gt;compareEnvironments( \EC\Utils\Backtrac\Client::COMPARE_PROD_DEV )-&amp;gt;result-&amp;gt;nid; /** * Wait for the end of the diff and display result : */ var_dump( $client-&amp;gt;waitForResults($diffId) ); /** * Custom compare : */ var_dump( $client-&amp;gt;customCompare( &#39;my_diff&#39;, new \EC\Utils\Backtrac\Website(&#39;site_1&#39;,&#39;http://xxxx.</description>
+Usage API Documentation See the generated documentation
+Installation composer require ec-europa/backtrac-php-client:~0.1  Examples Usage as library &amp;lt;?php require_once __DIR__.&#39;/../vendor/autoload.php&#39;; $client = new \EC\Utils\Backtrac\Client( 1, &#39;aaaaaaaaaaaaaaa&#39; ); /** * Create a website object */ $website = new \EC\Utils\Backtrac\Website(&#39;test-site&#39;,&#39;http://ci-test.com&#39;); /** * Set the new url for dev : */ $client-&amp;gt;setDevWebsite($website); /** * Compare prod a dev : */ $diffId = $client-&amp;gt;compareEnvironments( \EC\Utils\Backtrac\Client::COMPARE_PROD_DEV )-&amp;gt;result-&amp;gt;nid; /** * Wait for the end of the diff and display result : */ var_dump( $client-&amp;gt;waitForResults($diffId) ); /** * Custom compare : */ var_dump( $client-&amp;gt;customCompare( &#39;my_diff&#39;, new \EC\Utils\Backtrac\Website(&#39;site_1&#39;,&#39;http://xxxx.</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@ Installation composer require ec-europa/backtrac-php-client:~0.1  Usage as libra
       
       <guid>https://docs.fpfis.eu/php-sdks/itopapi/</guid>
       <description>iTopApi PHP is an helper class to use and query the iTop API from your PHP scripts.
-Installation composer require ec-europa/itopapi  Getting data require &#39;vendor/autoload.php&#39;; $iTopAPI = new \iTopApi\ITopClient( &#39;http://localhost/itop&#39;, &#39;itopUser&#39;, &#39;iTopPassword&#39; ); //disable SSL checks ? //$iTopAPI-&amp;gt;setCertificateCheck(false); $query = sprintf(&amp;quot;SELECT Servers WHERE environment = &#39;%s&#39;&amp;quot;,&#39;development&#39;); $serversRequest = $iTopAPI-&amp;gt;coreGet(&amp;quot;Servers&amp;quot;,$query); $servers = $serverRequest[&#39;objects&#39;];  Creating data require &#39;vendor/autoload.php&#39;; $iTopAPI = new \iTopApi\ITopClient( &#39;http://localhost/itop&#39;, &#39;itopUser&#39;, &#39;iTopPassword&#39; ); //disable SSL checks ?</description>
+Usage API documentation See the generated documentation.
+Installation composer require ec-europa/itopapi  Examples Getting data require &#39;vendor/autoload.php&#39;; $iTopAPI = new \iTopApi\ITopClient( &#39;http://localhost/itop&#39;, &#39;itopUser&#39;, &#39;iTopPassword&#39; ); //disable SSL checks ? //$iTopAPI-&amp;gt;setCertificateCheck(false); $query = sprintf(&amp;quot;SELECT Servers WHERE environment = &#39;%s&#39;&amp;quot;,&#39;development&#39;); $serversRequest = $iTopAPI-&amp;gt;coreGet(&amp;quot;Servers&amp;quot;,$query); $servers = $serverRequest[&#39;objects&#39;];  Creating data require &#39;vendor/autoload.php&#39;; $iTopAPI = new \iTopApi\ITopClient( &#39;http://localhost/itop&#39;, &#39;itopUser&#39;, &#39;iTopPassword&#39; ); //disable SSL checks ?</description>
     </item>
     
   </channel>
