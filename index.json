@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://docs.fpfis.eu/docker-images/php/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": " Environment variables Use the following environment variable to configure the image :\nDOCUMENT_ROOT Path to document root ( default /var/www/html )\nXDEBUG Enable/Disable Xdebug ( default on )\nWith docker-compose Eg, if you have an app with a web folder that should be the document root :\nservices: web: image: fpfis/php56-dev:latest environment: - DOCUMENT_ROOT=/app/web volumes: - .:/app  About ${DOCUMENT_ROOT} : The image will first try to create the directory using the parent\u0026rsquo;s permissions if it\u0026rsquo;s missing.\n "
+},
+{
 	"uri": "https://docs.fpfis.eu/php-sdks/",
 	"title": "PHP SDKs",
 	"tags": [],
@@ -35,11 +42,32 @@
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
 },
 {
+	"uri": "https://docs.fpfis.eu/docker-images/php/flavors/",
+	"title": "Flavors",
+	"tags": [],
+	"description": "",
+	"content": " Image flavors Base The image contains PHP and Apache, no additional services are running.\nAll subsequent development images are base on this image.\n$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :\n Shellinabox for accessing the container\u0026rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :\n Ruby Compass Sass  $ docker pull fpfis/php56-dev-full $ docker pull fpfis/php71-dev-full  "
+},
+{
+	"uri": "https://docs.fpfis.eu/docker-images/php/",
+	"title": "PHP",
+	"tags": [],
+	"description": "",
+	"content": " Introduction For production\u0026rsquo;s matching sake, the current FPFIS\u0026rsquo;s Docker images are based on CentOS 6.\nTwo version are currently supported : fpfis/php56 and fpfis/php71.\nFor more informations, consult the following topics :\n Configuration   Flavors   Shellinabox   About file permissions : The server will use the UID and GID of the ${DOCUMENT_ROOT} directory to run.\n Image size : Since the images are based on CentOS 6, the images can be quite big.\n "
+},
+{
 	"uri": "https://docs.fpfis.eu/docker-images/redis/",
 	"title": "Redis",
 	"tags": [],
 	"description": "",
 	"content": " Image Image is named fpfis/redis and based on CentOS 6.\nConfiguration No configuration is available for this image.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm fpfis/redis   \n"
+},
+{
+	"uri": "https://docs.fpfis.eu/docker-images/php/shellinabox/",
+	"title": "Shellinabox",
+	"tags": [],
+	"description": "",
+	"content": " Usage When running an fpfis/php*-dev-* you can access a shell from http://localhost:8080/shell/ .\n"
 },
 {
 	"uri": "https://docs.fpfis.eu/tags/",

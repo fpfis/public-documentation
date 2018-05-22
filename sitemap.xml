@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://docs.fpfis.eu/docker-images/php/configuration/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/php-sdks/</loc>
   </url>
   
@@ -24,7 +28,19 @@
   </url>
   
   <url>
+    <loc>https://docs.fpfis.eu/docker-images/php/flavors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/docker-images/php/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/docker-images/redis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/docker-images/php/shellinabox/</loc>
   </url>
   
   <url>

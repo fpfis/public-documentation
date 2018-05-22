@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>iTopApi :: FPFIS Documentation</title>
+    <title>PHP :: FPFIS Documentation</title>
     
     
     <link href="/css/nucleus.css?1527004023" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/php-sdks/itopapi/">
+  <body class="" data-url="/docker-images/php/">
     <nav id="sidebar" class="">
 
 
@@ -75,7 +75,7 @@
   
     
     <li data-nav-id="/php-sdks/" title="PHP SDKs" class="dd-item 
-        parent
+        
         
         
         ">
@@ -118,7 +118,7 @@
  
   
     
-      <li data-nav-id="/php-sdks/itopapi/" title="iTopApi" class="dd-item active">
+      <li data-nav-id="/php-sdks/itopapi/" title="iTopApi" class="dd-item ">
         <a href="/php-sdks/itopapi/">
         iTopApi
         
@@ -145,7 +145,7 @@
   
     
     <li data-nav-id="/docker-images/" title="Docker images" class="dd-item 
-        
+        parent
         
         
         ">
@@ -172,8 +172,8 @@
   
     
     <li data-nav-id="/docker-images/php/" title="PHP" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/docker-images/php/">
@@ -348,7 +348,7 @@
             
           
           
-            <a href='/'>FPFIS documentation</a> > <a href='/php-sdks/'>PHP SDKs</a> > iTopApi
+            <a href='/'>FPFIS documentation</a> > <a href='/docker-images/'>Docker images</a> > PHP
           
          
           
@@ -364,18 +364,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#usage">Usage</a>
-<ul>
-<li><a href="#api-documentation">API documentation</a></li>
-<li><a href="#installation">Installation</a></li>
-</ul></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#getting-data">Getting data</a></li>
-<li><a href="#creating-data">Creating data</a></li>
-<li><a href="#updating-data">Updating data</a></li>
-<li><a href="#using-object-oriented">Using object oriented</a></li>
-</ul></li>
+<li><a href="#introduction">Introduction</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -390,7 +379,7 @@
         
         <div id="body-inner">
           
-            <h1>iTopApi</h1>
+            <h1>PHP</h1>
           
 
         
@@ -398,124 +387,109 @@
 
 
 
-<p>iTopApi PHP is an helper class to use and query the <a href="https://wiki.openitop.org/doku.php">iTop</a> API from your PHP scripts.</p>
+<h2 id="introduction">Introduction</h2>
 
-<h2 id="usage">Usage</h2>
+<p>For production&rsquo;s matching sake, the current FPFIS&rsquo;s Docker images are based on CentOS 6.</p>
 
-<h3 id="api-documentation">API documentation</h3>
+<p>Two version are currently supported : <code>fpfis/php56</code> and <code>fpfis/php71</code>.</p>
 
-<p>See the <a href="/libs/namespaces/iTopApi.html">generated documentation</a>.</p>
-
-<h3 id="installation">Installation</h3>
-
-<pre><code>composer require ec-europa/itopapi
-</code></pre>
-
-<h2 id="examples">Examples</h2>
-
-<h3 id="getting-data">Getting data</h3>
-
-<pre><code class="language-php">require 'vendor/autoload.php';
-
-$iTopAPI = new \iTopApi\ITopClient( 'http://localhost/itop', 'itopUser', 'iTopPassword' );
-
-//disable SSL checks ?
-//$iTopAPI-&gt;setCertificateCheck(false);
-
-$query = sprintf(&quot;SELECT Servers WHERE environment = '%s'&quot;,'development');
-
-$serversRequest = $iTopAPI-&gt;coreGet(&quot;Servers&quot;,$query);
-
-$servers = $serverRequest['objects'];
-</code></pre>
-
-<h3 id="creating-data">Creating data</h3>
-
-<pre><code class="language-php">require 'vendor/autoload.php';
-
-$iTopAPI = new \iTopApi\ITopClient( 'http://localhost/itop', 'itopUser', 'iTopPassword' );
-
-//disable SSL checks ?
-//$iTopAPI-&gt;setCertificateCheck(false);
-
-$request = $iTopAPI-&gt;coreCreate(&quot;Servers&quot;,array(
-  'hostname' =&gt; 'localhost',
-  'memory' =&gt; 2048,
-  'cpu' =&gt; 4,
-  'location' =&gt; 'dc1'
-));
-
-</code></pre>
-
-<h3 id="updating-data">Updating data</h3>
-
-<pre><code class="language-php">require 'vendor/autoload.php';
-
-$iTopAPI = new \iTopApi\ITopClient( 'http://localhost/itop', 'itopUser', 'iTopPassword' );
-
-//disable SSL checks ?
-//$iTopAPI-&gt;setCertificateCheck(false);
-
-$request = $iTopAPI-&gt;coreUpdate(&quot;Servers&quot;,array(
-  'hostname' =&gt; 'localhost'
-),array(
-  'memory' =&gt; 1024
-));
-
-</code></pre>
-
-<h3 id="using-object-oriented">Using object oriented</h3>
-
-<pre><code class="language-php">require 'vendor/autoload.php';
-
-$iTopAPI = new \iTopApi\ITopClient( 'http://localhost/itop', 'itopUser', 'iTopPassword' );
-
-//disable SSL checks ?
-//$iTopAPI-&gt;setCertificateCheck(false);
+<p>For more informations, consult the following topics :</p>
 
 
-/**
- * Query and iterate 
- */
-
-$servers = $iTopAPI-&gt;getObjects(&quot;Server&quot;,
-  array(
-    'name' =&gt; 'server001'
-  )
-);
-
-foreach($servers as $server) {
-  echo $server-&gt;name.' is '.$server-&gt;status_friendlyname;
-  $server-&gt;name = 'server001-eu';
-  $server-&gt;save();
-}
 
 
-/**
- * Deletes a new server : 
- */
-if($server-&gt;status_friendlyname == 'decommissioning')
-  $server-&gt;delete();
+
+
+
+
+<ul class="children children-li">
+	
+    
+    
+
+	
+		
+	
+		
   
+
+
+<li>
+<a href="/docker-images/php/configuration/" >Configuration</a>
+</li>
+
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+		
   
-/**
- * Creates a new server : 
- */
-$server = $iTopClient-&gt;getNewObject('Server');
 
-$server-&gt;name = 'server002';
-$server-&gt;status_friendlyname = 'deployed';
-$server-&gt;save();
 
-</code></pre>
+<li>
+<a href="/docker-images/php/flavors/" >Flavors</a>
+</li>
 
-<p><a href="https://drone.fpfis.eu/ec-europa/iTopApi"><img src="https://drone.fpfis.eu/api/badges/ec-europa/iTopApi/status.svg?branch=master" alt="Build Status" /></a></p>
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+		
+  
+
+
+<li>
+<a href="/docker-images/php/shellinabox/" >Shellinabox</a>
+</li>
+
+
+
+
+
+
+			
+		
+
+		
+			
+
+		
+	
+
+	
+</ul>
+
+<div class="notices info" ><p><strong>About file permissions</strong> : The server will use the UID and GID of the <code>${DOCUMENT_ROOT}</code> directory to run.</p>
+</div>
+
+<div class="notices warning" ><p><strong>Image size</strong> : Since the images are based on CentOS 6, the images can be quite big.</p>
+</div>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -548,76 +522,8 @@ $server-&gt;save();
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -659,6 +565,74 @@ $server-&gt;save();
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -720,10 +694,10 @@ $server-&gt;save();
 
 
         
-            <a class="nav nav-prev" href="/php-sdks/backtrac-php-client/" title="Backtrac PHP client"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docker-images/" title="Docker images"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docker-images/" title="Docker images" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docker-images/php/configuration/" title="Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -753,4 +727,3 @@ $server-&gt;save();
 
   </body>
 </html>
-
