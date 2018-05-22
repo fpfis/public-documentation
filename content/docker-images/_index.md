@@ -4,7 +4,7 @@ title: Docker images
 weight: 15
 ---
 
-# Hub
+## Hub
 
 All images are available on FPFIS's [Docker hub](http://hub.docker.com/u/fpfis/)
 
