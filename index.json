@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://docs.fpfis.eu/docker-images/php/flavors/",
+	"title": "Flavors",
+	"tags": [],
+	"description": "",
+	"content": " Image flavors Base The image contains PHP and Apache, no additional services are running.\nAll subsequent development images are base on this image.\n$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :\n Shellinabox for accessing the container\u0026rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :\n Ruby Compass Sass  $ docker pull fpfis/php56-dev-full $ docker pull fpfis/php71-dev-full  "
+},
+{
 	"uri": "https://docs.fpfis.eu/docker-images/php/configuration/",
 	"title": "Configuration",
 	"tags": [],
@@ -42,18 +49,11 @@
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
 },
 {
-	"uri": "https://docs.fpfis.eu/docker-images/php/flavors/",
-	"title": "Flavors",
-	"tags": [],
-	"description": "",
-	"content": " Image flavors Base The image contains PHP and Apache, no additional services are running.\nAll subsequent development images are base on this image.\n$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :\n Shellinabox for accessing the container\u0026rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :\n Ruby Compass Sass  $ docker pull fpfis/php56-dev-full $ docker pull fpfis/php71-dev-full  "
-},
-{
 	"uri": "https://docs.fpfis.eu/docker-images/php/",
 	"title": "PHP",
 	"tags": [],
 	"description": "",
-	"content": " Introduction For production\u0026rsquo;s matching sake, the current FPFIS\u0026rsquo;s Docker images are based on CentOS 6.\nTwo version are currently supported : fpfis/php56 and fpfis/php71.\nFor more informations, consult the following topics :\n Configuration   Flavors   Shellinabox   About file permissions : The server will use the UID and GID of the ${DOCUMENT_ROOT} directory to run.\n Image size : Since the images are based on CentOS 6, the images can be quite big.\n "
+	"content": " Introduction For production\u0026rsquo;s matching sake, the current FPFIS\u0026rsquo;s Docker images are based on CentOS 6.\nTwo version are currently supported : fpfis/php56 and fpfis/php71.\nFor more informations, consult the following topics :\n Flavors   Configuration   Shellinabox   About file permissions : The server will use the UID and GID of the ${DOCUMENT_ROOT} directory to run.\n Image size : Since the images are based on CentOS 6, the images can be quite big.\n "
 },
 {
 	"uri": "https://docs.fpfis.eu/docker-images/redis/",

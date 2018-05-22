@@ -11,6 +11,18 @@
     
     
     <item>
+      <title>Flavors</title>
+      <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/php/flavors/</guid>
+      <description>Image flavors Base The image contains PHP and Apache, no additional services are running.
+All subsequent development images are base on this image.
+$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :
+ Shellinabox for accessing the container&amp;rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :</description>
+    </item>
+    
+    <item>
       <title>Configuration</title>
       <link>https://docs.fpfis.eu/docker-images/php/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -21,18 +33,6 @@ DOCUMENT_ROOT Path to document root ( default /var/www/html )
 XDEBUG Enable/Disable Xdebug ( default on )
 With docker-compose Eg, if you have an app with a web folder that should be the document root :
 services: web: image: fpfis/php56-dev:latest environment: - DOCUMENT_ROOT=/app/web volumes: - .:/app  About ${DOCUMENT_ROOT} : The image will first try to create the directory using the parent&amp;rsquo;s permissions if it&amp;rsquo;s missing.</description>
-    </item>
-    
-    <item>
-      <title>Flavors</title>
-      <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/php/flavors/</guid>
-      <description>Image flavors Base The image contains PHP and Apache, no additional services are running.
-All subsequent development images are base on this image.
-$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :
- Shellinabox for accessing the container&amp;rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :</description>
     </item>
     
     <item>

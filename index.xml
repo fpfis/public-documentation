@@ -11,6 +11,18 @@
     
     
     <item>
+      <title>Flavors</title>
+      <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/php/flavors/</guid>
+      <description>Image flavors Base The image contains PHP and Apache, no additional services are running.
+All subsequent development images are base on this image.
+$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :
+ Shellinabox for accessing the container&amp;rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :</description>
+    </item>
+    
+    <item>
       <title>Configuration</title>
       <link>https://docs.fpfis.eu/docker-images/php/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -32,18 +44,6 @@ services: web: image: fpfis/php56-dev:latest environment: - DOCUMENT_ROOT=/app/w
       <description>This projects includes both a client library and a phing helper to trigger visual comparison.
 Usage API Documentation See the generated documentation
 Installation composer require ec-europa/backtrac-php-client:~0.1  Examples Usage as library &amp;lt;?php require_once __DIR__.&#39;/../vendor/autoload.php&#39;; $client = new \EC\Utils\Backtrac\Client( 1, &#39;aaaaaaaaaaaaaaa&#39; ); /** * Create a website object */ $website = new \EC\Utils\Backtrac\Website(&#39;test-site&#39;,&#39;http://ci-test.com&#39;); /** * Set the new url for dev : */ $client-&amp;gt;setDevWebsite($website); /** * Compare prod a dev : */ $diffId = $client-&amp;gt;compareEnvironments( \EC\Utils\Backtrac\Client::COMPARE_PROD_DEV )-&amp;gt;result-&amp;gt;nid; /** * Wait for the end of the diff and display result : */ var_dump( $client-&amp;gt;waitForResults($diffId) ); /** * Custom compare : */ var_dump( $client-&amp;gt;customCompare( &#39;my_diff&#39;, new \EC\Utils\Backtrac\Website(&#39;site_1&#39;,&#39;http://xxxx.</description>
-    </item>
-    
-    <item>
-      <title>Flavors</title>
-      <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/php/flavors/</guid>
-      <description>Image flavors Base The image contains PHP and Apache, no additional services are running.
-All subsequent development images are base on this image.
-$ docker pull fpfis/php56 $ docker pull fpfis/php71  Development image The image contains PHP and Apache. Various dev services and packages are also included :
- Shellinabox for accessing the container&amp;rsquo;s shell while running Phpmyadmin for accessing MySQL databases Mailhog for receiving mock emails Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/php56-dev $ docker pull fpfis/php71-dev  Development full image The image contains everything fpfis/phpXX-dev contains and adds the following :</description>
     </item>
     
     <item>
