@@ -10,6 +10,14 @@ All images are available on FPFIS's [Docker hub](http://hub.docker.com/u/fpfis/)
 
 A curated lists of docker images maintained by FPFIS
 
+## [PHP](/docker-images/php)
+
+PHP Docker images
+
+```sh
+docker pull fpfis/php71-dev
+```
+
 ## [Redis](/docker-images/redis)
 
 Redis Docker image
