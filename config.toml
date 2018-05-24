@@ -11,3 +11,15 @@ description = "FPFIS Opensource projects documentation"
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-book-open'></i> Drone documentation"
+identifier = "dd"
+url = "https://docs.drone.io/"
+weight = 15
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-puzzle-piece'></i> Drone plugins"
+identifier = "dp"
+url = "https://plugins.drone.io/"
+weight = 20
