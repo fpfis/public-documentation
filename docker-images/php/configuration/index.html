@@ -12,19 +12,19 @@
     <title>Configuration :: FPFIS Documentation</title>
     
     
-    <link href="/css/nucleus.css?1527165950" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527165950" rel="stylesheet">
-    <link href="/css/hybrid.css?1527165950" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527165950" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527165950" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527165950" rel="stylesheet">
-    <link href="/css/theme.css?1527165950" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527165950" rel="stylesheet">
+    <link href="/css/nucleus.css?1527169802" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1527169802" rel="stylesheet">
+    <link href="/css/hybrid.css?1527169802" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1527169802" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1527169802" rel="stylesheet">
+    <link href="/css/auto-complete.css?1527169802" rel="stylesheet">
+    <link href="/css/theme.css?1527169802" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1527169802" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1527165950" rel="stylesheet">
+      <link href="/css/theme-blue.css?1527169802" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527165950"></script>
+    <script src="/js/jquery-2.x.min.js?1527169802"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1527165950"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1527165950"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1527169802"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1527169802"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1527165950"></script>
+<script type="text/javascript" src="/js/search.js?1527169802"></script>
 
     
   </div>
@@ -627,6 +627,7 @@
 <ul>
 <li><a href="#environment-variables">Environment variables</a></li>
 <li><a href="#with-docker-compose">With docker-compose</a></li>
+<li><a href="#default-values">Default values</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -663,7 +664,7 @@ Enable/Disable Xdebug ( default on )</p>
 Extra single line to add to Apache configuration, for options that don&rsquo;t work on <strong>.htaccess</strong> (Example: Alias)</p>
 
 <p><code>APACHE_EXTRA_CONF_DIR</code>
-Extra path with <strong>.conf</strong> files to load onto Apache</p>
+Extra path with <strong>.conf</strong> files to load onto Apache.</p>
 
 <h2 id="with-docker-compose">With docker-compose</h2>
 
@@ -681,6 +682,34 @@ Extra path with <strong>.conf</strong> files to load onto Apache</p>
 <div class="notices info" ><p><strong>About ${DOCUMENT_ROOT}</strong> : The image will first try to create the directory using the parent&rsquo;s permissions if it&rsquo;s missing.</p>
 </div>
 
+
+<h2 id="default-values">Default values</h2>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>XDEBUG</code></td>
+<td>ON</td>
+</tr>
+
+<tr>
+<td><code>APACHE_EXTRA_CONF</code></td>
+<td>empty</td>
+</tr>
+
+<tr>
+<td><code>APACHE_EXTRA_CONF_DIR</code></td>
+<td>conf.d</td>
+</tr>
+</tbody>
+</table>
 
 
 <footer class=" footline" >
@@ -1069,20 +1098,20 @@ Extra path with <strong>.conf</strong> files to load onto Apache</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527165950"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527165950"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527165950"></script>
-    <script src="/js/jquery.sticky.js?1527165950"></script>
-    <script src="/js/featherlight.min.js?1527165950"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527165950"></script>
-    <script src="/js/highlight.pack.js?1527165950"></script>
+    <script src="/js/clipboard.min.js?1527169802"></script>
+    <script src="/js/perfect-scrollbar.min.js?1527169802"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1527169802"></script>
+    <script src="/js/jquery.sticky.js?1527169802"></script>
+    <script src="/js/featherlight.min.js?1527169802"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1527169802"></script>
+    <script src="/js/highlight.pack.js?1527169802"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527165950"></script>
-    <script src="/js/learn.js?1527165950"></script>
-    <script src="/js/hugo-learn.js?1527165950"></script>
+    <script src="/js/modernizr.custom.71422.js?1527169802"></script>
+    <script src="/js/learn.js?1527169802"></script>
+    <script src="/js/hugo-learn.js?1527169802"></script>
 
-    <link href="/mermaid/mermaid.css?1527165950" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527165950"></script>
+    <link href="/mermaid/mermaid.css?1527169802" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1527169802"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
