@@ -100,6 +100,17 @@ Example pipeline: build-phar: image: phpdrone/phpdoc:2.8  Result Collecting file
     </item>
     
     <item>
+      <title>Packer</title>
+      <link>https://docs.fpfis.eu/drone/drone-plugins/packer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/drone/drone-plugins/packer/</guid>
+      <description>Image Image is named fpfis/packer and based on Alpine.
+Configuration No configuration is available for this image.
+Examples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  From Drone pipeline: run-packer: image: fpfis/packer</description>
+    </item>
+    
+    <item>
       <title>Redis</title>
       <link>https://docs.fpfis.eu/docker-images/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

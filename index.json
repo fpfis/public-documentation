@@ -88,7 +88,7 @@
 	"title": "Drone plugins",
 	"tags": [],
 	"description": "",
-	"content": " Composer SA Checker Checks your composer.lock file for known security advisories with Sensiolab\u0026rsquo;s SA checker.\npipeline: composer-sa-check: image: phpdrone/composer-sa-checker # lock_file: composer.lock  PHAR Composer Creates a standalone PHAR file from a composer project.\npipeline: build-phar: image: phpdrone/phar-composer output: myapp.phar  phpDocumentator Generates\npipeline: build-phar: image: phpdrone/phar-composer output: myapp.phar  "
+	"content": " Composer SA Checker Checks your composer.lock file for known security advisories with Sensiolab\u0026rsquo;s SA checker.\npipeline: composer-sa-check: image: phpdrone/composer-sa-checker # lock_file: composer.lock  PHAR Composer Creates a standalone PHAR file from a composer project.\npipeline: build-phar: image: phpdrone/phar-composer output: myapp.phar  phpDocumentator Generates documentation from phpDoc.\npipeline: build-phar: image: fpfis/phpdoc  Packer Process the packer.json file for creating infrastructure artifacts.\npipeline: run-packer: image: fpfis/packer  "
 },
 {
 	"uri": "https://docs.fpfis.eu/",
@@ -124,6 +124,13 @@
 	"tags": [],
 	"description": "",
 	"content": " There are 2 SDKs availalbe to interact with Drone :\nPlugin SDK The plugins SDK allows for easy creation of PHP based plugins.\n$build = new \\DronePluginSdk\\Build();  Client SDK The client SDK allows for interactions with Drone server.\nThe client SDK is currently unstested an a work in progress\n $api_instance = new DroneClient\\Api\\BuildsApi();  "
+},
+{
+	"uri": "https://docs.fpfis.eu/drone/drone-plugins/packer/",
+	"title": "Packer",
+	"tags": [],
+	"description": "",
+	"content": " Image Image is named fpfis/packer and based on Alpine.\nConfiguration No configuration is available for this image.\nExamples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  From Drone pipeline: run-packer: image: fpfis/packer   \n"
 },
 {
 	"uri": "https://docs.fpfis.eu/tags/phar/",

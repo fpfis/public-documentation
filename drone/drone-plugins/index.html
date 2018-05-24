@@ -12,19 +12,19 @@
     <title>Drone plugins :: FPFIS Documentation</title>
     
     
-    <link href="/css/nucleus.css?1527162320" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527162320" rel="stylesheet">
-    <link href="/css/hybrid.css?1527162320" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527162320" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527162320" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527162320" rel="stylesheet">
-    <link href="/css/theme.css?1527162320" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527162320" rel="stylesheet">
+    <link href="/css/nucleus.css?1527162951" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1527162951" rel="stylesheet">
+    <link href="/css/hybrid.css?1527162951" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1527162951" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1527162951" rel="stylesheet">
+    <link href="/css/auto-complete.css?1527162951" rel="stylesheet">
+    <link href="/css/theme.css?1527162951" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1527162951" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1527162320" rel="stylesheet">
+      <link href="/css/theme-blue.css?1527162951" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527162320"></script>
+    <script src="/js/jquery-2.x.min.js?1527162951"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1527162320"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1527162320"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1527162951"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1527162951"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1527162320"></script>
+<script type="text/javascript" src="/js/search.js?1527162951"></script>
 
     
   </div>
@@ -409,6 +409,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/drone/drone-plugins/packer/" title="Packer" class="dd-item ">
+        <a href="/drone/drone-plugins/packer/">
+        Packer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -603,6 +622,7 @@
 <li><a href="#composer-sa-checker-composer-sa-checker"><a href="composer-sa-checker">Composer SA Checker</a></a></li>
 <li><a href="#phar-composer-phar-composer"><a href="phar-composer">PHAR Composer</a></a></li>
 <li><a href="#phpdocumentator-phpdoc"><a href="phpdoc">phpDocumentator</a></a></li>
+<li><a href="#packer-packer"><a href="packer">Packer</a></a></li>
 </ul></li>
 </ul>
 </nav>
@@ -647,12 +667,20 @@
 
 <h2 id="phpdocumentator-phpdoc"><a href="phpdoc">phpDocumentator</a></h2>
 
-<p>Generates</p>
+<p>Generates documentation from phpDoc.</p>
 
 <pre><code class="language-yaml">pipeline:
   build-phar:
-    image: phpdrone/phar-composer
-    output: myapp.phar
+    image: fpfis/phpdoc
+</code></pre>
+
+<h2 id="packer-packer"><a href="packer">Packer</a></h2>
+
+<p>Process the packer.json file for creating infrastructure artifacts.</p>
+
+<pre><code class="language-yaml">pipeline:
+  run-packer:
+    image: fpfis/packer
 </code></pre>
 
 
@@ -932,6 +960,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1021,20 +1065,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527162320"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527162320"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527162320"></script>
-    <script src="/js/jquery.sticky.js?1527162320"></script>
-    <script src="/js/featherlight.min.js?1527162320"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527162320"></script>
-    <script src="/js/highlight.pack.js?1527162320"></script>
+    <script src="/js/clipboard.min.js?1527162951"></script>
+    <script src="/js/perfect-scrollbar.min.js?1527162951"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1527162951"></script>
+    <script src="/js/jquery.sticky.js?1527162951"></script>
+    <script src="/js/featherlight.min.js?1527162951"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1527162951"></script>
+    <script src="/js/highlight.pack.js?1527162951"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527162320"></script>
-    <script src="/js/learn.js?1527162320"></script>
-    <script src="/js/hugo-learn.js?1527162320"></script>
+    <script src="/js/modernizr.custom.71422.js?1527162951"></script>
+    <script src="/js/learn.js?1527162951"></script>
+    <script src="/js/hugo-learn.js?1527162951"></script>
 
-    <link href="/mermaid/mermaid.css?1527162320" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527162320"></script>
+    <link href="/mermaid/mermaid.css?1527162951" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1527162951"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

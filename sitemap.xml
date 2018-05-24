@@ -78,6 +78,10 @@
   </url>
   
   <url>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/packer/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/tags/phar/</loc>
     <priority>0</priority>
   </url>

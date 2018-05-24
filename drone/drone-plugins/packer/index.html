@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>PHAR Composer :: FPFIS Documentation</title>
+    <title>Packer :: FPFIS Documentation</title>
     
     
     <link href="/css/nucleus.css?1527162951" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/drone/drone-plugins/phpdoc/">
+  <body class="" data-url="/drone/drone-plugins/packer/">
     <nav id="sidebar" class="">
 
 
@@ -397,7 +397,7 @@
  
   
     
-      <li data-nav-id="/drone/drone-plugins/phpdoc/" title="PHAR Composer" class="dd-item active">
+      <li data-nav-id="/drone/drone-plugins/phpdoc/" title="PHAR Composer" class="dd-item ">
         <a href="/drone/drone-plugins/phpdoc/">
         PHAR Composer
         
@@ -416,7 +416,7 @@
  
   
     
-      <li data-nav-id="/drone/drone-plugins/packer/" title="Packer" class="dd-item ">
+      <li data-nav-id="/drone/drone-plugins/packer/" title="Packer" class="dd-item active">
         <a href="/drone/drone-plugins/packer/">
         Packer
         
@@ -607,7 +607,7 @@
             
           
           
-            <a href='/'>FPFIS documentation</a> > <a href='/drone/'>Drone documentation</a> > <a href='/drone/drone-plugins/'>Drone plugins</a> > PHAR Composer
+            <a href='/'>FPFIS documentation</a> > <a href='/drone/'>Drone documentation</a> > <a href='/drone/drone-plugins/'>Drone plugins</a> > Packer
           
          
           
@@ -625,9 +625,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#example">Example</a></li>
-<li><a href="#result">Result</a></li>
-<li><a href="#credits">Credits</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#from-cli">From CLI</a></li>
+<li><a href="#from-drone">From Drone</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -642,7 +646,7 @@
         
         <div id="body-inner">
           
-            <h1>PHAR Composer</h1>
+            <h1>Packer</h1>
           
 
         
@@ -650,87 +654,32 @@
 
 
 
-<p>This plugins allows for generating <a href="https://phpdoc.org/">phpDocumentator</a> site based on <code>phpdoc.xml</code></p>
+<h2 id="image">Image</h2>
 
-<h2 id="example">Example</h2>
+<p>Image is named <code>fpfis/packer</code> and based on Alpine.</p>
 
-<pre><code>pipeline:
-  build-phar:
-    image: phpdrone/phpdoc:2.8
+<h2 id="configuration">Configuration</h2>
+
+<p>No configuration is available for this image.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="from-cli">From CLI</h3>
+
+<pre><code class="language-bash">docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer
 </code></pre>
 
-<h2 id="result">Result</h2>
+<h3 id="from-drone">From Drone</h3>
 
-<pre><code>Collecting files .. OK
-Initializing parser .. OK
-Parsing files
-Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Repo.php
-  No summary was found for this file
-  No summary for method getOwner()
-  No summary for method getName()
-  No summary for method getLink()
-  No summary for method getDefaultBranch()
-  No summary for method isPrivate()
-  No summary for method isTrusted()
-Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Commit.php
-  No summary was found for this file
-  No summary for method getBranch()
-  No summary for method getTag()
-  No summary for method getSha()
-  No summary for method getMessage()
-  No summary for method getAuthorName()
-  No summary for method getAuthorEmail()
-  No summary for method getRef()
-Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Build.php
-
-Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
-
-Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
-
-Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
-
-Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
-  No summary was found for this file
-Storing cache in &quot;/drone/src/github.com/phpdrone/drone-plugin-sdk/doc&quot; .. OK
-Load cache                                                         ..    0.008s
-Preparing template &quot;clean&quot;                                         ..    0.017s
-Preparing 17 transformations                                       ..    0.000s
-Build &quot;elements&quot; index                                             ..    0.000s
-Replace textual FQCNs with object aliases                          ..    0.002s
-Resolve @link and @see tags in descriptions                        ..    0.001s
-Enriches inline example tags with their sources                    ..    0.000s
-Build &quot;packages&quot; index                                             ..    0.002s
-Build &quot;namespaces&quot; index and add namespaces to &quot;elements&quot;          ..    0.000s
-Collect all markers embedded in tags                               ..    0.000s
-Transform analyzed project into artifacts                          .. 
-Applying 17 transformations
-  Initialize writer &quot;phpDocumentor\Plugin\Core\Transformer\Writer\FileIo&quot;
-  Initialize writer &quot;phpDocumentor\Plugin\Twig\Writer\Twig&quot;
-  Initialize writer &quot;phpDocumentor\Plugin\Graphs\Writer\Graph&quot;
-  Execute transformation using writer &quot;FileIo&quot;
-  Execute transformation using writer &quot;FileIo&quot;
-  Execute transformation using writer &quot;FileIo&quot;
-  Execute transformation using writer &quot;FileIo&quot;
-  Execute transformation using writer &quot;FileIo&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;twig&quot;
-  Execute transformation using writer &quot;Graph&quot;
-   0.633s
-Analyze results and write report to log .. 0.001s
+<pre><code class="language-yaml">pipeline:
+  run-packer:
+    image: fpfis/packer
 </code></pre>
 
-<h2 id="credits">Credits</h2>
+<hr />
 
-<p>The plugin is based around <a href="https://phpdoc.org/">phpDocumentator</a>.</p>
+<p><a href="https://drone.fpfis.eu/ec-europa/docker-fpfis"><img src="https://drone.fpfis.eu/api/badges/ec-europa/docker-fpfis/status.svg?branch=release/packer" alt="Build Status" /></a>
+<a href="https://microbadger.com/images/fpfis/packer"><img src="https://images.microbadger.com/badges/image/fpfis/packer.svg" alt="Docker Image" /></a></p>
 
 
 <footer class=" footline" >
@@ -999,7 +948,6 @@ Analyze results and write report to log .. 0.001s
             
                 
                     
-                    
                 
                 
 
@@ -1016,8 +964,6 @@ Analyze results and write report to log .. 0.001s
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1038,6 +984,9 @@ Analyze results and write report to log .. 0.001s
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -1058,25 +1007,6 @@ Analyze results and write report to log .. 0.001s
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1100,6 +1030,25 @@ Analyze results and write report to log .. 0.001s
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -1107,10 +1056,10 @@ Analyze results and write report to log .. 0.001s
 
 
         
-            <a class="nav nav-prev" href="/drone/drone-plugins/phar-composer/" title="PHAR Composer"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/drone/drone-plugins/phpdoc/" title="PHAR Composer"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/drone/drone-plugins/packer/" title="Packer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/drone/php-sdks/" title="PHP SDKs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
