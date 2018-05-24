@@ -14,6 +14,14 @@ Path to document root ( default /var/www/html )
 `XDEBUG`
 Enable/Disable Xdebug ( default on )
 
+`APACHE_EXTRA_CONF`
+Extra single line to add to Apache configuration, for options that don't work on **.htaccess** (Example: Alias)
+
+`APACHE_EXTRA_CONF_DIR`
+Extra path with **.conf** files to load onto Apache
+
+
+
 ## With docker-compose
 
 Eg, if you have an app with a `web` folder that should be the document root :
