@@ -45,6 +45,11 @@
   </url>
   
   <url>
+    <loc>https://docs.fpfis.eu/tags/documentation/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/drone/</loc>
   </url>
   
@@ -58,6 +63,10 @@
   
   <url>
     <loc>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</loc>
   </url>
   
   <url>

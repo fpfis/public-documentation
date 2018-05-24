@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/drone/drone-plugins/phar-composer/">
+  <body class="" data-url="/drone/drone-plugins/phpdoc/">
     <nav id="sidebar" class="">
 
 
@@ -378,7 +378,7 @@
  
   
     
-      <li data-nav-id="/drone/drone-plugins/phar-composer/" title="PHAR Composer" class="dd-item active">
+      <li data-nav-id="/drone/drone-plugins/phar-composer/" title="PHAR Composer" class="dd-item ">
         <a href="/drone/drone-plugins/phar-composer/">
         PHAR Composer
         
@@ -397,7 +397,7 @@
  
   
     
-      <li data-nav-id="/drone/drone-plugins/phpdoc/" title="PHAR Composer" class="dd-item ">
+      <li data-nav-id="/drone/drone-plugins/phpdoc/" title="PHAR Composer" class="dd-item active">
         <a href="/drone/drone-plugins/phpdoc/">
         PHAR Composer
         
@@ -606,10 +606,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#operation">Operation</a></li>
 <li><a href="#example">Example</a></li>
 <li><a href="#result">Result</a></li>
-<li><a href="#limitation">Limitation</a></li>
 <li><a href="#credits">Credits</a></li>
 </ul></li>
 </ul>
@@ -633,108 +631,87 @@
 
 
 
-<p>This plugins allows for creating a standalone PHAR file from a composer project.</p>
-
-<h2 id="operation">Operation</h2>
-
-<p>The plugin will :</p>
-
-<ol>
-<li>Move away your current vendor, .git and .drone.yml file</li>
-<li>Do a <code>composer install --no-dev</code> to get a minimal build</li>
-<li>Build a PHAR file</li>
-<li>Restore your vendor, .git and .drone.yml file</li>
-</ol>
+<p>This plugins allows for generating <a href="https://phpdoc.org/">phpDocumentator</a> site based on <code>phpdoc.xml</code></p>
 
 <h2 id="example">Example</h2>
 
 <pre><code>pipeline:
   build-phar:
-    image: phpdrone/phar-composer
-    output: ghcli.phar
+    image: phpdrone/phpdoc:2.8
 </code></pre>
 
 <h2 id="result">Result</h2>
 
-<pre><code>Backing up vendor directory ...
-Moving away non-dist material ...
-Installing mininal components ...
-Loading composer repositories with package information
-Installing dependencies from lock file
-Package operations: 0 installs, 0 updates, 10 removals
-  - Removing squizlabs/php_codesniffer (3.1.1)
-  - Removing clue/phar-composer (v1.0.0)
-  - Removing herrera-io/box (1.6.1)
-  - Removing phine/path (1.1.0)
-  - Removing phine/exception (1.0.0)
-  - Removing tedivm/jshrink (v1.2.0)
-  - Removing knplabs/packagist-api (v1.5.0)
-  - Removing doctrine/inflector (v1.2.0)
-  - Removing symfony/finder (v2.8.28)
-  - Removing symfony/process (v2.8.28)
-Generating autoload files
-Building PHAR file ...
-[1/1] Creating phar ghcli.phar
-  - Adding main package
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/&quot;
-  - Adding composer base files
-  - Adding dependency &quot;clue/stream-filter&quot; from &quot;vendor/clue/stream-filter/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/clue/stream-filter/&quot;
-  - Adding dependency &quot;guzzlehttp/guzzle&quot; from &quot;vendor/guzzlehttp/guzzle/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/guzzle/&quot;
-  - Adding dependency &quot;guzzlehttp/promises&quot; from &quot;vendor/guzzlehttp/promises/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/promises/&quot;
-  - Adding dependency &quot;guzzlehttp/psr7&quot; from &quot;vendor/guzzlehttp/psr7/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/psr7/&quot;
-  - Adding dependency &quot;knplabs/github-api&quot; from &quot;vendor/knplabs/github-api/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/knplabs/github-api/&quot;
-  - Adding dependency &quot;php-http/cache-plugin&quot; from &quot;vendor/php-http/cache-plugin/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/cache-plugin/&quot;
-  - Adding dependency &quot;php-http/client-common&quot; from &quot;vendor/php-http/client-common/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/client-common/&quot;
-  - Adding dependency &quot;php-http/discovery&quot; from &quot;vendor/php-http/discovery/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/discovery/&quot;
-  - Adding dependency &quot;php-http/guzzle6-adapter&quot; from &quot;vendor/php-http/guzzle6-adapter/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/guzzle6-adapter/&quot;
-  - Adding dependency &quot;php-http/httplug&quot; from &quot;vendor/php-http/httplug/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/httplug/&quot;
-  - Adding dependency &quot;php-http/message&quot; from &quot;vendor/php-http/message/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/message/&quot;
-  - Adding dependency &quot;php-http/message-factory&quot; from &quot;vendor/php-http/message-factory/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/message-factory/&quot;
-  - Adding dependency &quot;php-http/promise&quot; from &quot;vendor/php-http/promise/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/promise/&quot;
-  - Adding dependency &quot;psr/cache&quot; from &quot;vendor/psr/cache/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/cache/&quot;
-  - Adding dependency &quot;psr/http-message&quot; from &quot;vendor/psr/http-message/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/http-message/&quot;
-  - Adding dependency &quot;psr/log&quot; from &quot;vendor/psr/log/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/log/&quot;
-  - Adding dependency &quot;symfony/console&quot; from &quot;vendor/symfony/console/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/console/&quot;
-  - Adding dependency &quot;symfony/debug&quot; from &quot;vendor/symfony/debug/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/debug/&quot;
-  - Adding dependency &quot;symfony/options-resolver&quot; from &quot;vendor/symfony/options-resolver/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/options-resolver/&quot;
-  - Adding dependency &quot;symfony/polyfill-mbstring&quot; from &quot;vendor/symfony/polyfill-mbstring/&quot;
-    Adding whole project directory &quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/polyfill-mbstring/&quot;
-  - Setting main/stub
-    Using referenced shebang &quot;#!/usr/bin/env php&quot;
-    Using referenced chmod 0755
-    Applying chmod 0755
+<pre><code>Collecting files .. OK
+Initializing parser .. OK
+Parsing files
+Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Repo.php
+  No summary was found for this file
+  No summary for method getOwner()
+  No summary for method getName()
+  No summary for method getLink()
+  No summary for method getDefaultBranch()
+  No summary for method isPrivate()
+  No summary for method isTrusted()
+Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Commit.php
+  No summary was found for this file
+  No summary for method getBranch()
+  No summary for method getTag()
+  No summary for method getSha()
+  No summary for method getMessage()
+  No summary for method getAuthorName()
+  No summary for method getAuthorEmail()
+  No summary for method getRef()
+Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Build.php
 
-    OK - Creating ghcli.phar (2537.2 KiB) completed after 33.4s
-Restoring state ...
+Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
+
+Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
+
+Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
+
+Warning: count(): Parameter must be an array or an object that implements Countable in /root/.composer/vendor/phpdocumentor/phpdocumentor/src/phpDocumentor/Plugin/Core/Descriptor/Validator/Constraints/Functions/IsArgumentInDocBlockValidator.php on line 33
+  No summary was found for this file
+Storing cache in &quot;/drone/src/github.com/phpdrone/drone-plugin-sdk/doc&quot; .. OK
+Load cache                                                         ..    0.008s
+Preparing template &quot;clean&quot;                                         ..    0.017s
+Preparing 17 transformations                                       ..    0.000s
+Build &quot;elements&quot; index                                             ..    0.000s
+Replace textual FQCNs with object aliases                          ..    0.002s
+Resolve @link and @see tags in descriptions                        ..    0.001s
+Enriches inline example tags with their sources                    ..    0.000s
+Build &quot;packages&quot; index                                             ..    0.002s
+Build &quot;namespaces&quot; index and add namespaces to &quot;elements&quot;          ..    0.000s
+Collect all markers embedded in tags                               ..    0.000s
+Transform analyzed project into artifacts                          .. 
+Applying 17 transformations
+  Initialize writer &quot;phpDocumentor\Plugin\Core\Transformer\Writer\FileIo&quot;
+  Initialize writer &quot;phpDocumentor\Plugin\Twig\Writer\Twig&quot;
+  Initialize writer &quot;phpDocumentor\Plugin\Graphs\Writer\Graph&quot;
+  Execute transformation using writer &quot;FileIo&quot;
+  Execute transformation using writer &quot;FileIo&quot;
+  Execute transformation using writer &quot;FileIo&quot;
+  Execute transformation using writer &quot;FileIo&quot;
+  Execute transformation using writer &quot;FileIo&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;twig&quot;
+  Execute transformation using writer &quot;Graph&quot;
+   0.633s
+Analyze results and write report to log .. 0.001s
 </code></pre>
-
-<h2 id="limitation">Limitation</h2>
-
-<p>You should clean your workspace before building, at
-the risk of finding non-dist material in the final PHAR file.</p>
 
 <h2 id="credits">Credits</h2>
 
-<p>The plugin is based around <a href="https://github.com/clue/phar-composer">PHAR-Composer</a> by Clue.</p>
+<p>The plugin is based around <a href="https://phpdoc.org/">phpDocumentator</a>.</p>
 
 
 <footer class=" footline" >
@@ -987,7 +964,6 @@ the risk of finding non-dist material in the final PHAR file.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1004,8 +980,6 @@ the risk of finding non-dist material in the final PHAR file.</p>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1026,6 +1000,9 @@ the risk of finding non-dist material in the final PHAR file.</p>
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -1046,25 +1023,6 @@ the risk of finding non-dist material in the final PHAR file.</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1088,6 +1046,25 @@ the risk of finding non-dist material in the final PHAR file.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -1095,10 +1072,10 @@ the risk of finding non-dist material in the final PHAR file.</p>
 
 
         
-            <a class="nav nav-prev" href="/drone/drone-plugins/composer-sa-checker/" title="Composer SA Checker"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/drone/drone-plugins/phar-composer/" title="PHAR Composer"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/drone/drone-plugins/phpdoc/" title="PHAR Composer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/drone/php-sdks/" title="PHP SDKs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

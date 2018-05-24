@@ -31,5 +31,15 @@ Operation The plugin will :
  Move away your current vendor, .git and .drone.yml file Do a composer install --no-dev to get a minimal build Build a PHAR file Restore your vendor, .git and .drone.yml file  Example pipeline: build-phar: image: phpdrone/phar-composer output: ghcli.phar  Result Backing up vendor directory ... Moving away non-dist material ... Installing mininal components .</description>
     </item>
     
+    <item>
+      <title>PHAR Composer</title>
+      <link>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</guid>
+      <description>This plugins allows for generating phpDocumentator site based on phpdoc.xml
+Example pipeline: build-phar: image: phpdrone/phpdoc:2.8  Result Collecting files .. OK Initializing parser .. OK Parsing files Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Repo.php No summary was found for this file No summary for method getOwner() No summary for method getName() No summary for method getLink() No summary for method getDefaultBranch() No summary for method isPrivate() No summary for method isTrusted() Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Commit.php No summary was found for this file No summary for method getBranch() No summary for method getTag() No summary for method getSha() No summary for method getMessage() No summary for method getAuthorName() No summary for method getAuthorEmail() No summary for method getRef() Parsing /drone/src/github.</description>
+    </item>
+    
   </channel>
 </rss>
