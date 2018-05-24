@@ -27,11 +27,20 @@ pipeline:
 
 ## [phpDocumentator](phpdoc)
 
-Generates 
+Generates documentation from phpDoc.
 
 ```yaml
 pipeline:
   build-phar:
-    image: phpdrone/phar-composer
-    output: myapp.phar
+    image: fpfis/phpdoc
+```
+
+## [Packer](packer)
+
+Process the packer.json file for creating infrastructure artifacts.
+
+```yaml
+pipeline:
+  run-packer:
+    image: fpfis/packer
 ```
