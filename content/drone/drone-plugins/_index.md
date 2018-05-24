@@ -25,3 +25,13 @@ pipeline:
     output: myapp.phar
 ```
 
+## [phpDocumentator](phpdoc)
+
+Generates 
+
+```yaml
+pipeline:
+  build-phar:
+    image: phpdrone/phar-composer
+    output: myapp.phar
+```
