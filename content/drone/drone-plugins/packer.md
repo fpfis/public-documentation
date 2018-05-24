@@ -3,6 +3,13 @@ date: 2018-24-05T10:13:05+02:00
 title: Packer
 --- 
 
+## Description
+
+Packer is a tool by [Hashicorp](https://www.packer.io/) to automatically build 
+machine images.
+
+It supports Docker, Virtualbox, AWS EC2 and many more. 
+
 ## Image
 
 Image is named `fpfis/packer` and based on Alpine.
