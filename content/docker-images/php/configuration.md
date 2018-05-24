@@ -18,8 +18,7 @@ Enable/Disable Xdebug ( default on )
 Extra single line to add to Apache configuration, for options that don't work on **.htaccess** (Example: Alias)
 
 `APACHE_EXTRA_CONF_DIR`
-Extra path with **.conf** files to load onto Apache
-
+Extra path with **.conf** files to load onto Apache.
 
 
 ## With docker-compose
@@ -39,3 +38,12 @@ services:
 {{% notice info %}}
 **About ${DOCUMENT_ROOT}** : The image will first try to create the directory using the parent's permissions if it's missing.
 {{% /notice %}}
+
+
+## Default values
+
+| Variable | Default Value |
+| -------- | ------------- |
+| `XDEBUG`   | ON            |
+| `APACHE_EXTRA_CONF` | empty | 
+| `APACHE_EXTRA_CONF_DIR` | conf.d |
