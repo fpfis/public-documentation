@@ -32,16 +32,6 @@ Operation The plugin will :
     </item>
     
     <item>
-      <title>PHAR Composer</title>
-      <link>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</guid>
-      <description>This plugins allows for generating phpDocumentator site based on phpdoc.xml
-Example pipeline: build-phar: image: phpdrone/phpdoc:2.8  Result Collecting files .. OK Initializing parser .. OK Parsing files Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Repo.php No summary was found for this file No summary for method getOwner() No summary for method getName() No summary for method getLink() No summary for method getDefaultBranch() No summary for method isPrivate() No summary for method isTrusted() Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Commit.php No summary was found for this file No summary for method getBranch() No summary for method getTag() No summary for method getSha() No summary for method getMessage() No summary for method getAuthorName() No summary for method getAuthorEmail() No summary for method getRef() Parsing /drone/src/github.</description>
-    </item>
-    
-    <item>
       <title>Packer</title>
       <link>https://docs.fpfis.eu/drone/drone-plugins/packer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -50,6 +40,16 @@ Example pipeline: build-phar: image: phpdrone/phpdoc:2.8  Result Collecting file
       <description>Image Image is named fpfis/packer and based on Alpine.
 Configuration No configuration is available for this image.
 Examples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  From Drone pipeline: run-packer: image: fpfis/packer</description>
+    </item>
+    
+    <item>
+      <title>phpDoc</title>
+      <link>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</guid>
+      <description>This plugins allows for generating phpDocumentator site based on phpdoc.xml
+Example pipeline: build-phar: image: phpdrone/phpdoc:2.8  Result Collecting files .. OK Initializing parser .. OK Parsing files Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Repo.php No summary was found for this file No summary for method getOwner() No summary for method getName() No summary for method getLink() No summary for method getDefaultBranch() No summary for method isPrivate() No summary for method isTrusted() Parsing /drone/src/github.com/phpdrone/drone-plugin-sdk/src/Commit.php No summary was found for this file No summary for method getBranch() No summary for method getTag() No summary for method getSha() No summary for method getMessage() No summary for method getAuthorName() No summary for method getAuthorEmail() No summary for method getRef() Parsing /drone/src/github.</description>
     </item>
     
   </channel>

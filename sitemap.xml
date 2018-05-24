@@ -66,10 +66,6 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.fpfis.eu/docker-images/php/</loc>
   </url>
   
@@ -114,6 +110,10 @@
   
   <url>
     <loc>https://docs.fpfis.eu/php-sdks/itopapi/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/phpdoc/</loc>
   </url>
   
 </urlset>
