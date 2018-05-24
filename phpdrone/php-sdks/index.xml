@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP SDKs on FPFIS Documentation</title>
+    <link>https://docs.fpfis.eu/phpdrone/php-sdks/</link>
+    <description>Recent content in PHP SDKs on FPFIS Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.fpfis.eu/phpdrone/php-sdks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Drone Client PHP SDK</title>
+      <link>https://docs.fpfis.eu/phpdrone/php-sdks/drone-client-sdk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/phpdrone/php-sdks/drone-client-sdk/</guid>
+      <description>The client SDK is currently unstested an a work in progress
+ Using with composer $ composer require gboddin/php-drone-client  Getting Started Please follow the installation procedure and then run the following:
+&amp;lt;?php require_once(__DIR__ . &#39;/vendor/autoload.php&#39;); // Configure API key authorization: accessToken DroneClient\Configuration::getDefaultConfiguration()-&amp;gt;setApiKey(&#39;access_token&#39;, &#39;YOUR_API_KEY&#39;); // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed // DroneClient\Configuration::getDefaultConfiguration()-&amp;gt;setApiKeyPrefix(&#39;access_token&#39;, &#39;Bearer&#39;); $api_instance = new DroneClient\Api\BuildsApi(); $owner = &amp;quot;owner_example&amp;quot;; // string | owner of the repository $name = &amp;quot;name_example&amp;quot;; // string | name of the repository try { $result = $api_instance-&amp;gt;reposOwnerNameBuildsGet($owner, $name); print_r($result); } catch (Exception $e) { echo &#39;Exception when calling BuildsApi-&amp;gt;reposOwnerNameBuildsGet: &#39;, $e-&amp;gt;getMessage(), PHP_EOL; } ?</description>
+    </item>
+    
+    <item>
+      <title>Drone Plugin PHP SDK</title>
+      <link>https://docs.fpfis.eu/phpdrone/php-sdks/drone-plugin-sdk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/phpdrone/php-sdks/drone-plugin-sdk/</guid>
+      <description>Allows for creating PHP based plugins.
+Using with composer $ composer require phpdrone/drone-plugin-sdk:~0.1  Example &amp;lt;?php require __DIR__.&amp;quot;/vendor/autoload.php&amp;quot;; // Get the build : $build = new \DronePluginSdk\Build(); // Get some settings : var_dump($build-&amp;gt;getPluginParameter(&#39;my_parameter&#39;));  Full example See the example included on Github
+API documentation See the full API documentation</description>
+    </item>
+    
+  </channel>
+</rss>

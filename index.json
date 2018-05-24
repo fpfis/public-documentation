@@ -28,6 +28,20 @@
 	"content": " The current FPFIS Docker images are NOT production ready and are meant for development and testing only !!!\n All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/php71-dev  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish  "
 },
 {
+	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/drone-client-sdk/",
+	"title": "Drone Client PHP SDK",
+	"tags": [],
+	"description": "",
+	"content": " The client SDK is currently unstested an a work in progress\n Using with composer $ composer require gboddin/php-drone-client  Getting Started Please follow the installation procedure and then run the following:\n\u0026lt;?php require_once(__DIR__ . '/vendor/autoload.php'); // Configure API key authorization: accessToken DroneClient\\Configuration::getDefaultConfiguration()-\u0026gt;setApiKey('access_token', 'YOUR_API_KEY'); // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed // DroneClient\\Configuration::getDefaultConfiguration()-\u0026gt;setApiKeyPrefix('access_token', 'Bearer'); $api_instance = new DroneClient\\Api\\BuildsApi(); $owner = \u0026quot;owner_example\u0026quot;; // string | owner of the repository $name = \u0026quot;name_example\u0026quot;; // string | name of the repository try { $result = $api_instance-\u0026gt;reposOwnerNameBuildsGet($owner, $name); print_r($result); } catch (Exception $e) { echo 'Exception when calling BuildsApi-\u0026gt;reposOwnerNameBuildsGet: ', $e-\u0026gt;getMessage(), PHP_EOL; } ?\u0026gt;  "
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/drone-plugin-sdk/",
+	"title": "Drone Plugin PHP SDK",
+	"tags": [],
+	"description": "",
+	"content": " Allows for creating PHP based plugins.\nUsing with composer $ composer require phpdrone/drone-plugin-sdk:~0.1  Example \u0026lt;?php require __DIR__.\u0026quot;/vendor/autoload.php\u0026quot;; // Get the build : $build = new \\DronePluginSdk\\Build(); // Get some settings : var_dump($build-\u0026gt;getPluginParameter('my_parameter'));  Full example See the example included on Github\nAPI documentation See the full API documentation\n"
+},
+{
 	"uri": "https://docs.fpfis.eu/php-sdks/backtrac-php-client/",
 	"title": "Backtrac PHP client",
 	"tags": [],
@@ -42,11 +56,46 @@
 	"content": ""
 },
 {
+	"uri": "https://docs.fpfis.eu/tags/composer/",
+	"title": "Composer",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/composer-sa-checker/",
+	"title": "Composer SA Checker",
+	"tags": ["composer", "security"],
+	"description": "",
+	"content": " This plugin connects to Sensiolab Security Advisories, to check if your composer.lock contains any reference to vulnerable components.\nUsage pipeline: test-composer-deps: image: phpdrone/composer-sa-checker # lock_file: composer.lock  Result Security Report =============== No known* vulnerabilities detected. * Disclaimer: This checker can only detect vulnerabilities that are referenced in the SensioLabs security advisories database.  "
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/",
+	"title": "Drone documentation",
+	"tags": [],
+	"description": "",
+	"content": " Introduction The PhpDrone organisation aims a providing unified resources and plugins towards usage of Drone for PHP continuous integration, delivery and deployment.\nSDKs Two SDKs are currently maintained, one for client and one for plugins.\nPlugins We are providing multiple dedicated Drone plugins, both aimed toward PHP or written in PHP.\n"
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/",
+	"title": "Drone plugins",
+	"tags": [],
+	"description": "",
+	"content": " Composer SA Checker Checks your composer.lock file for known security advisories with Sensiolab\u0026rsquo;s SA checker.\npipeline: composer-sa-check: image: phpdrone/composer-sa-checker # lock_file: composer.lock  PHAR Composer Creates a standalone PHAR file from a composer project.\npipeline: build-phar: image: phpdrone/phar-composer output: myapp.phar  "
+},
+{
 	"uri": "https://docs.fpfis.eu/",
 	"title": "FPFIS documentation",
 	"tags": [],
 	"description": "",
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/phar-composer/",
+	"title": "PHAR Composer",
+	"tags": ["composer", "phar"],
+	"description": "",
+	"content": " This plugins allows for creating a standalone PHAR file from a composer project.\nOperation The plugin will :\n Move away your current vendor, .git and .drone.yml file Do a composer install --no-dev to get a minimal build Build a PHAR file Restore your vendor, .git and .drone.yml file  Example pipeline: build-phar: image: phpdrone/phar-composer output: ghcli.phar  Result Backing up vendor directory ... Moving away non-dist material ... Installing mininal components ... Loading composer repositories with package information Installing dependencies from lock file Package operations: 0 installs, 0 updates, 10 removals - Removing squizlabs/php_codesniffer (3.1.1) - Removing clue/phar-composer (v1.0.0) - Removing herrera-io/box (1.6.1) - Removing phine/path (1.1.0) - Removing phine/exception (1.0.0) - Removing tedivm/jshrink (v1.2.0) - Removing knplabs/packagist-api (v1.5.0) - Removing doctrine/inflector (v1.2.0) - Removing symfony/finder (v2.8.28) - Removing symfony/process (v2.8.28) Generating autoload files Building PHAR file ... [1/1] Creating phar ghcli.phar - Adding main package Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/\u0026quot; - Adding composer base files - Adding dependency \u0026quot;clue/stream-filter\u0026quot; from \u0026quot;vendor/clue/stream-filter/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/clue/stream-filter/\u0026quot; - Adding dependency \u0026quot;guzzlehttp/guzzle\u0026quot; from \u0026quot;vendor/guzzlehttp/guzzle/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/guzzle/\u0026quot; - Adding dependency \u0026quot;guzzlehttp/promises\u0026quot; from \u0026quot;vendor/guzzlehttp/promises/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/promises/\u0026quot; - Adding dependency \u0026quot;guzzlehttp/psr7\u0026quot; from \u0026quot;vendor/guzzlehttp/psr7/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/guzzlehttp/psr7/\u0026quot; - Adding dependency \u0026quot;knplabs/github-api\u0026quot; from \u0026quot;vendor/knplabs/github-api/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/knplabs/github-api/\u0026quot; - Adding dependency \u0026quot;php-http/cache-plugin\u0026quot; from \u0026quot;vendor/php-http/cache-plugin/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/cache-plugin/\u0026quot; - Adding dependency \u0026quot;php-http/client-common\u0026quot; from \u0026quot;vendor/php-http/client-common/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/client-common/\u0026quot; - Adding dependency \u0026quot;php-http/discovery\u0026quot; from \u0026quot;vendor/php-http/discovery/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/discovery/\u0026quot; - Adding dependency \u0026quot;php-http/guzzle6-adapter\u0026quot; from \u0026quot;vendor/php-http/guzzle6-adapter/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/guzzle6-adapter/\u0026quot; - Adding dependency \u0026quot;php-http/httplug\u0026quot; from \u0026quot;vendor/php-http/httplug/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/httplug/\u0026quot; - Adding dependency \u0026quot;php-http/message\u0026quot; from \u0026quot;vendor/php-http/message/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/message/\u0026quot; - Adding dependency \u0026quot;php-http/message-factory\u0026quot; from \u0026quot;vendor/php-http/message-factory/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/message-factory/\u0026quot; - Adding dependency \u0026quot;php-http/promise\u0026quot; from \u0026quot;vendor/php-http/promise/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/php-http/promise/\u0026quot; - Adding dependency \u0026quot;psr/cache\u0026quot; from \u0026quot;vendor/psr/cache/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/cache/\u0026quot; - Adding dependency \u0026quot;psr/http-message\u0026quot; from \u0026quot;vendor/psr/http-message/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/http-message/\u0026quot; - Adding dependency \u0026quot;psr/log\u0026quot; from \u0026quot;vendor/psr/log/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/psr/log/\u0026quot; - Adding dependency \u0026quot;symfony/console\u0026quot; from \u0026quot;vendor/symfony/console/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/console/\u0026quot; - Adding dependency \u0026quot;symfony/debug\u0026quot; from \u0026quot;vendor/symfony/debug/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/debug/\u0026quot; - Adding dependency \u0026quot;symfony/options-resolver\u0026quot; from \u0026quot;vendor/symfony/options-resolver/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/options-resolver/\u0026quot; - Adding dependency \u0026quot;symfony/polyfill-mbstring\u0026quot; from \u0026quot;vendor/symfony/polyfill-mbstring/\u0026quot; Adding whole project directory \u0026quot;/drone/src/github.com/gboddin/php-github-cli/vendor/symfony/polyfill-mbstring/\u0026quot; - Setting main/stub Using referenced shebang \u0026quot;#!/usr/bin/env php\u0026quot; Using referenced chmod 0755 Applying chmod 0755 OK - Creating ghcli.phar (2537.2 KiB) completed after 33.4s Restoring state ...  Limitation You should clean your workspace before building, at the risk of finding non-dist material in the final PHAR file.\nCredits The plugin is based around PHAR-Composer by Clue.\n"
 },
 {
 	"uri": "https://docs.fpfis.eu/docker-images/php/",
@@ -56,11 +105,32 @@
 	"content": " Introduction For production\u0026rsquo;s matching sake, the current FPFIS\u0026rsquo;s Docker images are based on CentOS 6.\nTwo version are currently supported : fpfis/php56 and fpfis/php71.\nFor more informations, consult the following topics :\n Flavors   Configuration   Shellinabox   About file permissions : The server will use the UID and GID of the ${DOCUMENT_ROOT} directory to run.\n Image size : Since the images are based on CentOS 6, the images can be quite big.\n "
 },
 {
+	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/",
+	"title": "PHP SDKs",
+	"tags": [],
+	"description": "",
+	"content": " There are 2 SDKs availalbe to interact with Drone :\nPlugin SDK The plugins SDK allows for easy creation of PHP based plugins.\n$build = new \\DronePluginSdk\\Build();  Client SDK The client SDK allows for interactions with Drone server.\nThe client SDK is currently unstested an a work in progress\n $api_instance = new DroneClient\\Api\\BuildsApi();  "
+},
+{
+	"uri": "https://docs.fpfis.eu/tags/phar/",
+	"title": "Phar",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://docs.fpfis.eu/docker-images/redis/",
 	"title": "Redis",
 	"tags": [],
 	"description": "",
 	"content": " Image Image is named fpfis/redis and based on CentOS 6.\nConfiguration No configuration is available for this image.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm fpfis/redis   \n"
+},
+{
+	"uri": "https://docs.fpfis.eu/tags/security/",
+	"title": "Security",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://docs.fpfis.eu/docker-images/php/shellinabox/",
@@ -72,6 +142,13 @@
 {
 	"uri": "https://docs.fpfis.eu/tags/",
 	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://docs.fpfis.eu/phpdrone/tutorials/",
+	"title": "Tutorials",
 	"tags": [],
 	"description": "",
 	"content": ""
