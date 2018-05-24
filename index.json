@@ -28,14 +28,14 @@
 	"content": " The current FPFIS Docker images are NOT production ready and are meant for development and testing only !!!\n All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/php71-dev  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish  "
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/drone-client-sdk/",
+	"uri": "https://docs.fpfis.eu/drone/php-sdks/drone-client-sdk/",
 	"title": "Drone Client PHP SDK",
 	"tags": [],
 	"description": "",
 	"content": " The client SDK is currently unstested an a work in progress\n Using with composer $ composer require gboddin/php-drone-client  Getting Started Please follow the installation procedure and then run the following:\n\u0026lt;?php require_once(__DIR__ . '/vendor/autoload.php'); // Configure API key authorization: accessToken DroneClient\\Configuration::getDefaultConfiguration()-\u0026gt;setApiKey('access_token', 'YOUR_API_KEY'); // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed // DroneClient\\Configuration::getDefaultConfiguration()-\u0026gt;setApiKeyPrefix('access_token', 'Bearer'); $api_instance = new DroneClient\\Api\\BuildsApi(); $owner = \u0026quot;owner_example\u0026quot;; // string | owner of the repository $name = \u0026quot;name_example\u0026quot;; // string | name of the repository try { $result = $api_instance-\u0026gt;reposOwnerNameBuildsGet($owner, $name); print_r($result); } catch (Exception $e) { echo 'Exception when calling BuildsApi-\u0026gt;reposOwnerNameBuildsGet: ', $e-\u0026gt;getMessage(), PHP_EOL; } ?\u0026gt;  "
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/drone-plugin-sdk/",
+	"uri": "https://docs.fpfis.eu/drone/php-sdks/drone-plugin-sdk/",
 	"title": "Drone Plugin PHP SDK",
 	"tags": [],
 	"description": "",
@@ -63,21 +63,21 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/composer-sa-checker/",
+	"uri": "https://docs.fpfis.eu/drone/drone-plugins/composer-sa-checker/",
 	"title": "Composer SA Checker",
 	"tags": ["composer", "security"],
 	"description": "",
 	"content": " This plugin connects to Sensiolab Security Advisories, to check if your composer.lock contains any reference to vulnerable components.\nUsage pipeline: test-composer-deps: image: phpdrone/composer-sa-checker # lock_file: composer.lock  Result Security Report =============== No known* vulnerabilities detected. * Disclaimer: This checker can only detect vulnerabilities that are referenced in the SensioLabs security advisories database.  "
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/",
+	"uri": "https://docs.fpfis.eu/drone/",
 	"title": "Drone documentation",
 	"tags": [],
 	"description": "",
 	"content": " Introduction The PhpDrone organisation aims a providing unified resources and plugins towards usage of Drone for PHP continuous integration, delivery and deployment.\nSDKs Two SDKs are currently maintained, one for client and one for plugins.\nPlugins We are providing multiple dedicated Drone plugins, both aimed toward PHP or written in PHP.\n"
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/",
+	"uri": "https://docs.fpfis.eu/drone/drone-plugins/",
 	"title": "Drone plugins",
 	"tags": [],
 	"description": "",
@@ -91,7 +91,7 @@
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/drone-plugins/phar-composer/",
+	"uri": "https://docs.fpfis.eu/drone/drone-plugins/phar-composer/",
 	"title": "PHAR Composer",
 	"tags": ["composer", "phar"],
 	"description": "",
@@ -105,7 +105,7 @@
 	"content": " Introduction For production\u0026rsquo;s matching sake, the current FPFIS\u0026rsquo;s Docker images are based on CentOS 6.\nTwo version are currently supported : fpfis/php56 and fpfis/php71.\nFor more informations, consult the following topics :\n Flavors   Configuration   Shellinabox   About file permissions : The server will use the UID and GID of the ${DOCUMENT_ROOT} directory to run.\n Image size : Since the images are based on CentOS 6, the images can be quite big.\n "
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/php-sdks/",
+	"uri": "https://docs.fpfis.eu/drone/php-sdks/",
 	"title": "PHP SDKs",
 	"tags": [],
 	"description": "",
@@ -147,7 +147,7 @@
 	"content": ""
 },
 {
-	"uri": "https://docs.fpfis.eu/phpdrone/tutorials/",
+	"uri": "https://docs.fpfis.eu/drone/tutorials/",
 	"title": "Tutorials",
 	"tags": [],
 	"description": "",

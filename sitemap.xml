@@ -19,11 +19,11 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/php-sdks/drone-client-sdk/</loc>
+    <loc>https://docs.fpfis.eu/drone/php-sdks/drone-client-sdk/</loc>
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/php-sdks/drone-plugin-sdk/</loc>
+    <loc>https://docs.fpfis.eu/drone/php-sdks/drone-plugin-sdk/</loc>
   </url>
   
   <url>
@@ -41,15 +41,15 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/drone-plugins/composer-sa-checker/</loc>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/composer-sa-checker/</loc>
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/</loc>
+    <loc>https://docs.fpfis.eu/drone/</loc>
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/drone-plugins/</loc>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/</loc>
   </url>
   
   <url>
@@ -57,7 +57,7 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/drone-plugins/phar-composer/</loc>
+    <loc>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</loc>
   </url>
   
   <url>
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/php-sdks/</loc>
+    <loc>https://docs.fpfis.eu/drone/php-sdks/</loc>
   </url>
   
   <url>
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://docs.fpfis.eu/phpdrone/tutorials/</loc>
+    <loc>https://docs.fpfis.eu/drone/tutorials/</loc>
   </url>
   
   <url>

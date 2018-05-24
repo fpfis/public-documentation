@@ -12,20 +12,20 @@
     
     <item>
       <title>Composer SA Checker</title>
-      <link>https://docs.fpfis.eu/phpdrone/drone-plugins/composer-sa-checker/</link>
+      <link>https://docs.fpfis.eu/drone/drone-plugins/composer-sa-checker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.fpfis.eu/phpdrone/drone-plugins/composer-sa-checker/</guid>
+      <guid>https://docs.fpfis.eu/drone/drone-plugins/composer-sa-checker/</guid>
       <description> This plugin connects to Sensiolab Security Advisories, to check if your composer.lock contains any reference to vulnerable components.
 Usage pipeline: test-composer-deps: image: phpdrone/composer-sa-checker # lock_file: composer.lock  Result Security Report =============== No known* vulnerabilities detected. * Disclaimer: This checker can only detect vulnerabilities that are referenced in the SensioLabs security advisories database.  </description>
     </item>
     
     <item>
       <title>PHAR Composer</title>
-      <link>https://docs.fpfis.eu/phpdrone/drone-plugins/phar-composer/</link>
+      <link>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.fpfis.eu/phpdrone/drone-plugins/phar-composer/</guid>
+      <guid>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</guid>
       <description>This plugins allows for creating a standalone PHAR file from a composer project.
 Operation The plugin will :
  Move away your current vendor, .git and .drone.yml file Do a composer install --no-dev to get a minimal build Build a PHAR file Restore your vendor, .git and .drone.yml file  Example pipeline: build-phar: image: phpdrone/phar-composer output: ghcli.phar  Result Backing up vendor directory ... Moving away non-dist material ... Installing mininal components .</description>
