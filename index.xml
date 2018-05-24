@@ -96,7 +96,9 @@ Operation The plugin will :
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/drone/drone-plugins/packer/</guid>
-      <description>Image Image is named fpfis/packer and based on Alpine.
+      <description>Description Packer is a tool by Hashicorp to automatically build machine images.
+It supports Docker, Virtualbox, AWS EC2 and many more.
+Image Image is named fpfis/packer and based on Alpine.
 Configuration No configuration is available for this image.
 Examples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  From Drone pipeline: run-packer: image: fpfis/packer</description>
     </item>
