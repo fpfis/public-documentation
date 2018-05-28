@@ -25,16 +25,6 @@ pipeline:
     output: myapp.phar
 ```
 
-## [phpDocumentator](phpdoc)
-
-Generates documentation from phpDoc.
-
-```yaml
-pipeline:
-  build-phar:
-    image: fpfis/phpdoc
-```
-
 ## [Packer](packer)
 
 Process the packer.json file for creating infrastructure artifacts.
@@ -43,4 +33,14 @@ Process the packer.json file for creating infrastructure artifacts.
 pipeline:
   run-packer:
     image: fpfis/packer
+```
+
+## [phpDocumentator](phpdoc)
+
+Generates documentation from phpDoc.
+
+```yaml
+pipeline:
+  build-phar:
+    image: fpfis/phpdoc
 ```

@@ -10,7 +10,7 @@ This plugins allows for generating [phpDocumentator](https://phpdoc.org/) site b
 
 ```
 pipeline:
-  build-phar:
+  build-doc:
     image: phpdrone/phpdoc:2.8
 ```
 

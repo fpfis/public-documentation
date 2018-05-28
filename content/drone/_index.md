@@ -7,7 +7,7 @@ pre: "<i class='fab fa-php'></i> "
 
 ## Introduction
 
-The [PhpDrone](https://github.com/phpdrone) organisation aims a providing unified resources and plugins
+This section aims a providing unified resources and plugins
 towards usage of Drone for PHP continuous integration, delivery and deployment.
 
 ### [SDKs](php-sdks)

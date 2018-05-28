@@ -5,7 +5,7 @@ title: PHP SDKs
 
 There are 2 SDKs availalbe to interact with Drone :
 
-## [Plugin SDK](/php-sdks/drone-plugin-sdk)
+## [Plugin SDK](drone-plugin-sdk)
 
 The plugins SDK allows for easy creation of PHP based plugins.
 
