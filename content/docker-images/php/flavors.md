@@ -13,34 +13,20 @@ The image contains PHP and Apache, no additional services are running.
 All subsequent development images are base on this image.
 
 ```bash
-$ docker pull fpfis/php56
-$ docker pull fpfis/php71
+$ docker pull fpfis/httpd-php:5.6
+$ docker pull fpfis/httpd-php:7.1
 ```
 
 ### Development image
 
 The image contains PHP and Apache. Various dev services and packages are also included :
 
- - [Shellinabox](shellinabox) for accessing the container's shell while running
- - Phpmyadmin for accessing MySQL databases
- - Mailhog for receiving mock emails
+ - Composer
+ - Git, Patch & co
  - Xdebug for debugging
  - Blackfire for profiling
  
 ```bash
-$ docker pull fpfis/php56-dev
-$ docker pull fpfis/php71-dev
-```
-
-### Development full image
-
-The image contains everything `fpfis/phpXX-dev` contains and adds the following :
-
- - Ruby
- - Compass
- - Sass
- 
-```bash
-$ docker pull fpfis/php56-dev-full
-$ docker pull fpfis/php71-dev-full
+$ docker pull fpfis/httpd-php-dev:5.6
+$ docker pull fpfis/httpd-php-dev:7.1
 ```

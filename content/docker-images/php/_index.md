@@ -5,18 +5,10 @@ title: PHP
 
 ## Introduction
 
-For production's matching sake, the current FPFIS's Docker images are based on CentOS 6.
+The FPFIS Docker images are based on Alpine directly from the PHP-FPM image.
 
-Two version are currently supported : `fpfis/php56` and `fpfis/php71`.
+Two version are currently supported : `fpfis/http-php:5.6` and `fpfis/httpd-php:7.1`.
 
 For more informations, consult the following topics :
 
 {{% children  %}}
-
-
-{{% notice info %}}
-**About file permissions** : The server will use the UID and GID of the `${DOCUMENT_ROOT}` directory to run.
-{{% /notice %}}
-{{% notice warning %}}
-**Image size** : Since the images are based on CentOS 6, the images can be quite big.
-{{% /notice %}}

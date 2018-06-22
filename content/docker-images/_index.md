@@ -4,9 +4,6 @@ title: Docker images
 pre: "<i class='fab fa-docker'></i> "
 weight: 15
 ---
-{{% notice warning %}}
-The current FPFIS Docker images are **NOT production** ready and are meant for **development and testing only !!!**
-{{% /notice %}}
 
 All images are available on FPFIS's [Docker hub](http://hub.docker.com/u/fpfis/)
 
@@ -16,8 +13,13 @@ A curated lists of docker images maintained by FPFIS
 ## [PHP Docker images](/docker-images/php)
 
 ```sh
-docker pull fpfis/php71-dev
+docker pull fpfis/httpd-php:7.1
 ```
+
+{{% notice warning %}}
+The following FPFIS Docker images are **NOT production** ready and are meant for **development and testing only !!!**
+{{% /notice %}}
+
 
 ## [Redis Docker image](/docker-images/redis)
 

@@ -11,9 +11,6 @@ Use the following environment variable to configure the image :
 `DOCUMENT_ROOT`
 Path to document root ( default /var/www/html )
 
-`XDEBUG`
-Enable/Disable Xdebug ( default on )
-
 `APACHE_EXTRA_CONF`
 Extra single line to add to Apache configuration, for options that don't work on **.htaccess** (Example: Alias)
 
@@ -28,7 +25,7 @@ Eg, if you have an app with a `web` folder that should be the document root :
 ```yaml
 services:
   web:
-    image: fpfis/php56-dev:latest
+    image: fpfis/httpd-php-dev:5.6
     environment:
      - DOCUMENT_ROOT=/app/web
     volumes:
@@ -44,6 +41,5 @@ services:
 
 | Variable | Default Value |
 | -------- | ------------- |
-| `XDEBUG`   | ON            |
 | `APACHE_EXTRA_CONF` | empty | 
 | `APACHE_EXTRA_CONF_DIR` | conf.d |
