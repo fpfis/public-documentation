@@ -12,19 +12,19 @@
     <title>Flavors :: FPFIS Documentation</title>
     
     
-    <link href="/css/nucleus.css?1527548489" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1527548489" rel="stylesheet">
-    <link href="/css/hybrid.css?1527548489" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1527548489" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1527548489" rel="stylesheet">
-    <link href="/css/auto-complete.css?1527548489" rel="stylesheet">
-    <link href="/css/theme.css?1527548489" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1527548489" rel="stylesheet">
+    <link href="/css/nucleus.css?1529694593" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1529694593" rel="stylesheet">
+    <link href="/css/hybrid.css?1529694593" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1529694593" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1529694593" rel="stylesheet">
+    <link href="/css/auto-complete.css?1529694593" rel="stylesheet">
+    <link href="/css/theme.css?1529694593" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1529694593" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1527548489" rel="stylesheet">
+      <link href="/css/theme-blue.css?1529694593" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1527548489"></script>
+    <script src="/js/jquery-2.x.min.js?1529694593"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1527548489"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1527548489"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1529694593"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1529694593"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1527548489"></script>
+<script type="text/javascript" src="/js/search.js?1529694593"></script>
 
     
   </div>
@@ -218,25 +218,6 @@
       <li data-nav-id="/docker-images/php/configuration/" title="Configuration" class="dd-item ">
         <a href="/docker-images/php/configuration/">
         Configuration
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/docker-images/php/shellinabox/" title="Shellinabox" class="dd-item ">
-        <a href="/docker-images/php/shellinabox/">
-        Shellinabox
         
         </a>
     </li>
@@ -629,7 +610,6 @@
 <ul>
 <li><a href="#base">Base</a></li>
 <li><a href="#development-image">Development image</a></li>
-<li><a href="#development-full-image">Development full image</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -661,8 +641,8 @@
 
 <p>All subsequent development images are base on this image.</p>
 
-<pre><code class="language-bash">$ docker pull fpfis/php56
-$ docker pull fpfis/php71
+<pre><code class="language-bash">$ docker pull fpfis/httpd-php:5.6
+$ docker pull fpfis/httpd-php:7.1
 </code></pre>
 
 <h3 id="development-image">Development image</h3>
@@ -670,29 +650,14 @@ $ docker pull fpfis/php71
 <p>The image contains PHP and Apache. Various dev services and packages are also included :</p>
 
 <ul>
-<li><a href="shellinabox">Shellinabox</a> for accessing the container&rsquo;s shell while running</li>
-<li>Phpmyadmin for accessing MySQL databases</li>
-<li>Mailhog for receiving mock emails</li>
+<li>Composer</li>
+<li>Git, Patch &amp; co</li>
 <li>Xdebug for debugging</li>
 <li>Blackfire for profiling</li>
 </ul>
 
-<pre><code class="language-bash">$ docker pull fpfis/php56-dev
-$ docker pull fpfis/php71-dev
-</code></pre>
-
-<h3 id="development-full-image">Development full image</h3>
-
-<p>The image contains everything <code>fpfis/phpXX-dev</code> contains and adds the following :</p>
-
-<ul>
-<li>Ruby</li>
-<li>Compass</li>
-<li>Sass</li>
-</ul>
-
-<pre><code class="language-bash">$ docker pull fpfis/php56-dev-full
-$ docker pull fpfis/php71-dev-full
+<pre><code class="language-bash">$ docker pull fpfis/httpd-php-dev:5.6
+$ docker pull fpfis/httpd-php-dev:7.1
 </code></pre>
 
 
@@ -832,22 +797,6 @@ $ docker pull fpfis/php71-dev-full
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1079,20 +1028,20 @@ $ docker pull fpfis/php71-dev-full
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1527548489"></script>
-    <script src="/js/perfect-scrollbar.min.js?1527548489"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1527548489"></script>
-    <script src="/js/jquery.sticky.js?1527548489"></script>
-    <script src="/js/featherlight.min.js?1527548489"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1527548489"></script>
-    <script src="/js/highlight.pack.js?1527548489"></script>
+    <script src="/js/clipboard.min.js?1529694593"></script>
+    <script src="/js/perfect-scrollbar.min.js?1529694593"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1529694593"></script>
+    <script src="/js/jquery.sticky.js?1529694593"></script>
+    <script src="/js/featherlight.min.js?1529694593"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1529694593"></script>
+    <script src="/js/highlight.pack.js?1529694593"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1527548489"></script>
-    <script src="/js/learn.js?1527548489"></script>
-    <script src="/js/hugo-learn.js?1527548489"></script>
+    <script src="/js/modernizr.custom.71422.js?1529694593"></script>
+    <script src="/js/learn.js?1529694593"></script>
+    <script src="/js/hugo-learn.js?1529694593"></script>
 
-    <link href="/mermaid/mermaid.css?1527548489" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1527548489"></script>
+    <link href="/mermaid/mermaid.css?1529694593" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1529694593"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
