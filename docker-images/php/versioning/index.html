@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Composer :: FPFIS Documentation</title>
+    <title>Versioning :: FPFIS Documentation</title>
     
     
     <link href="/css/nucleus.css?1530799296" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/composer/">
+  <body class="" data-url="/docker-images/php/versioning/">
     <nav id="sidebar" class="">
 
 
@@ -145,7 +145,7 @@
   
     
     <li data-nav-id="/docker-images/" title="Docker images" class="dd-item 
-        
+        parent
         
         
         ">
@@ -172,7 +172,7 @@
   
     
     <li data-nav-id="/docker-images/php/" title="PHP" class="dd-item 
-        
+        parent
         
         
         ">
@@ -215,7 +215,7 @@
  
   
     
-      <li data-nav-id="/docker-images/php/versioning/" title="Versioning" class="dd-item ">
+      <li data-nav-id="/docker-images/php/versioning/" title="Versioning" class="dd-item active">
         <a href="/docker-images/php/versioning/">
         Versioning
         
@@ -595,7 +595,25 @@
                     
           
           
-            Composer
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>FPFIS documentation</a> > <a href='/docker-images/'>Docker images</a> > <a href='/docker-images/php/'>PHP</a> > Versioning
+          
+         
+          
+         
+          
+         
           
            
                   </span>
@@ -603,7 +621,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#upstream-tags">Upstream tags</a></li>
+<li><a href="#tagging-rational">Tagging rational</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -615,7 +641,7 @@
         
         <div id="body-inner">
           
-            <h1>Composer</h1>
+            <h1>Versioning</h1>
           
 
         
@@ -623,9 +649,80 @@
 
 
 
+<h2 id="upstream-tags">Upstream tags</h2>
+
+<p>Both <code>fpfis/httpd-php</code> and <code>fpfis/httpd-php-dev</code> are based on the latest PHP docker images.</p>
+
+<p>We follow upstream version for tagging.</p>
+
+<h2 id="tagging-rational">Tagging rational</h2>
+
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>type</th>
+<th>build</th>
+<th>environment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>5.6</td>
+<td>alpha</td>
+<td>push on release/5.6</td>
+<td>acceptance/playground/testing/development</td>
+</tr>
+
+<tr>
+<td>5.6.36</td>
+<td>beta</td>
+<td>tag from release/5.6</td>
+<td>selective/edge cases/regression testing</td>
+</tr>
+
+<tr>
+<td>production-5.6</td>
+<td>stable</td>
+<td>merge tag on production/5.6</td>
+<td>production</td>
+</tr>
+
+<tr>
+<td>7.1</td>
+<td>alpha</td>
+<td>push on release/7.1</td>
+<td>acceptance/playground/testing/development</td>
+</tr>
+
+<tr>
+<td>7.1.2</td>
+<td>beta</td>
+<td>tag from release/7.1</td>
+<td>selective/edge cases/regression testing</td>
+</tr>
+
+<tr>
+<td>production-7.1</td>
+<td>stable</td>
+<td>merge tag on production/7.1</td>
+<td>production</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Alpha: versions are always the latest build of our docker images, they should be used for testing and ensure no issue are found at the infrastructure level before the image hits the production servers.</li>
+<li>Beta: version are tagged version that are considered stable and can be used to target the pre-prod version or older version for regression testing.</li>
+<li>Stable: Is merged everytime the last tag is considered stable, and should be used in production.</li>
+</ul>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -709,6 +806,129 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -780,120 +1000,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -987,8 +1093,10 @@
 
 
         
+            <a class="nav nav-prev" href="/docker-images/php/flavors/" title="Flavors"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/php-sdks/" title="PHP SDKs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/docker-images/php/configuration/" title="Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1018,3 +1126,4 @@
 
   </body>
 </html>
+
