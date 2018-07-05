@@ -144,7 +144,7 @@
 	"title": "Redis",
 	"tags": [],
 	"description": "",
-	"content": " Image Image is named fpfis/redis and based on CentOS 6.\nConfiguration No configuration is available for this image.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm fpfis/redis   \n"
+	"content": " Image We recommend using the latest Redis 4.0 image\nConfiguration See the Docker Hub\u0026rsquo;s page.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm redis  "
 },
 {
 	"uri": "https://docs.fpfis.eu/tags/security/",
