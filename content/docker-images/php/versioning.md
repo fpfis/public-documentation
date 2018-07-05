@@ -6,7 +6,7 @@ weight: 5
 
 ## Upstream tags
 
-Both `fpfis/httpd-php` and `fpfis/httpd-php-dev` are based on the latest PHP docker images.
+Both `fpfis/httpd-php` and `fpfis/httpd-php-dev` are based on the latest PHP Docker images.
 
 We follow upstream version for tagging.
 
@@ -23,6 +23,6 @@ We follow upstream version for tagging.
 
 
  - Alpha: versions are always the latest build of our docker images, they should be used for testing and ensure no issue are found at the infrastructure level before the image hits the production servers.
- - Beta: version are tagged version that are considered stable and can be used to target the pre-prod version or older version for regression testing.
- - Stable: Is merged everytime the last tag is considered stable, and should be used in production.
+ - Beta: versions are tags that are considered stable and can be used to target the pre-prod version or older version for regression testing.
+ - Stable: Is merged every time the last tag is considered stable, and should be used in production.
  
