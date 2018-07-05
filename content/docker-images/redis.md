@@ -5,11 +5,11 @@ title: Redis
 
 ## Image
 
-Image is named `fpfis/redis` and based on CentOS 6.
+We recommend using the latest [Redis 4.0](https://hub.docker.com/_/redis/) image
 
 ## Configuration
 
-No configuration is available for this image.
+See the [Docker Hub's page](https://hub.docker.com/_/redis/).
 
 ## Port
 
@@ -18,9 +18,5 @@ Redis is running on port `6379` by default.
 ## Example
 
 ```bash
-docker run -p 6379:6379 -ti --rm fpfis/redis
+docker run -p 6379:6379 -ti --rm redis
 ```
-___
-
-[![Build Status](https://drone.fpfis.eu/api/badges/ec-europa/docker-fpfis/status.svg?branch=release/redis)](https://drone.fpfis.eu/ec-europa/docker-fpfis)
-[![Docker Image](https://images.microbadger.com/badges/image/fpfis/redis.svg)](https://microbadger.com/images/fpfis/redis) 
