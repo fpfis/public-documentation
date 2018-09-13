@@ -30,7 +30,7 @@ $ docker pull fpfis/httpd-php:5.6 $ docker pull fpfis/httpd-php:7.1  Development
       <guid>https://docs.fpfis.eu/docker-images/php/versioning/</guid>
       <description>Upstream tags Both fpfis/httpd-php and fpfis/httpd-php-dev are based on the latest PHP Docker images.
 We follow upstream version for tagging.
-Tagging rational    tag type build environment     5.6 alpha push on release/5.6 acceptance/playground/testing/development   5.6.36 beta tag from release/5.6 selective/edge cases/regression testing   production-5.6 stable merge tag on production/5.6 production   7.1 alpha push on release/7.1 acceptance/playground/testing/development   7.1.2 beta tag from release/7.</description>
+Tagging rational    tag type build environment     5.6 alpha push on release/5.6 acceptance/playground/testing/development   5.6.36(-1..xx) beta tag from release/5.6 selective/edge cases/regression testing   production-5.6 stable merge tag on production/5.6 production   7.1 alpha push on release/7.1 acceptance/playground/testing/development   7.1.2(-1..xx) beta tag from release/7.</description>
     </item>
     
     <item>
