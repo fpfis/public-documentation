@@ -23,6 +23,6 @@ We follow upstream version for tagging.
 
 
  - Alpha: versions are always the latest build of our docker images, they should be used for testing and ensure no issue are found at the infrastructure level before the image hits the production servers.
- - Beta: versions are tags that are considered stable and can be used to target the pre-prod version or older version for regression testing.
+ - Beta: versions are tags that are considered stable and can be used to target the pre-prod version or older version for regression testing. A suffix is added when a fpfis release is done ( eg: 5.6.36-1, 5.6.36-2, ect ... )
  - Stable: Is merged every time the last tag is considered stable, and should be used in production.
  
