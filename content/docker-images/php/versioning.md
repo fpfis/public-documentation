@@ -15,10 +15,10 @@ We follow upstream version for tagging.
 | tag            | type   | build                       | environment                               |
 |----------------|--------|-----------------------------|-------------------------------------------|
 | 5.6            | alpha  | push on release/5.6         | acceptance/playground/testing/development |
-| 5.6.36         | beta   | tag from release/5.6        | selective/edge cases/regression testing   |
+| 5.6.36(-1..xx) | beta   | tag from release/5.6        | selective/edge cases/regression testing   |
 | production-5.6 | stable | merge tag on production/5.6 | production                                |
 | 7.1            | alpha  | push on release/7.1         | acceptance/playground/testing/development |
-| 7.1.2          | beta   | tag from release/7.1        | selective/edge cases/regression testing   |
+| 7.1.2(-1..xx)  | beta   | tag from release/7.1        | selective/edge cases/regression testing   |
 | production-7.1 | stable | merge tag on production/7.1 | production                                |
 
 
