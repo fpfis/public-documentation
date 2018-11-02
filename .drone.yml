@@ -7,9 +7,9 @@ pipeline:
       - ./hugo
 
   build-docs:
-    image: fpfis/php56-dev
+    image: fpfis/httpd-php-dev:7.1
     commands:
-      - yum install -y graphviz
+      - apt-get update && apt-get install -y graphviz rsync
       - composer global require hirak/prestissimo --ansi
       - composer install --ansi
       - cd phpdoc
