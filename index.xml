@@ -86,6 +86,19 @@ Usage pipeline: test-composer-deps: image: phpdrone/composer-sa-checker # lock_f
     </item>
     
     <item>
+      <title>NextEuropa Varnish</title>
+      <link>https://docs.fpfis.eu/docker-images/varnish-ne/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/varnish-ne/</guid>
+      <description>Image The image is named fpfis/varnish-ne:4.1.
+It is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.
+The NextEuropa VCL is included and includes the purging mechanism.
+Supported version  4.1
+  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1</description>
+    </item>
+    
+    <item>
       <title>PHAR Composer</title>
       <link>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

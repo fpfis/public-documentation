@@ -105,6 +105,13 @@
 	"content": " Introduction This space is a placeholder for all documentation about FPFIS\u0026rsquo;s OpenSource projects.\nPHP SDKs Multiple PHP SDKs are provided for various clients.\nDocker images Docker images are also provided for other tasks, eg, an nginx web server, a Composer Docker image\n"
 },
 {
+	"uri": "https://docs.fpfis.eu/docker-images/varnish-ne/",
+	"title": "NextEuropa Varnish",
+	"tags": [],
+	"description": "",
+	"content": " Image The image is named fpfis/varnish-ne:4.1.\nIt is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.\nThe NextEuropa VCL is included and includes the purging mechanism.\nSupported version  4.1\n  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1   \n"
+},
+{
 	"uri": "https://docs.fpfis.eu/drone/drone-plugins/phar-composer/",
 	"title": "PHAR Composer",
 	"tags": ["composer", "phar"],
