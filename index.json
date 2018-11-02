@@ -39,7 +39,7 @@
 	"title": "Docker images",
 	"tags": [],
 	"description": "",
-	"content": " All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/httpd-php:7.1  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish:4.1  "
+	"content": " All images are available on FPFIS\u0026rsquo;s Docker hub\nA curated lists of docker images maintained by FPFIS\nPHP Docker images docker pull fpfis/httpd-php:7.1  Redis Docker image docker pull fpfis/redis  Varnish Docker image docker pull fpfis/varnish:4.1  Varnish NextEuropa Docker image docker pull fpfis/varnish-ne:4.1  "
 },
 {
 	"uri": "https://docs.fpfis.eu/drone/php-sdks/drone-client-sdk/",
