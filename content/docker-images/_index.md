@@ -28,3 +28,8 @@ docker pull fpfis/redis
 docker pull fpfis/varnish:4.1
 ```
 
+## [Varnish NextEuropa Docker image](/docker-images/varnish-ne)
+
+```sh
+docker pull fpfis/varnish-ne:4.1
+```
