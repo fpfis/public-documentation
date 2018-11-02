@@ -11,6 +11,31 @@
     
     
     <item>
+      <title>NextEuropa Varnish</title>
+      <link>https://docs.fpfis.eu/docker-images/varnish-ne/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/varnish-ne/</guid>
+      <description>Image The image is named fpfis/varnish-ne:4.1.
+It is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.
+The NextEuropa VCL is included and includes the purging mechanism.
+Supported version  4.1
+  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1</description>
+    </item>
+    
+    <item>
+      <title>Varnish</title>
+      <link>https://docs.fpfis.eu/docker-images/varnish/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
+      <description>Image Image is named fpfis/varnish and are based on Ubuntu.
+Supported version  4.1
+ 6  VMOD included The following vmods have been included :
+ Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
+    </item>
+    
+    <item>
       <title>Flavors</title>
       <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -86,19 +111,6 @@ Usage pipeline: test-composer-deps: image: phpdrone/composer-sa-checker # lock_f
     </item>
     
     <item>
-      <title>NextEuropa Varnish</title>
-      <link>https://docs.fpfis.eu/docker-images/varnish-ne/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/varnish-ne/</guid>
-      <description>Image The image is named fpfis/varnish-ne:4.1.
-It is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.
-The NextEuropa VCL is included and includes the purging mechanism.
-Supported version  4.1
-  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1</description>
-    </item>
-    
-    <item>
       <title>PHAR Composer</title>
       <link>https://docs.fpfis.eu/drone/drone-plugins/phar-composer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,18 +144,6 @@ Examples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  F
 Configuration See the Docker Hub&amp;rsquo;s page.
 Port Redis is running on port 6379 by default.
 Example docker run -p 6379:6379 -ti --rm redis  </description>
-    </item>
-    
-    <item>
-      <title>Varnish</title>
-      <link>https://docs.fpfis.eu/docker-images/varnish/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
-      <description>Image Image is named fpfis/varnish and are based on Ubuntu.
-Supported version  4.1
- 6  VMOD included The following vmods have been included :
- Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
     </item>
     
     <item>

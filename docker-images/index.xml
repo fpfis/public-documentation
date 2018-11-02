@@ -24,18 +24,6 @@ Supported version  4.1
     </item>
     
     <item>
-      <title>Redis</title>
-      <link>https://docs.fpfis.eu/docker-images/redis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/redis/</guid>
-      <description> Image We recommend using the latest Redis 4.0 image
-Configuration See the Docker Hub&amp;rsquo;s page.
-Port Redis is running on port 6379 by default.
-Example docker run -p 6379:6379 -ti --rm redis  </description>
-    </item>
-    
-    <item>
       <title>Varnish</title>
       <link>https://docs.fpfis.eu/docker-images/varnish/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -45,6 +33,18 @@ Example docker run -p 6379:6379 -ti --rm redis  </description>
 Supported version  4.1
  6  VMOD included The following vmods have been included :
  Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://docs.fpfis.eu/docker-images/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/redis/</guid>
+      <description> Image We recommend using the latest Redis 4.0 image
+Configuration See the Docker Hub&amp;rsquo;s page.
+Port Redis is running on port 6379 by default.
+Example docker run -p 6379:6379 -ti --rm redis  </description>
     </item>
     
   </channel>
