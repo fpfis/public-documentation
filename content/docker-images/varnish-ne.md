@@ -1,6 +1,7 @@
 ---
 date: 2018-22-05T10:21:05+02:00
 title: NextEuropa Varnish
+weight: 1
 --- 
 
 ## Image
@@ -8,7 +9,7 @@ title: NextEuropa Varnish
 The image is named `fpfis/varnish-ne:4.1`.
 
 It is based on `fpfis/varnish` and as such inherits all configuration options 
-from the [fpfis/varnish](varnish)  image.
+from the [fpfis/varnish](../varnish/)  image.
 
 The NextEuropa VCL is included and includes the purging mechanism.
 
