@@ -15,11 +15,28 @@ All subsequent development images are base on this image.
 ```bash
 $ docker pull fpfis/httpd-php:5.6
 $ docker pull fpfis/httpd-php:7.1
+$ docker pull fpfis/httpd-php:7.2
+```
+
+
+### Full image
+
+Based on the base image.
+
+Additional components have been added for convenience :
+
+ - Java
+ - OCI
+ 
+```bash
+$ docker pull fpfis/httpd-php-full:5.6
+$ docker pull fpfis/httpd-php-full:7.1
+$ docker pull fpfis/httpd-php-full:7.2
 ```
 
 ### Development image
 
-The image contains PHP and Apache. Various dev services and packages are also included :
+Based on the full image, various dev services and packages are also included :
 
  - Composer
  - Git, Patch & co
@@ -29,4 +46,6 @@ The image contains PHP and Apache. Various dev services and packages are also in
 ```bash
 $ docker pull fpfis/httpd-php-dev:5.6
 $ docker pull fpfis/httpd-php-dev:7.1
+$ docker pull fpfis/httpd-php-dev:7.2
 ```
+

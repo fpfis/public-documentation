@@ -4,22 +4,16 @@ title: Versioning
 weight: 5
 --- 
 
-## Upstream tags
-
-Both `fpfis/httpd-php` and `fpfis/httpd-php-dev` are based on the latest PHP Docker images.
-
 We follow upstream version for tagging.
 
 ## Tagging rational
 
 | tag            | type   | build                       | environment                               |
 |----------------|--------|-----------------------------|-------------------------------------------|
-| 5.6            | alpha  | push on release/5.6         | acceptance/playground/testing/development |
-| 5.6.36(-1..xx) | beta   | tag from release/5.6        | selective/edge cases/regression testing   |
-| production-5.6 | stable | merge tag on production/5.6 | production                                |
-| 7.1            | alpha  | push on release/7.1         | acceptance/playground/testing/development |
-| 7.1.2(-1..xx)  | beta   | tag from release/7.1        | selective/edge cases/regression testing   |
-| production-7.1 | stable | merge tag on production/7.1 | production                                |
+| x.x            | beta   | push on develop             | acceptance/playground/testing/development |
+| 5.6.36(-1..xx) | stable | tag from develop            | selective/edge cases/regression testing   |
+| 7.1.2(-1..xx)  | stable | tag from develop            | selective/edge cases/regression testing   |
+| production-x.x | stable | merge from develop or tag   | production                                |
 
 
  - Alpha: versions are always the latest build of our docker images, they should be used for testing and ensure no issue are found at the infrastructure level before the image hits the production servers.

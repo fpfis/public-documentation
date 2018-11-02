@@ -5,9 +5,10 @@ title: PHP
 
 ## Introduction
 
-The FPFIS Docker images are based on Alpine directly from the PHP-FPM image.
+The FPFIS Docker images are based on the latest Ubuntu LTS with the PHP packages from [Ondrej's PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php).
 
-Two version are currently supported : `fpfis/http-php:5.6` and `fpfis/httpd-php:7.1`.
+
+Three version are currently supported : 5.6, 7.1 and 7.2.
 
 For more informations, consult the following topics :
 

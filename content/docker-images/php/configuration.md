@@ -4,18 +4,28 @@ title: Configuration
 weight: 10
 --- 
 
-## Environment variables
+## Runtime docker configuration
 
-Use the following environment variable to configure the image :
+| env                        | Description                        |  Default          |
+|----------------------------|------------------------------------|-------------------|
+|`APACHE_ACCESS_LOG`         | Location of apache's access log    | `/proc/self/fd/1` |
+|`APACHE_ERROR_LOG`          | Location of apache's error log     | `/proc/self/fd/2` |
+|`DAEMON_GROUP`              | Group name to run the daemons with | `www-data`        |
+|`DAEMON_USER`               | Username to run the daemons with   | `www-data`        |
+|`DOCUMENT_ROOT`             | Document root                      | `/var/www/html`   |
+|`SITE_PATH`                 | Site URL location (non-dev)        | `/`
+|`FPM_MAX_CHILDREN`          | Max number of PHP processes        | `5`               |
+|`FPM_MIN_CHILDREN`          | Min number of PHP processes        | `2`               |
+|`HTTP_PORT`                 | Port to listen on                  | `8080`            |
+|`PHP_MAX_EXECUTION_TIME`    | PHP max execution time             | `30`              |
+|`PHP_MAX_INPUT_TIME`        | PHP max input time                 | `30`              |
+|`PHP_MEMORY_LIMIT`          | PHP memory limit                   | `512M`            |
+|`SMTP_SERVER`               | SMTP server to use                 | empty
+|`SMTP_PORT  `               | SMTP port   to use                 | `25`
+|`SMTP_FROM`                 | SMTP From to use                   | empty
+|`SMTP_USERNAME`             | Username to use for SMTP auth      | empty
+|`SMTP_PASSWORD`             | Password to use for SMTP auth      | empty
 
-`DOCUMENT_ROOT`
-Path to document root ( default /var/www/html )
-
-`APACHE_EXTRA_CONF`
-Extra single line to add to Apache configuration, for options that don't work on **.htaccess** (Example: Alias)
-
-`APACHE_EXTRA_CONF_DIR`
-Extra path with **.conf** files to load onto Apache.
 
 
 ## With docker-compose
@@ -31,15 +41,3 @@ services:
     volumes:
      - .:/app
 ```
-
-{{% notice info %}}
-**About ${DOCUMENT_ROOT}** : The image will first try to create the directory using the parent's permissions if it's missing.
-{{% /notice %}}
-
-
-## Default values
-
-| Variable | Default Value |
-| -------- | ------------- |
-| `APACHE_EXTRA_CONF` | empty | 
-| `APACHE_EXTRA_CONF_DIR` | conf.d |
