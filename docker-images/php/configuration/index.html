@@ -12,19 +12,19 @@
     <title>Configuration :: FPFIS Documentation</title>
 
     
-    <link href="/css/nucleus.css?1541165972" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541165972" rel="stylesheet">
-    <link href="/css/hybrid.css?1541165972" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541165972" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541165972" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541165972" rel="stylesheet">
-    <link href="/css/theme.css?1541165972" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541165972" rel="stylesheet">
+    <link href="/css/nucleus.css?1541166528" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541166528" rel="stylesheet">
+    <link href="/css/hybrid.css?1541166528" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541166528" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541166528" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541166528" rel="stylesheet">
+    <link href="/css/theme.css?1541166528" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541166528" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1541165972" rel="stylesheet">
+      <link href="/css/theme-blue.css?1541166528" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541165972"></script>
+    <script src="/js/jquery-2.x.min.js?1541166528"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541165972"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541165972"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541166528"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541166528"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.fpfis.eu\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541165972"></script>
+<script type="text/javascript" src="/js/search.js?1541166528"></script>
 
     
   </div>
@@ -628,9 +628,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#environment-variables">Environment variables</a></li>
+<li><a href="#runtime-docker-configuration">Runtime docker configuration</a></li>
 <li><a href="#with-docker-compose">With docker-compose</a></li>
-<li><a href="#default-values">Default values</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -653,18 +652,121 @@
 
 
 
-<h2 id="environment-variables">Environment variables</h2>
+<h2 id="runtime-docker-configuration">Runtime docker configuration</h2>
 
-<p>Use the following environment variable to configure the image :</p>
+<table>
+<thead>
+<tr>
+<th>env</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 
-<p><code>DOCUMENT_ROOT</code>
-Path to document root ( default /var/www/html )</p>
+<tbody>
+<tr>
+<td><code>APACHE_ACCESS_LOG</code></td>
+<td>Location of apache&rsquo;s access log</td>
+<td><code>/proc/self/fd/1</code></td>
+</tr>
 
-<p><code>APACHE_EXTRA_CONF</code>
-Extra single line to add to Apache configuration, for options that don&rsquo;t work on <strong>.htaccess</strong> (Example: Alias)</p>
+<tr>
+<td><code>APACHE_ERROR_LOG</code></td>
+<td>Location of apache&rsquo;s error log</td>
+<td><code>/proc/self/fd/2</code></td>
+</tr>
 
-<p><code>APACHE_EXTRA_CONF_DIR</code>
-Extra path with <strong>.conf</strong> files to load onto Apache.</p>
+<tr>
+<td><code>DAEMON_GROUP</code></td>
+<td>Group name to run the daemons with</td>
+<td><code>www-data</code></td>
+</tr>
+
+<tr>
+<td><code>DAEMON_USER</code></td>
+<td>Username to run the daemons with</td>
+<td><code>www-data</code></td>
+</tr>
+
+<tr>
+<td><code>DOCUMENT_ROOT</code></td>
+<td>Document root</td>
+<td><code>/var/www/html</code></td>
+</tr>
+
+<tr>
+<td><code>SITE_PATH</code></td>
+<td>Site URL location (non-dev)</td>
+<td><code>/</code></td>
+</tr>
+
+<tr>
+<td><code>FPM_MAX_CHILDREN</code></td>
+<td>Max number of PHP processes</td>
+<td><code>5</code></td>
+</tr>
+
+<tr>
+<td><code>FPM_MIN_CHILDREN</code></td>
+<td>Min number of PHP processes</td>
+<td><code>2</code></td>
+</tr>
+
+<tr>
+<td><code>HTTP_PORT</code></td>
+<td>Port to listen on</td>
+<td><code>8080</code></td>
+</tr>
+
+<tr>
+<td><code>PHP_MAX_EXECUTION_TIME</code></td>
+<td>PHP max execution time</td>
+<td><code>30</code></td>
+</tr>
+
+<tr>
+<td><code>PHP_MAX_INPUT_TIME</code></td>
+<td>PHP max input time</td>
+<td><code>30</code></td>
+</tr>
+
+<tr>
+<td><code>PHP_MEMORY_LIMIT</code></td>
+<td>PHP memory limit</td>
+<td><code>512M</code></td>
+</tr>
+
+<tr>
+<td><code>SMTP_SERVER</code></td>
+<td>SMTP server to use</td>
+<td>empty</td>
+</tr>
+
+<tr>
+<td><code>SMTP_PORT</code></td>
+<td>SMTP port   to use</td>
+<td><code>25</code></td>
+</tr>
+
+<tr>
+<td><code>SMTP_FROM</code></td>
+<td>SMTP From to use</td>
+<td>empty</td>
+</tr>
+
+<tr>
+<td><code>SMTP_USERNAME</code></td>
+<td>Username to use for SMTP auth</td>
+<td>empty</td>
+</tr>
+
+<tr>
+<td><code>SMTP_PASSWORD</code></td>
+<td>Password to use for SMTP auth</td>
+<td>empty</td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="with-docker-compose">With docker-compose</h2>
 
@@ -678,33 +780,6 @@ Extra path with <strong>.conf</strong> files to load onto Apache.</p>
     volumes:
      - .:/app
 </code></pre>
-
-<div class="notices info" ><p><strong>About ${DOCUMENT_ROOT}</strong> : The image will first try to create the directory using the parent&rsquo;s permissions if it&rsquo;s missing.</p>
-</div>
-
-
-<h2 id="default-values">Default values</h2>
-
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Default Value</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>APACHE_EXTRA_CONF</code></td>
-<td>empty</td>
-</tr>
-
-<tr>
-<td><code>APACHE_EXTRA_CONF_DIR</code></td>
-<td>conf.d</td>
-</tr>
-</tbody>
-</table>
 
 
 <footer class=" footline" >
@@ -1096,20 +1171,20 @@ Extra path with <strong>.conf</strong> files to load onto Apache.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541165972"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541165972"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541165972"></script>
-    <script src="/js/jquery.sticky.js?1541165972"></script>
-    <script src="/js/featherlight.min.js?1541165972"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541165972"></script>
-    <script src="/js/highlight.pack.js?1541165972"></script>
+    <script src="/js/clipboard.min.js?1541166528"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541166528"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541166528"></script>
+    <script src="/js/jquery.sticky.js?1541166528"></script>
+    <script src="/js/featherlight.min.js?1541166528"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541166528"></script>
+    <script src="/js/highlight.pack.js?1541166528"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541165972"></script>
-    <script src="/js/learn.js?1541165972"></script>
-    <script src="/js/hugo-learn.js?1541165972"></script>
+    <script src="/js/modernizr.custom.71422.js?1541166528"></script>
+    <script src="/js/learn.js?1541166528"></script>
+    <script src="/js/hugo-learn.js?1541166528"></script>
 
-    <link href="/mermaid/mermaid.css?1541165972" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541165972"></script>
+    <link href="/mermaid/mermaid.css?1541166528" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541166528"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

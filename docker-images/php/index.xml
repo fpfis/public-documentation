@@ -18,8 +18,9 @@
       <guid>https://docs.fpfis.eu/docker-images/php/flavors/</guid>
       <description>Image flavors Base The image contains PHP and Apache, no additional services are running.
 All subsequent development images are base on this image.
-$ docker pull fpfis/httpd-php:5.6 $ docker pull fpfis/httpd-php:7.1  Development image The image contains PHP and Apache. Various dev services and packages are also included :
- Composer Git, Patch &amp;amp; co Xdebug for debugging Blackfire for profiling  $ docker pull fpfis/httpd-php-dev:5.6 $ docker pull fpfis/httpd-php-dev:7.</description>
+$ docker pull fpfis/httpd-php:5.6 $ docker pull fpfis/httpd-php:7.1 $ docker pull fpfis/httpd-php:7.2  Full image Based on the base image.
+Additional components have been added for convenience :
+ Java OCI  $ docker pull fpfis/httpd-php-full:5.6 $ docker pull fpfis/httpd-php-full:7.1 $ docker pull fpfis/httpd-php-full:7.2  Development image Based on the full image, various dev services and packages are also included :</description>
     </item>
     
     <item>
@@ -28,9 +29,8 @@ $ docker pull fpfis/httpd-php:5.6 $ docker pull fpfis/httpd-php:7.1  Development
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/php/versioning/</guid>
-      <description>Upstream tags Both fpfis/httpd-php and fpfis/httpd-php-dev are based on the latest PHP Docker images.
-We follow upstream version for tagging.
-Tagging rational    tag type build environment     5.6 alpha push on release/5.6 acceptance/playground/testing/development   5.6.36(-1..xx) beta tag from release/5.6 selective/edge cases/regression testing   production-5.6 stable merge tag on production/5.6 production   7.1 alpha push on release/7.1 acceptance/playground/testing/development   7.1.2(-1..xx) beta tag from release/7.</description>
+      <description>We follow upstream version for tagging.
+Tagging rational    tag type build environment     x.x beta push on develop acceptance/playground/testing/development   5.6.36(-1..xx) stable tag from develop selective/edge cases/regression testing   7.1.2(-1..xx) stable tag from develop selective/edge cases/regression testing   production-x.x stable merge from develop or tag production     Alpha: versions are always the latest build of our docker images, they should be used for testing and ensure no issue are found at the infrastructure level before the image hits the production servers.</description>
     </item>
     
     <item>
@@ -39,12 +39,7 @@ Tagging rational    tag type build environment     5.6 alpha push on release/5.6
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/php/configuration/</guid>
-      <description>Environment variables Use the following environment variable to configure the image :
-DOCUMENT_ROOT Path to document root ( default /var/www/html )
-APACHE_EXTRA_CONF Extra single line to add to Apache configuration, for options that don&amp;rsquo;t work on .htaccess (Example: Alias)
-APACHE_EXTRA_CONF_DIR Extra path with .conf files to load onto Apache.
-With docker-compose Eg, if you have an app with a web folder that should be the document root :
-services: web: image: fpfis/httpd-php-dev:5.</description>
+      <description>Runtime docker configuration    env Description Default     APACHE_ACCESS_LOG Location of apache&amp;rsquo;s access log /proc/self/fd/1   APACHE_ERROR_LOG Location of apache&amp;rsquo;s error log /proc/self/fd/2   DAEMON_GROUP Group name to run the daemons with www-data   DAEMON_USER Username to run the daemons with www-data   DOCUMENT_ROOT Document root /var/www/html   SITE_PATH Site URL location (non-dev) /   FPM_MAX_CHILDREN Max number of PHP processes 5   FPM_MIN_CHILDREN Min number of PHP processes 2   HTTP_PORT Port to listen on 8080   PHP_MAX_EXECUTION_TIME PHP max execution time 30   PHP_MAX_INPUT_TIME PHP max input time 30   PHP_MEMORY_LIMIT PHP memory limit 512M   SMTP_SERVER SMTP server to use empty   SMTP_PORT SMTP port to use 25   SMTP_FROM SMTP From to use empty   SMTP_USERNAME Username to use for SMTP auth empty   SMTP_PASSWORD Password to use for SMTP auth empty    With docker-compose Eg, if you have an app with a web folder that should be the document root :</description>
     </item>
     
   </channel>
