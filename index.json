@@ -1,19 +1,5 @@
 [
 {
-	"uri": "https://docs.fpfis.eu/docker-images/varnish-ne/",
-	"title": "NextEuropa Varnish",
-	"tags": [],
-	"description": "",
-	"content": " Image The image is named fpfis/varnish-ne:4.1.\nIt is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.\nThe NextEuropa VCL is included and includes the purging mechanism.\nSupported version  4.1\n  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1   \n"
-},
-{
-	"uri": "https://docs.fpfis.eu/docker-images/varnish/",
-	"title": "Varnish",
-	"tags": [],
-	"description": "",
-	"content": " Image Image is named fpfis/varnish and are based on Ubuntu.\nSupported version  4.1\n 6  VMOD included The following vmods have been included :\n Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.yaml    YAML configuration The backend must be defined in a YAML file mounted as a volume.\nThe syntax is as follow :\nSimple configuration varnish: sites: default: nodes: - host: web port: 8080  Load balancer with routing varnish: sites: site1: path: /site1 base64auth: pxosizjpiweqw nodes: - host: web01 port: 8888 - host: web02 port: 8888 site1static: path: /site1/static base64auth: pxosizjpiweqw nodes: - host: web01 port: 8889 - host: web02 port: 8889 site2: path: /site2 base64auth: pxosizjpiweqw nodes: - host: web03 port: 8888 - host: web04 port: 8888 site2static: path: /site2/static base64auth: pxosizjpiweqw nodes: - host: web03 port: 8889 - host: web04 port: 8889  Mouting VCL volume VCL must be mounted in /etc/varnish and a default.vcl should be present. You should also make sure to include /tmp/directors.vcl in your VCL to setup the backends.\nExample Assuming you have a working VCL with default.vcl in your local varnish folder :\ndocker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1    \n"
-},
-{
 	"uri": "https://docs.fpfis.eu/docker-images/php/flavors/",
 	"title": "Flavors",
 	"tags": [],
@@ -42,6 +28,13 @@
 	"content": " A curated lists of PHP SDKs maintained by FPFIS :\niTopApi The plugins SDK allows for interactions with iTop CMDB.\ncomposer require ec-europa/itopapi:~1.0  Backtrac PHP client This projects includes both a client library and a phing helper to trigger visual comparison.\ncomposer require ec-europa/backtrac-php-client:~0.1  "
 },
 {
+	"uri": "https://docs.fpfis.eu/docker-images/varnish/",
+	"title": "Varnish",
+	"tags": [],
+	"description": "",
+	"content": " Image Image is named fpfis/varnish and are based on Ubuntu.\nSupported version  4.1\n 6  VMOD included The following vmods have been included :\n Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.yaml    YAML configuration The backend must be defined in a YAML file mounted as a volume.\nThe syntax is as follow :\nSimple configuration varnish: sites: default: nodes: - host: web port: 8080  Load balancer with routing varnish: sites: site1: path: /site1 base64auth: pxosizjpiweqw nodes: - host: web01 port: 8888 - host: web02 port: 8888 site1static: path: /site1/static base64auth: pxosizjpiweqw nodes: - host: web01 port: 8889 - host: web02 port: 8889 site2: path: /site2 base64auth: pxosizjpiweqw nodes: - host: web03 port: 8888 - host: web04 port: 8888 site2static: path: /site2/static base64auth: pxosizjpiweqw nodes: - host: web03 port: 8889 - host: web04 port: 8889  Mouting VCL volume VCL must be mounted in /etc/varnish and a default.vcl should be present. You should also make sure to include /tmp/directors.vcl in your VCL to setup the backends.\nExample Assuming you have a working VCL with default.vcl in your local varnish folder :\ndocker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1    \n"
+},
+{
 	"uri": "https://docs.fpfis.eu/docker-images/",
 	"title": "Docker images",
 	"tags": [],
@@ -61,6 +54,20 @@
 	"tags": [],
 	"description": "",
 	"content": " Allows for creating PHP based plugins.\nUsing with composer $ composer require phpdrone/drone-plugin-sdk:~0.1  Example \u0026lt;?php require __DIR__.\u0026quot;/vendor/autoload.php\u0026quot;; // Get the build : $build = new \\DronePluginSdk\\Build(); // Get some settings : var_dump($build-\u0026gt;getPluginParameter('my_parameter'));  Full example See the example included on Github\nAPI documentation See the full API documentation\n"
+},
+{
+	"uri": "https://docs.fpfis.eu/docker-images/varnish-ne/",
+	"title": "NextEuropa Varnish",
+	"tags": [],
+	"description": "",
+	"content": " Image The image is named fpfis/varnish-ne:4.1.\nIt is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.\nThe NextEuropa VCL is included and includes the purging mechanism.\nSupported version  4.1\n  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1   \n"
+},
+{
+	"uri": "https://docs.fpfis.eu/docker-images/redis/",
+	"title": "Redis",
+	"tags": [],
+	"description": "",
+	"content": " Image We recommend using the latest Redis 4.0 image\nConfiguration See the Docker Hub\u0026rsquo;s page.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm redis  "
 },
 {
 	"uri": "https://docs.fpfis.eu/php-sdks/backtrac-php-client/",
@@ -152,13 +159,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://docs.fpfis.eu/docker-images/redis/",
-	"title": "Redis",
-	"tags": [],
-	"description": "",
-	"content": " Image We recommend using the latest Redis 4.0 image\nConfiguration See the Docker Hub\u0026rsquo;s page.\nPort Redis is running on port 6379 by default.\nExample docker run -p 6379:6379 -ti --rm redis  "
 },
 {
 	"uri": "https://docs.fpfis.eu/tags/security/",

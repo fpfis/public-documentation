@@ -11,31 +11,6 @@
     
     
     <item>
-      <title>NextEuropa Varnish</title>
-      <link>https://docs.fpfis.eu/docker-images/varnish-ne/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/varnish-ne/</guid>
-      <description>Image The image is named fpfis/varnish-ne:4.1.
-It is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.
-The NextEuropa VCL is included and includes the purging mechanism.
-Supported version  4.1
-  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1</description>
-    </item>
-    
-    <item>
-      <title>Varnish</title>
-      <link>https://docs.fpfis.eu/docker-images/varnish/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
-      <description>Image Image is named fpfis/varnish and are based on Ubuntu.
-Supported version  4.1
- 6  VMOD included The following vmods have been included :
- Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
-    </item>
-    
-    <item>
       <title>Flavors</title>
       <link>https://docs.fpfis.eu/docker-images/php/flavors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -68,6 +43,18 @@ Tagging rational    tag type build environment     x.x beta push on develop acce
     </item>
     
     <item>
+      <title>Varnish</title>
+      <link>https://docs.fpfis.eu/docker-images/varnish/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
+      <description>Image Image is named fpfis/varnish and are based on Ubuntu.
+Supported version  4.1
+ 6  VMOD included The following vmods have been included :
+ Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
+    </item>
+    
+    <item>
       <title>Drone Client PHP SDK</title>
       <link>https://docs.fpfis.eu/drone/php-sdks/drone-client-sdk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,6 +74,31 @@ Tagging rational    tag type build environment     x.x beta push on develop acce
       <description>Allows for creating PHP based plugins.
 Using with composer $ composer require phpdrone/drone-plugin-sdk:~0.1  Example &amp;lt;?php require __DIR__.&amp;quot;/vendor/autoload.php&amp;quot;; // Get the build : $build = new \DronePluginSdk\Build(); // Get some settings : var_dump($build-&amp;gt;getPluginParameter(&#39;my_parameter&#39;));  Full example See the example included on Github
 API documentation See the full API documentation</description>
+    </item>
+    
+    <item>
+      <title>NextEuropa Varnish</title>
+      <link>https://docs.fpfis.eu/docker-images/varnish-ne/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/varnish-ne/</guid>
+      <description>Image The image is named fpfis/varnish-ne:4.1.
+It is based on fpfis/varnish and as such inherits all configuration options from the fpfis/varnish image.
+The NextEuropa VCL is included and includes the purging mechanism.
+Supported version  4.1
+  Running docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml fpfis/varnish-ne:4.1</description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://docs.fpfis.eu/docker-images/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.fpfis.eu/docker-images/redis/</guid>
+      <description> Image We recommend using the latest Redis 4.0 image
+Configuration See the Docker Hub&amp;rsquo;s page.
+Port Redis is running on port 6379 by default.
+Example docker run -p 6379:6379 -ti --rm redis  </description>
     </item>
     
     <item>
@@ -132,18 +144,6 @@ It supports Docker, Virtualbox, AWS EC2 and many more.
 Image Image is named fpfis/packer and based on Alpine.
 Configuration No configuration is available for this image.
 Examples From CLI docker run -v $(pwd):$(pwd) -w $(pwd) -ti --rm fpfis/packer  From Drone pipeline: run-packer: image: fpfis/packer</description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://docs.fpfis.eu/docker-images/redis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.fpfis.eu/docker-images/redis/</guid>
-      <description> Image We recommend using the latest Redis 4.0 image
-Configuration See the Docker Hub&amp;rsquo;s page.
-Port Redis is running on port 6379 by default.
-Example docker run -p 6379:6379 -ti --rm redis  </description>
     </item>
     
     <item>

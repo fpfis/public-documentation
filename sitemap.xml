@@ -3,14 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.fpfis.eu/docker-images/varnish-ne/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.fpfis.eu/docker-images/varnish/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.fpfis.eu/docker-images/php/flavors/</loc>
   </url>
   
@@ -27,6 +19,10 @@
   </url>
   
   <url>
+    <loc>https://docs.fpfis.eu/docker-images/varnish/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.fpfis.eu/docker-images/</loc>
   </url>
   
@@ -36,6 +32,14 @@
   
   <url>
     <loc>https://docs.fpfis.eu/drone/php-sdks/drone-plugin-sdk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/docker-images/varnish-ne/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.fpfis.eu/docker-images/redis/</loc>
   </url>
   
   <url>
@@ -92,10 +96,6 @@
   <url>
     <loc>https://docs.fpfis.eu/tags/phar/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://docs.fpfis.eu/docker-images/redis/</loc>
   </url>
   
   <url>
