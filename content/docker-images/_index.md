@@ -16,11 +16,6 @@ A curated lists of docker images maintained by FPFIS
 docker pull fpfis/httpd-php:7.1
 ```
 
-{{% notice warning %}}
-The following FPFIS Docker images are **NOT production** ready and are meant for **development and testing only !!!**
-{{% /notice %}}
-
-
 ## [Redis Docker image](/docker-images/redis)
 
 ```sh
@@ -30,6 +25,6 @@ docker pull fpfis/redis
 ## [Varnish Docker image](/docker-images/varnish)
 
 ```sh
-docker pull fpfis/varnish
+docker pull fpfis/varnish:4.1
 ```
 

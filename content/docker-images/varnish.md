@@ -5,31 +5,102 @@ title: Varnish
 
 ## Image
 
-Image is named `fpfis/varnish` and based on CentOS 6.
+Image is named `fpfis/varnish` and are based on Ubuntu.
+
+## Supported version
+
+ - 4.1 [![Docker Image](https://images.microbadger.com/badges/image/fpfis/varnish:4.1.svg)](https://microbadger.com/images/fpfis/varnish) 
+ - 6 [![Docker Image](https://images.microbadger.com/badges/image/fpfis/varnish:6.svg)](https://microbadger.com/images/fpfis/varnish) 
+
+## VMOD included
+
+The following vmods have been included :
+
+ - [Varnish extra vmods](https://github.com/varnish/varnish-modules)
+ - [Drupal 7](https://git.kindwolf.org/libvmod-drupal7/)
 
 ## Configuration
 
-Use the following environment variable to configure the image :
+### Environment configuration
 
-`HTTP_PORT`
-Port to listen to ( default 6080 )
 
-`DEFAULT_BACKEND`
-Backend to connect to ( default localhost:8080 )
+| env                        | Description                        |  Default          |
+|----------------------------|------------------------------------|-------------------|
+|`HTTP_PORT`                 | Port to listen on                  | `8086` 
+|`MAX_MEMORY`                | Maximum memory to use for caching  | `1G  ` 
+|`YAML_CONF`                 | YAML file to read backend config   | `/config.yaml` 
+
+
+The backend must be defined in a YAML file mounted as a volume.
+
+The syntax is as follow :
+
+### Simple configuration
+
+```yaml 
+varnish:
+  sites:
+    default:
+    nodes:
+      - host: web
+        port: 8080
+```
+
+### Load balancer with routing
+
+```yaml
+varnish:
+  sites:
+    site1:
+      path: /site1
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web01
+          port: 8888
+        - host: web02
+          port: 8888
+    site1static:
+      path: /site1/static
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web01
+          port: 8889
+        - host: web02
+          port: 8889
+    site2:
+      path: /site2
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web03
+          port: 8888
+        - host: web04
+          port: 8888
+    site2static:
+      path: /site2/static
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web03
+          port: 8889
+        - host: web04
+          port: 8889
+```
 
 ## Mouting VCL volume
 
 VCL must be mounted in `/etc/varnish` and a `default.vcl` should be present.
+You should also make sure to include `/tmp/directors.vcl` in your VCL to setup the backends.
 
 ## Example
 
 Assuming you have a working VCL with `default.vcl` in your local `varnish` folder :
 
 ```bash
-docker run -p 6080:6080 -ti --rm -e DEFAULT_BACKEND=172.16.10.1:8080 -v $(pwd)/varnish:/etc/varnish fpfis/varnish 
+docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1 
 ```
 
 ___
 
-[![Build Status](https://drone.fpfis.eu/api/badges/ec-europa/docker-fpfis/status.svg?branch=release/varnish)](https://drone.fpfis.eu/ec-europa/docker-fpfis)
-[![Docker Image](https://images.microbadger.com/badges/image/fpfis/varnish.svg)](https://microbadger.com/images/fpfis/varnish) 
+
+___
+
+[![Build Status](https://drone.fpfis.eu/api/badges/fpfis/varnish/status.svg?branch=master)](https://drone.fpfis.eu/fpfis/varnish)
