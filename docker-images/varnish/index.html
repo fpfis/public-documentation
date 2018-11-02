@@ -12,19 +12,19 @@
     <title>Varnish :: FPFIS Documentation</title>
 
     
-    <link href="/css/nucleus.css?1536841220" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1536841220" rel="stylesheet">
-    <link href="/css/hybrid.css?1536841220" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1536841220" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1536841220" rel="stylesheet">
-    <link href="/css/auto-complete.css?1536841220" rel="stylesheet">
-    <link href="/css/theme.css?1536841220" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1536841220" rel="stylesheet">
+    <link href="/css/nucleus.css?1541165582" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541165582" rel="stylesheet">
+    <link href="/css/hybrid.css?1541165582" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541165582" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541165582" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541165582" rel="stylesheet">
+    <link href="/css/theme.css?1541165582" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541165582" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1536841220" rel="stylesheet">
+      <link href="/css/theme-blue.css?1541165582" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1536841220"></script>
+    <script src="/js/jquery-2.x.min.js?1541165582"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1536841220"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1536841220"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541165582"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541165582"></script>
 <script type="text/javascript">
     
-        var baseurl = '\/';
+        var baseurl = "https:\/\/docs.fpfis.eu\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1536841220"></script>
+<script type="text/javascript" src="/js/search.js?1541165582"></script>
 
     
   </div>
@@ -592,6 +592,8 @@
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -609,7 +611,8 @@
           
          
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -620,7 +623,14 @@
 <li>
 <ul>
 <li><a href="#image">Image</a></li>
-<li><a href="#configuration">Configuration</a></li>
+<li><a href="#supported-version">Supported version</a></li>
+<li><a href="#vmod-included">VMOD included</a></li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#environment-configuration">Environment configuration</a></li>
+<li><a href="#simple-configuration">Simple configuration</a></li>
+<li><a href="#load-balancer-with-routing">Load balancer with routing</a></li>
+</ul></li>
 <li><a href="#mouting-vcl-volume">Mouting VCL volume</a></li>
 <li><a href="#example">Example</a></li>
 </ul></li>
@@ -647,33 +657,127 @@
 
 <h2 id="image">Image</h2>
 
-<p>Image is named <code>fpfis/varnish</code> and based on CentOS 6.</p>
+<p>Image is named <code>fpfis/varnish</code> and are based on Ubuntu.</p>
+
+<h2 id="supported-version">Supported version</h2>
+
+<ul>
+<li>4.1 <a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:4.1.svg" alt="Docker Image" /></a></li>
+<li>6 <a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:6.svg" alt="Docker Image" /></a></li>
+</ul>
+
+<h2 id="vmod-included">VMOD included</h2>
+
+<p>The following vmods have been included :</p>
+
+<ul>
+<li><a href="https://github.com/varnish/varnish-modules">Varnish extra vmods</a></li>
+<li><a href="https://git.kindwolf.org/libvmod-drupal7/">Drupal 7</a></li>
+</ul>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>Use the following environment variable to configure the image :</p>
+<h3 id="environment-configuration">Environment configuration</h3>
 
-<p><code>HTTP_PORT</code>
-Port to listen to ( default 6080 )</p>
+<table>
+<thead>
+<tr>
+<th>env</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 
-<p><code>DEFAULT_BACKEND</code>
-Backend to connect to ( default localhost:8080 )</p>
+<tbody>
+<tr>
+<td><code>HTTP_PORT</code></td>
+<td>Port to listen on</td>
+<td><code>8086</code></td>
+</tr>
+
+<tr>
+<td><code>MAX_MEMORY</code></td>
+<td>Maximum memory to use for caching</td>
+<td><code>1G</code></td>
+</tr>
+
+<tr>
+<td><code>YAML_CONF</code></td>
+<td>YAML file to read backend config</td>
+<td><code>/config.yaml</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>The backend must be defined in a YAML file mounted as a volume.</p>
+
+<p>The syntax is as follow :</p>
+
+<h3 id="simple-configuration">Simple configuration</h3>
+
+<pre><code class="language-yaml">varnish:
+  sites:
+    default:
+    nodes:
+      - host: web
+        port: 8080
+</code></pre>
+
+<h3 id="load-balancer-with-routing">Load balancer with routing</h3>
+
+<pre><code class="language-yaml">varnish:
+  sites:
+    site1:
+      path: /site1
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web01
+          port: 8888
+        - host: web02
+          port: 8888
+    site1static:
+      path: /site1/static
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web01
+          port: 8889
+        - host: web02
+          port: 8889
+    site2:
+      path: /site2
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web03
+          port: 8888
+        - host: web04
+          port: 8888
+    site2static:
+      path: /site2/static
+      base64auth: pxosizjpiweqw
+      nodes:
+        - host: web03
+          port: 8889
+        - host: web04
+          port: 8889
+</code></pre>
 
 <h2 id="mouting-vcl-volume">Mouting VCL volume</h2>
 
-<p>VCL must be mounted in <code>/etc/varnish</code> and a <code>default.vcl</code> should be present.</p>
+<p>VCL must be mounted in <code>/etc/varnish</code> and a <code>default.vcl</code> should be present.
+You should also make sure to include <code>/tmp/directors.vcl</code> in your VCL to setup the backends.</p>
 
 <h2 id="example">Example</h2>
 
 <p>Assuming you have a working VCL with <code>default.vcl</code> in your local <code>varnish</code> folder :</p>
 
-<pre><code class="language-bash">docker run -p 6080:6080 -ti --rm -e DEFAULT_BACKEND=172.16.10.1:8080 -v $(pwd)/varnish:/etc/varnish fpfis/varnish 
+<pre><code class="language-bash">docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1 
 </code></pre>
 
 <hr />
 
-<p><a href="https://drone.fpfis.eu/ec-europa/docker-fpfis"><img src="https://drone.fpfis.eu/api/badges/ec-europa/docker-fpfis/status.svg?branch=release/varnish" alt="Build Status" /></a>
-<a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish.svg" alt="Docker Image" /></a></p>
+<hr />
+
+<p><a href="https://drone.fpfis.eu/fpfis/varnish"><img src="https://drone.fpfis.eu/api/badges/fpfis/varnish/status.svg?branch=master" alt="Build Status" /></a></p>
 
 
 <footer class=" footline" >
@@ -1048,12 +1152,15 @@ Backend to connect to ( default localhost:8080 )</p>
         
 
 
-        
-            <a class="nav nav-prev" href="/docker-images/redis/" title="Redis"> <i class="fas fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/drone/" title="Drone documentation" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/docker-images/redis/" title="Redis"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/drone/" title="Drone documentation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1061,20 +1168,20 @@ Backend to connect to ( default localhost:8080 )</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1536841220"></script>
-    <script src="/js/perfect-scrollbar.min.js?1536841220"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1536841220"></script>
-    <script src="/js/jquery.sticky.js?1536841220"></script>
-    <script src="/js/featherlight.min.js?1536841220"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1536841220"></script>
-    <script src="/js/highlight.pack.js?1536841220"></script>
+    <script src="/js/clipboard.min.js?1541165582"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541165582"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541165582"></script>
+    <script src="/js/jquery.sticky.js?1541165582"></script>
+    <script src="/js/featherlight.min.js?1541165582"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541165582"></script>
+    <script src="/js/highlight.pack.js?1541165582"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1536841220"></script>
-    <script src="/js/learn.js?1536841220"></script>
-    <script src="/js/hugo-learn.js?1536841220"></script>
+    <script src="/js/modernizr.custom.71422.js?1541165582"></script>
+    <script src="/js/learn.js?1541165582"></script>
+    <script src="/js/hugo-learn.js?1541165582"></script>
 
-    <link href="/mermaid/mermaid.css?1536841220" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1536841220"></script>
+    <link href="/mermaid/mermaid.css?1541165582" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541165582"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -28,12 +28,9 @@ Example docker run -p 6379:6379 -ti --rm redis  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.fpfis.eu/docker-images/varnish/</guid>
-      <description>Image Image is named fpfis/varnish and based on CentOS 6.
-Configuration Use the following environment variable to configure the image :
-HTTP_PORT Port to listen to ( default 6080 )
-DEFAULT_BACKEND Backend to connect to ( default localhost:8080 )
-Mouting VCL volume VCL must be mounted in /etc/varnish and a default.vcl should be present.
-Example Assuming you have a working VCL with default.vcl in your local varnish folder :</description>
+      <description>Image Image is named fpfis/varnish and are based on Ubuntu.
+Supported version  4.1  6   VMOD included The following vmods have been included :
+ Varnish extra vmods Drupal 7  Configuration Environment configuration    env Description Default     HTTP_PORT Port to listen on 8086   MAX_MEMORY Maximum memory to use for caching 1G   YAML_CONF YAML file to read backend config /config.</description>
     </item>
     
   </channel>
