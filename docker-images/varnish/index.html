@@ -12,19 +12,19 @@
     <title>Varnish :: FPFIS Documentation</title>
 
     
-    <link href="/css/nucleus.css?1541165828" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541165828" rel="stylesheet">
-    <link href="/css/hybrid.css?1541165828" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541165828" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541165828" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541165828" rel="stylesheet">
-    <link href="/css/theme.css?1541165828" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541165828" rel="stylesheet">
+    <link href="/css/nucleus.css?1541165972" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541165972" rel="stylesheet">
+    <link href="/css/hybrid.css?1541165972" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541165972" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541165972" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541165972" rel="stylesheet">
+    <link href="/css/theme.css?1541165972" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541165972" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1541165828" rel="stylesheet">
+      <link href="/css/theme-blue.css?1541165972" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541165828"></script>
+    <script src="/js/jquery-2.x.min.js?1541165972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541165828"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541165828"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541165972"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541165972"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/docs.fpfis.eu\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541165828"></script>
+<script type="text/javascript" src="/js/search.js?1541165972"></script>
 
     
   </div>
@@ -628,10 +628,13 @@
 <li><a href="#configuration">Configuration</a>
 <ul>
 <li><a href="#environment-configuration">Environment configuration</a></li>
+<li><a href="#yaml-configuration">YAML configuration</a>
+<ul>
 <li><a href="#simple-configuration">Simple configuration</a></li>
 <li><a href="#load-balancer-with-routing">Load balancer with routing</a></li>
 </ul></li>
 <li><a href="#mouting-vcl-volume">Mouting VCL volume</a></li>
+</ul></li>
 <li><a href="#example">Example</a></li>
 </ul></li>
 </ul>
@@ -662,8 +665,8 @@
 <h2 id="supported-version">Supported version</h2>
 
 <ul>
-<li>4.1 <a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:4.1.svg" alt="Docker Image" /></a></li>
-<li>6 <a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:6.svg" alt="Docker Image" /></a></li>
+<li>4.1<br /></li>
+<li>6</li>
 </ul>
 
 <h2 id="vmod-included">VMOD included</h2>
@@ -709,11 +712,13 @@
 </tbody>
 </table>
 
+<h3 id="yaml-configuration">YAML configuration</h3>
+
 <p>The backend must be defined in a YAML file mounted as a volume.</p>
 
 <p>The syntax is as follow :</p>
 
-<h3 id="simple-configuration">Simple configuration</h3>
+<h4 id="simple-configuration">Simple configuration</h4>
 
 <pre><code class="language-yaml">varnish:
   sites:
@@ -723,7 +728,7 @@
         port: 8080
 </code></pre>
 
-<h3 id="load-balancer-with-routing">Load balancer with routing</h3>
+<h4 id="load-balancer-with-routing">Load balancer with routing</h4>
 
 <pre><code class="language-yaml">varnish:
   sites:
@@ -761,7 +766,7 @@
           port: 8889
 </code></pre>
 
-<h2 id="mouting-vcl-volume">Mouting VCL volume</h2>
+<h3 id="mouting-vcl-volume">Mouting VCL volume</h3>
 
 <p>VCL must be mounted in <code>/etc/varnish</code> and a <code>default.vcl</code> should be present.
 You should also make sure to include <code>/tmp/directors.vcl</code> in your VCL to setup the backends.</p>
@@ -775,9 +780,9 @@ You should also make sure to include <code>/tmp/directors.vcl</code> in your VCL
 
 <hr />
 
-<hr />
-
-<p><a href="https://drone.fpfis.eu/fpfis/varnish"><img src="https://drone.fpfis.eu/api/badges/fpfis/varnish/status.svg?branch=master" alt="Build Status" /></a></p>
+<p><a href="https://drone.fpfis.eu/fpfis/varnish"><img src="https://drone.fpfis.eu/api/badges/fpfis/varnish/status.svg?branch=master" alt="Build Status" /></a>
+<a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:4.1.svg" alt="Docker Image" /></a>
+<a href="https://microbadger.com/images/fpfis/varnish"><img src="https://images.microbadger.com/badges/image/fpfis/varnish:6.svg" alt="Docker Image" /></a></p>
 
 
 <footer class=" footline" >
@@ -1168,20 +1173,20 @@ You should also make sure to include <code>/tmp/directors.vcl</code> in your VCL
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541165828"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541165828"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541165828"></script>
-    <script src="/js/jquery.sticky.js?1541165828"></script>
-    <script src="/js/featherlight.min.js?1541165828"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541165828"></script>
-    <script src="/js/highlight.pack.js?1541165828"></script>
+    <script src="/js/clipboard.min.js?1541165972"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541165972"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541165972"></script>
+    <script src="/js/jquery.sticky.js?1541165972"></script>
+    <script src="/js/featherlight.min.js?1541165972"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541165972"></script>
+    <script src="/js/highlight.pack.js?1541165972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541165828"></script>
-    <script src="/js/learn.js?1541165828"></script>
-    <script src="/js/hugo-learn.js?1541165828"></script>
+    <script src="/js/modernizr.custom.71422.js?1541165972"></script>
+    <script src="/js/learn.js?1541165972"></script>
+    <script src="/js/hugo-learn.js?1541165972"></script>
 
-    <link href="/mermaid/mermaid.css?1541165828" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541165828"></script>
+    <link href="/mermaid/mermaid.css?1541165972" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541165972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
