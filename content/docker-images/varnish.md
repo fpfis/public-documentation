@@ -43,9 +43,9 @@ The syntax is as follow :
 varnish:
   sites:
     default:
-    nodes:
-      - host: web
-        port: 8080
+      nodes:
+        - host: web
+          port: 8080
 ```
 
 #### Load balancer with routing
@@ -97,7 +97,7 @@ You should also make sure to include `/tmp/directors.vcl` in your VCL to setup t
 Assuming you have a working VCL with `default.vcl` in your local `varnish` folder :
 
 ```bash
-docker run -p 8086:8086 -ti --rm -e YAML_CONF=/yaml.conf -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1 
+docker run -p 8086:8086 -ti --rm -e YAML_CONF=/config.yaml -v $(pwd)/config.yaml:/config.yaml -v $(pwd)/varnish:/etc/varnish fpfis/varnish:4.1 
 ```
 
 
